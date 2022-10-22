@@ -54,7 +54,7 @@ h1:after {
 #content{
     /* height: 85vh; */
     flex-grow: 20;
-    padding: 14px;
+    padding: 7px;
 }
 #chp-list {
     height: 85vh;
@@ -189,6 +189,11 @@ box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0p
 }
 #name {
     margin: auto;
+}
+#address i {
+    color: #686868;
+    font-size: smaller;
+    margin: 2px;
 }
 
 @media only screen and (max-width:800px) {

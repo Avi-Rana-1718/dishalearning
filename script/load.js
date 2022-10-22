@@ -10,7 +10,7 @@ function src(src, number, name) {
  var fullname;
 fullname = name.split(" - ");
  document.getElementById("specific").style.display = "inline";
- document.getElementById("specific").innerHTML = "/" +  number + "th/" + fullname[0];
+ document.getElementById("specific").innerHTML = "<i class='fas fa-chevron-right'></i>" +  number + "th<i class='fas fa-chevron-right'></i>" + fullname[0];
 }
 
 function back() {
