@@ -3,13 +3,17 @@
     display: flex;
 }
 #auth {
-    background-color: #f8f8f8;
+    background-color: #fff;
     padding: 20px;
     display: inline-block;
     height: fit-content;
     width: 50vw;
     margin-left:auto;
     margin-right: auto;
+    background-image: url('../images/login.svg');
+    background-repeat: no-repeat;
+    background-size: 50vh;
+    background-position:  right;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 input {
@@ -20,4 +24,18 @@ input {
     margin: 4px;
     font-family: 'Open Sans', sans-serif;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+#auth button {
+    margin: 4px;
+    padding: 10px;
+    border: none;
+}
+#auth small {
+    color: #888;
+    font-size: smaller;
+}
+#auth small:hover {
+    text-decoration: underline;
+    color: #000;
+    cursor: pointer;
 }
