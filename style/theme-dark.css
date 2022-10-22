@@ -1,0 +1,54 @@
+body {
+    background-color: #282828;
+    color: #fff;
+}
+
+nav {
+color: #fff;
+
+}
+nav a {
+    color: #888;
+}
+nav a:hover {
+color: #f6f6f6;
+}
+
+#brand {
+    text-decoration: none;
+    color: #fff;
+    padding:0px;
+    } 
+    
+    #brand:hover {
+    color: #f6f6f6;
+    }
+    #login {
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    color: #fff;
+    }
+footer {
+        background-color: #121418;
+    }
+footer a {
+color: #f6f6f6;
+text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+.active {
+color:#f6f6f6;
+}
+#reviews {
+    background-color: #A2A2A2;
+}
+
+@media only screen and (max-width:800px) {
+#login {
+    display: none;
+}
+footer a, footer img {
+    display: none;
+}
+}
