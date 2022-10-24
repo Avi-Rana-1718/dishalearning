@@ -1,3 +1,7 @@
+* {
+    transform: all 0.2s;
+}
+
 body {
     background-color: #fffffe;
     color: #000;
@@ -80,25 +84,27 @@ color: #282828;
 /* Footer */
 footer {
     background-color: #f8f8f8;
-    display: flex;
-    justify-content: center;
+    padding: 12px;
+    padding-left: 70px;
+    font-family: 'Poppins', sans-serif;
 }
-footer div {
-margin: 7px;
-padding: 7px;
-}
-
 footer img {
 width: 1.5em;
 height: 1.5em;
 margin-right: 3px;
 }
 footer a {
-color: #000;
-text-decoration: none;
+    text-decoration: none;
+    color: #08081B;
+    padding: 7px;
+    transition: background-color 0.2s;
+    margin: 2px;
 }
 footer a:hover {
-text-decoration: underline;
+    background-color: #fff;
+    color: #000;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 3px;
 }
 
 /* MISC */
