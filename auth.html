@@ -30,6 +30,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+<!--NETLIFY-->
+<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
          <!--NAVBAR-->
@@ -45,14 +47,7 @@
 <!--/NAVBAR-->
     <div id="main">
     <div id="auth">
-        <h5>Login to your account</h5>
-        <br>
-        <label for="userid">User ID</label><br>
-        <input type="number" id="userid"><br>
-        <label for="userid">Password</label><br>
-        <input type="password" id="userid"><br>
-        <button onclick="auth()">Login</button>
-        <small>Forgot password?</small>
+      <button onclick="netlifyIdentity.open()">Login</button>
     </div>
     </div>
 
