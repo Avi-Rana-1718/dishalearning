@@ -65,7 +65,7 @@ function authCheck() {
     } else {
       // User is signed out
       // ...
-      if ((window.location.href!=="https://dishalearningin/index.html") || (window.location.href="https://dishalearning.in")){
+      if ((window.location.href!="https://dishalearningin/index.html") || (window.location.href="https://dishalearning.in")){
         window.location.href="auth.html";
       }
 
