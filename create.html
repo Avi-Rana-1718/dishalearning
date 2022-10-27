@@ -50,10 +50,13 @@
       <h3>Authentication</h3>
       <small>Please authenticate yourself to access the website!</small>
       <br><br>
+      <label for="username">Username</label>
+      <input type="text" id="username">
       <label for="email">Email</label>
       <input type="email" id="email">
       <label for="pass">Password</label>
       <input type="password" id="pass">
+      <button onclick="signUp()">SignUp</button>
       <button onclick="signIn()">SignIn</button>
       <span id="forgot" onclick="resetPass()">Forget Password?</span>
     </div>

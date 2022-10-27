@@ -58,8 +58,11 @@ color: #282828;
     margin: 4px;
     padding: 8px;
     color: #000;
-    background-color: #f8f8f8;
+    /* background-color: #f8f8f8; */
     border-radius: 3px;
+    }
+    #username:hover {
+        text-decoration: underline;
     }
     
 /* TOP BAR */
