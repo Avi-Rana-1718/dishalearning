@@ -42,7 +42,7 @@ function signIn() {
 
     var user = userCredential.user;
     console.log("Signed In");
-    // window.location.href="index.html";
+    window.location.href="index.html";
 console.log(user.displayName);
   })
   
