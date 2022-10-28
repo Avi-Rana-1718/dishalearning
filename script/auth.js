@@ -9,6 +9,9 @@ function signUp() {
 firebase.auth().createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
     // Signed in 
+    document.getElementById("prompt").style.backgroundColor = "#4ca896";
+    document.getElementById("promptMessage").innerHTML = "Success";
+    document.getElementById("prompt").style.display = "block";
 
     var user = userCredential.user;
     return user.updateProfile({
@@ -19,9 +22,9 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
     var errorCode = error.code;
     var errorMessage = error.message;
     //ERROR TIP
-    document.getElementById("errorMessage").style.backgroundColor = "red";
-    document.getElementById("errorMessage").innerHTML = errorCode + errorMessage;
-    document.getElementById("error").style.display = "block";
+    document.getElementById("prompt").style.backgroundColor = "#d92324";
+    document.getElementById("promptMessage").innerHTML = "<i class='fas fa-exclamation-circle'></i> " + errorCode + " " + errorMessage;
+    document.getElementById("prompt").style.display = "block";
   });
 }
 
@@ -32,9 +35,14 @@ function signIn() {
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
     // Signed in
+    document.getElementById("prompt").style.backgroundColor = "#4ca896";
+    document.getElementById("promptMessage").innerHTML = "Success";
+    document.getElementById("prompt").style.display = "block";
+
+
     var user = userCredential.user;
     console.log("Signed In");
-    window.location.href="index.html";
+    // window.location.href="index.html";
 console.log(user.displayName);
   })
   
@@ -42,8 +50,9 @@ console.log(user.displayName);
     var errorCode = error.code;
     var errorMessage = error.message;
     //ERROR TIP
-    document.getElementById("errorMessage").innerHTML = errorCode + " " + errorMessage;
-    document.getElementById("error").style.display = "block";
+    document.getElementById("prompt").style.backgroundColor = "#d92324";
+    document.getElementById("promptMessage").innerHTML = "<i class='fas fa-exclamation-circle'></i> " + errorCode + " " + errorMessage;
+    document.getElementById("prompt").style.display = "block";
   });
 }
 
@@ -57,17 +66,13 @@ function authCheck() {
       var uid = user.uid;
       var username =  user.displayName;
       
-      if (window.location == "https://dishalearning.in/auth.html") {
-        window.location.href="index.html";
-      }
+
       document.getElementById("login").innerHTML = "<i class='fas fa-user'></i> <span id='username'>" + username + "</span>";
       // ...
     } else {
       // User is signed out
       // ...
-      if ((window.location != "https://dishalearningin/index.html") || (window.location != "https://dishalearning.in")){
-        window.location.href="auth.html";
-      }
+      console.log("Signed Out!");
 
     }
   });

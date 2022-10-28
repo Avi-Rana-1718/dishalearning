@@ -48,14 +48,11 @@ input {
     color: #000;
     text-decoration: underline;
 }
-#error {
-    padding: 20px;
-    display: none;
-    width: 90vw;
-    position: absolute;
-    bottom: 20px;
-    margin: 15px;
-    color: #fff;
-    font-family: 'Open Sans', sans-serif;
-    border-radius: 3px;
+#prompt i {
+    color: #f6f6f6;
 }
+@media only screen and (max-width:800px) {
+.auth {
+    max-width: 90vw;
+}
+    }
