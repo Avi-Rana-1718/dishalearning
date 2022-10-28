@@ -51,6 +51,9 @@ input {
 #prompt i {
     color: #f6f6f6;
 }
+lord-icon {
+    color: #fff;
+}
 @media only screen and (max-width:800px) {
 .auth {
     max-width: 90vw;

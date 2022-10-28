@@ -29,7 +29,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
 }
 
 function signIn() {
-  email = document.getElementById("email").value;
+  email = document.getElementById("number").value + "@dishalearning.in";
     password = document.getElementById("pass").value;
 
   firebase.auth().signInWithEmailAndPassword(email, password)
@@ -66,8 +66,9 @@ function authCheck() {
       var uid = user.uid;
       var username =  user.displayName;
       
-
-      document.getElementById("login").innerHTML = "<i class='fas fa-user'></i> <span id='username'>" + username + "</span>";
+      document.getElementById("down").style.display="inline";
+      document.getElementById("username").innerHTML = "<i class='fas fa-user'></i> <span id='name'>" + username + "</span>";
+      document.getElementById("username").href = "#"
       // ...
     } else {
       // User is signed out
@@ -78,18 +79,21 @@ function authCheck() {
   });
 }
 
-
-// RESET PASSWORD
-
-function resetPass(email) {
-  firebase.auth().sendPasswordResetEmail(email)
-  .then(() => {
-    // Password reset email sent!
-    console.log("Reset mail sent!");
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ..
-  });
+//LOGOUT
+function logout() {
+firebase.auth().signOut().then(() => {
+  // Sign-out successful.
+  document.getElementById("prompt").style.backgroundColor = "#4ca896";
+  document.getElementById("promptMessage").innerHTML = "Success";
+  document.getElementById("prompt").style.display = "block";
+  window.location = "auth.html";
+}).catch((error) => {
+  // An error happened.
+      //ERROR TIP
+      document.getElementById("prompt").style.backgroundColor = "#d92324";
+      document.getElementById("promptMessage").innerHTML = "<i class='fas fa-exclamation-circle'></i> " + errorCode + " " + errorMessage;
+      document.getElementById("prompt").style.display = "block";
+});
 }
+
+
