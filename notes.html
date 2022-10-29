@@ -35,35 +35,33 @@
 </head>
     </head>
     <body onload="authCheck()">
-      <!--NAVBAR-->
-      <nav class="d-flex justify-content-between">
-         <div>
-           <a id="brand" href="index.html">
-             <h4>
-               <img src="images/logo.png" alt="Logo">Disha Learning
-             </h4>
-           </a>
-         </div>
-         <div id="opt">
-           <a id="notes" href="notes.html" title="Notes">Notes</a> 
-           <a href="tests.html" title="Tests">Tests</a> 
-          
-           <div id="dropdown">
-           <span id="login" title="Student Auth">
-             <a id="username" href="auth.html">Student Login</a>
-             <i id="down" onclick="hideDropdown()" class="fas fa-caret-down"></i>
-             <i id="up" onclick="showDropdown()" class="fas fa-caret-up"></i>
-           </span>
-           <br>
-           <ul id="dropmenu">
-             <li>Account</li>
-             <li>Settings</li>
-             <li style="color:red;" onclick="logout()"><i class="fas fa-sign-out-alt"></i>Logout</li>
-           </ul>
-           </div>
-         </div>
-       </nav>
- <!--/NAVBAR-->
+            <!--NAVBAR-->
+            <nav class="d-flex justify-content-between">
+               <div>
+                 <a id="brand" href="index.html">
+                   <h4>
+                     <img src="images/logo.png" alt="Logo">Disha Learning
+                   </h4>
+                 </a>
+               </div>
+               <div id="opt">
+                 <a id="notes" href="notes.html" title="Notes">Notes</a> 
+                 <a href="tests.html" title="Tests">Tests</a> 
+                
+                 <div id="dropdown">
+                 <span id="login" title="Student Auth">
+                   <a id="username" href="auth.html">Student Login</a>
+                   <i id="down" onclick="hideDropdown()" class="fas fa-caret-down"></i>
+                   <i id="up" onclick="showDropdown()" class="fas fa-caret-up"></i>
+                 </span>
+                 <br>
+                 <ul id="dropmenu">
+                   <li style="color:red;" onclick="logout()"><i class="fas fa-sign-out-alt"></i>Logout</li>
+                 </ul>
+                 </div>
+               </div>
+             </nav>
+       <!--/NAVBAR-->
 
           <br><br>
          <h1>Notes</h1>
