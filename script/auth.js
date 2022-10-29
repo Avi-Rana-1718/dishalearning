@@ -30,6 +30,20 @@ firebase.auth().signInWithPhoneNumber(email, appVerifier)
     });
 }
 
+function verify() {
+  const code = document.getElementById("pass").value;
+confirmationResult.confirm(code).then((result) => {
+  // User signed in successfully.
+  const user = result.user;
+  console.log("success");
+  // ...
+}).catch((error) => {
+  // User couldn't sign in (bad verification code?)
+  // ...
+  console.log(error);
+});
+}
+
 function signIn() {
   email = document.getElementById("number").value + "@dishalearning.in";
     password = document.getElementById("pass").value;
