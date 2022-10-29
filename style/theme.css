@@ -112,6 +112,20 @@ color: #282828;
     font-size: x-large;
     cursor: pointer;
 }
+
+#account-details {
+    z-index: 6;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    right: 30%;
+    width: 100%;
+    max-width: 40vw;
+    height: 40vh;
+    padding: 20px;
+    background-color: #f6f6f6;
+    bottom: 50%;
+}
 /* Footer */
 footer {
     background-color: #f8f8f8;
