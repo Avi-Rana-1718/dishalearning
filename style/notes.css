@@ -120,7 +120,7 @@ ul li span {
     font-family: 'Open Sans', sans-serif;
     display: block;
     position: relative;
-    padding: 8px;
+    padding: 7px;
     cursor: pointer;
     margin: 12px;
     border: 1px solid #888;
@@ -129,7 +129,9 @@ ul li span {
 ul span:hover {
     /* text-decoration: underline; */
     color: #000;
-    background-color: #EBEBEB;
+    margin: 16px;
+    box-shadow: 4px 4px #888;
+
 }
 
 #content a {
