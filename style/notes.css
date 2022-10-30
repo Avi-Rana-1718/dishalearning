@@ -61,6 +61,10 @@ h1:after {
     overflow-y: scroll;
     overflow-x: hidden;
 }
+#chp-list h5 {
+    text-decoration: underline;
+    text-decoration-color:#04AA6D;
+}
 #sidebar {
     flex-grow: 4;
     max-width: 17vw;
