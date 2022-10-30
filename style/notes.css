@@ -151,7 +151,7 @@ ul span:hover {
 
 #iframe-div {
     display: none;
-    height: 85vh;
+    height: 100%;
 }
 #iframe-nav button {
 border: none;
@@ -169,13 +169,27 @@ box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0p
 }
 #viewer {
     width:95vw;
-    height: 75vh;
+    height: 80vh;
+    
 }
 #download {
     color: #000;
     text-decoration: none;
 }
-
+/* #errorIframe {
+    padding: 15px;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    margin: 15px;
+    max-width: 40vw;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+#errorIframe h5 {
+    text-decoration: underline;
+}
+#errorIframe p {
+    font-family: 'Open Sans', sans-serif;
+} */
 
   /* MISC */
 
