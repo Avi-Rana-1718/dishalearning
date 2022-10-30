@@ -27,6 +27,16 @@ color: #f6f6f6;
         box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     color: #fff;
     }
+    #username {
+        color: #fff;
+    }
+    #head p {
+        color: #fff;
+    }
+    #reviews {
+        background-color: #18181c;
+        
+    }
 footer {
         background-color: #121418;
     }
@@ -39,9 +49,6 @@ footer a:hover {
 }
 .active {
 color:#f6f6f6;
-}
-#reviews {
-    background-color: #A2A2A2;
 }
 
 @media only screen and (max-width:800px) {

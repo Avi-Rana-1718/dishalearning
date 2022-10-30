@@ -4,4 +4,4 @@ fileref.type = "text/css";
 fileref.href = "theme-dark.css";
 document.getElementsByTagName("head")[0].appendChild(fileref);
 
-document.getElementById("reviews").style.backgroundColor = "#1F2326";
+// document.getElementById("reviews").style.backgroundColor = "#1F2326";

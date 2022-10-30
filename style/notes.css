@@ -130,6 +130,11 @@ ul li span {
     border: 1px solid #888;
     border-radius: 2px;
 }
+ul li span small {
+    color: #888;
+    display: block;
+    font-size: smaller;
+}
 ul span:hover {
     /* text-decoration: underline; */
     color: #000;
