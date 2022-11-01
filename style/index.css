@@ -159,6 +159,8 @@ h5 {
     #head { 
         background-size: 50vw;
         background-position:right;
+        margin-right: 5px;
+        margin-left: 5px;
     }
     #head h1 {
         font-size: 3em;
@@ -166,6 +168,13 @@ h5 {
     #head p {
         max-width: 50vw;
         font-size: smaller;
+    }
+    .avatar {
+        width: 8em;
+    }
+    #contact {
+        margin: 0;
+        padding: 4px;
     }
     #about {
         margin: 0;

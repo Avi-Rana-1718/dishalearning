@@ -1,13 +1,14 @@
 header {
-    margin: 45px;
-    text-align: center;
+    
 }
 header h2 {
     font-family: 'Epilogue', sans-serif;
+    margin-left: 15px;
 }
 header small {
     font-family: 'Open Sans', sans-serif;
     column-gap: #181818;
+    margin-left: 15px;
 }
 form {
     padding: 14px;
@@ -41,7 +42,7 @@ form button {
     border-radius: 3px;
     border: none;
 }
-#main {
+#support-content {
     display: flex;
 }
 #faq {

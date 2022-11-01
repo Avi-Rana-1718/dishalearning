@@ -49,7 +49,7 @@
       <h3>Authentication</h3>
       <small>Please authenticate yourself to access the website!</small>
       <br><br>
-      <label for="number">Phone Number</label>
+      <label for="number">Email</label>
       <input type="text" id="number" autocomplete="off">
       <label for="pass">Password</label>
       <input type="password" id="pass">
@@ -94,7 +94,7 @@ const firebaseConfig = {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
-      window.location="index.html";
+      window.location="dashboard.html";
       // ...
     } else {
       // User is signed out

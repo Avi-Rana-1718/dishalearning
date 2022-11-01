@@ -29,20 +29,18 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
 }
 
 function signIn() {
-  email = document.getElementById("number").value + "@dishalearning.in";
+  email = document.getElementById("email").value;
     password = document.getElementById("pass").value;
 
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
     // Signed in
-    document.getElementById("prompt").style.backgroundColor = "#4ca896";
-    document.getElementById("promptMessage").innerHTML = "Success";
-    document.getElementById("prompt").style.display = "block";
+
 
 
     var user = userCredential.user;
     console.log("Signed In");
-    window.location.href="index.html";
+    window.location.href="dashboard.html";
 console.log(user.displayName);
   })
   
@@ -50,9 +48,7 @@ console.log(user.displayName);
     var errorCode = error.code;
     var errorMessage = error.message;
     //ERROR TIP
-    document.getElementById("prompt").style.backgroundColor = "#d92324";
-    document.getElementById("promptMessage").innerHTML = "<i class='fas fa-exclamation-circle'></i> " + errorCode + " " + errorMessage;
-    document.getElementById("prompt").style.display = "block";
+
   });
 }
 
@@ -67,7 +63,7 @@ function authCheck() {
       var username =  user.displayName;
       
       document.getElementById("down").style.display="inline";
-      document.getElementById("username").innerHTML = "<i class='fas fa-user'></i> <span id='name'>" + username + "</span>";
+      document.getElementById("username").innerHTML = username + "</span>";
       document.getElementById("username").href = "#"
       // ...
     } else {
@@ -83,16 +79,12 @@ function authCheck() {
 function logout() {
 firebase.auth().signOut().then(() => {
   // Sign-out successful.
-  document.getElementById("prompt").style.backgroundColor = "#4ca896";
-  document.getElementById("promptMessage").innerHTML = "Success";
-  document.getElementById("prompt").style.display = "block";
+
   window.location = "auth.html";
 }).catch((error) => {
   // An error happened.
       //ERROR TIP
-      document.getElementById("prompt").style.backgroundColor = "#d92324";
-      document.getElementById("promptMessage").innerHTML = "<i class='fas fa-exclamation-circle'></i> " + errorCode + " " + errorMessage;
-      document.getElementById("prompt").style.display = "block";
+
 });
 }
 

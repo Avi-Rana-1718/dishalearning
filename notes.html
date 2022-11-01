@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Notes - Disha Learning</title>
+        <title>Dashboard | Disha Learning</title>
         <link rel="icon"
            type="image/png"
            href="images/logo.png">
@@ -13,6 +13,7 @@
         <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="https://kit.fontawesome.com/3a3c813962.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style/theme.css">
+        <link rel="stylesheet" href="style/dashboard.css">
         <link rel="stylesheet" href="style/notes.css">
                 <!--SEO META-->
                 <meta name="title" content="Disha Learning - Boundless Knowledge Solutions  ">
@@ -26,12 +27,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500&display=swap" rel="stylesheet">   
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600&display=swap" rel="stylesheet">
-
 </head>
     </head>
     <body onload="authCheck()">
@@ -39,15 +35,10 @@
 <nav class="d-flex justify-content-between">
    <div>
      <a id="brand" href="index.html">
-       <h4>
          <img src="images/logo.png" alt="Logo">Disha Learning
-       </h4>
      </a>
    </div>
    <div id="opt">
-     <a href="notes.html" title="Notes">Notes</a> 
-     <a href="tests.html" title="Tests">Tests</a> 
-    
      <div id="dropdown">
      <span id="login" title="Student Auth">
        <a id="username" href="auth.html">Student Login</a>
@@ -63,30 +54,27 @@
  </nav>
 <!--/NAVBAR-->
 
-          <br><br>
-         <h1>Notes</h1>
+          <!--START OF LIST-->
+          <div id="main">
+            <!--SIDEBAR-->
+<div id="sidebar">
+   <h4 onclick="window.location='dashboard.html';"><i class="fas fa-home"></i></h4>
+   <h4 onclick="window.location='notes.html';"><i class="fas fa-book"></i></h4>
+   <h4 onclick="window.location='support.html';"><i class="fas fa-question-circle"></i></h4>
+</div>
+<!--/SIDEBAR-->
+
+<div id="content">
+    <br>
+            <h1>Notes</h1>
          <br>
-          <span id="address"><a title="Home" href="index.html">Home</a><i class="fas fa-chevron-right"></i>Notes<i class="fas fa-chevron-right"></i>Physics<span id="specific"></span></span>
+          <span id="address">Notes<i class="fas fa-chevron-right"></i>Physics<span id="specific"></span></span>
          <br>
          <div id="alert">
             Only Study Material for Physics available
           </div>
-          <!--START OF LIST-->
-          <div id="main">
-<div id="sidebar">
-   <div id="side-nav">
-   <h5>Class</h5>
-<ul>
-      <li><a href="#11th">11th</a></li>
-      <li><a href="#12th">12th</a></li>
-</ul>
-</div>
 
-<div id="side-alert">
-   <p><small>Only notes for 11th & 12th available</small></p>
-</div>
-</div>
-<div id="content">
+          <!--CHP-LIST-->
    <div id="chp-list">
      <section>
       <br id="11th">
@@ -246,30 +234,21 @@
       </ul>
      </section>
      </div>
+     <!--/CHP-LIST-->
 
 <!--IFRAME-->
+<div id="iframe-div">
+   <!--IFRAME NAV-->      
+   <div id="iframe-nav" class="d-flex justify-content-between">
+         <button onclick="back()"><i class="fas fa-chevron-left"></i> Back</button>
+         <button><a id="download" href="#">Download <i class="fas fa-download"></i></a></button>
+         </div>
 
-     <div id="iframe-div">
-      <!--IFRAME NAV-->      
-      <div id="iframe-nav" class="d-flex justify-content-between">
-         <div>
-            <button onclick="back()"><i class="fas fa-chevron-left"></i> Back</button>
-         </div>
-         <div>
-         </div>
-         <div>
-            <button><a id="download" href="#">Download <i class="fas fa-download"></i></a></button>
-         </div>
-            </div>
-      <iframe id="viewer" src='#' frameborder='0'> </iframe>
-      <!-- <br>
-<div id="errorIframe">
-   <h5><i class="fas fa-file" style="color: #18181c;"></i>File not opening?</h5>
-   <p>Try reloading the page, if the problem still persists kindly report it <a href="support.html">here<i class="fas fa-external-link-alt"></i></a> with the valid information.</p>
-</div> -->
-     </div>
+         <!--VIEWER-->
+   <iframe id="viewer" src='#' frameborder='0'>Iframe not loading. JS not supported.</iframe>
+<!--/VIEWER-->
+  </div>
 </div>
-
 <!--/IFRAME-->
 
           </div>
@@ -279,6 +258,9 @@
 <div id="prompt">
    <p id="promptMessage">Prompt Message</p>
  </div>
+<!--/ERROR-->
+
+<!--FOOTER-->
 <footer>
    <a href="https://www.buymeacoffee.com/avirana">Pledge</a>
    <a href="support.html">Support</a>
@@ -286,6 +268,7 @@
    <br><br>
    <h5><img src="images/logo.png">@Disha Learning</h5>
  </footer>
+ <!--/FOOTER-->
  
 
 <!--SRC-->
@@ -318,6 +301,5 @@ const firebaseConfig = {
 <script src="script/auth.js"></script>
 <script src="script/load.js"></script>
 <script src="script/index.js"></script>
-
     </body>
 </html>

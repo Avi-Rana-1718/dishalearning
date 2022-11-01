@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard | Disha Learning</title>
+        <link rel="icon"
+           type="image/png"
+           href="images/logo.png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#04AA6D">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="https://kit.fontawesome.com/3a3c813962.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style/theme.css">
+        <link rel="stylesheet" href="style/dashboard.css">
+                <!--SEO META-->
+                <meta name="title" content="Disha Learning - Boundless Knowledge Solutions  ">
+                <meta name="description" content="We provide coaching for Maths and Science for classes 9th to 12th in which we prepare students for both board exams and different competitive exams such as JEE & NEET. Revise and test your knowledge with the help of online tests and assignments!">
+                <meta name="keywords" content="Disha Learning Chandigarh, Coaching, Physics, Maths, JEE, NEET">
+                <meta name="robots" content="index, follow">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                <meta name="language" content="English">
+                <!--SEO META-->
+        <!--FONTS-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+</head>
+    </head>
+    <body onload="authCheck()">
+<!--NAVBAR-->
+<nav class="d-flex justify-content-between">
+   <div>
+     <a id="brand" href="index.html">
+         <img src="images/logo.png" alt="Logo">Disha Learning
+     </a>
+   </div>
+   <div id="opt">
+     <div id="dropdown">
+     <span id="login" title="Student Auth">
+       <a id="username" href="auth.html">Student Login</a>
+       <i id="down" onclick="hideDropdown()" class="fas fa-caret-down"></i>
+       <i id="up" onclick="showDropdown()" class="fas fa-caret-up"></i>
+     </span>
+     <br>
+     <ul id="dropmenu">
+       <li style="color:red;" onclick="logout()"><i class="fas fa-sign-out-alt"></i>Logout</li>
+     </ul>
+     </div>
+   </div>
+ </nav>
+<!--/NAVBAR-->
+  
+          <div id="main">
+            <!--SIDEBAR-->
+<div id="sidebar">
+   <h4><i class="fas fa-home"></i></h4>
+   <h4 onclick="window.location='notes.html';"><i class="fas fa-book"></i></h4>
+   <h4 onclick="window.location='support.html';"><i class="fas fa-question-circle"></i></h4>
+</div>
+<!--/SIDEBAR-->
+
+<div id="content">
+   <br>
+<h1>Dashboard</h1>
+
+<!--QUICK LINKS-->
+<div class="d-flex">
+  <!--11TH-->
+  <div class="item">
+    <small>Physics</small>
+    <h6>Notes: Class 11th</h6>
+    <a href="notes.html#11th">Expand<i class="fas fa-external-link-alt"></i></a>
+  </div>
+  <!--/11TH-->
+
+  <!--12TH-->
+  <div class="item">
+    <small>Physics</small>
+    <h6>Notes: Class 12th</h6>
+    <a href="notes.html#12th">Expand<i class="fas fa-external-link-alt"></i></a>
+  </div>
+  <!--/12TH-->
+</div>
+<!--/QUICK LINKS-->
+
+     <!--SUPPORT-->
+     <div class="item">
+      <small>Support</small>
+      <p>Create a support ticket, if a file is not loading & links are broken. Try reloading the respective page and check your internet connection.</p>
+      <a href="notes.html#12th">Open<i class="fas fa-external-link-alt"></i></a>
+     </div>
+     <!--/SUPPORT-->
+
+          </div>
+          </div>
+
+<!--FOOTER-->
+<footer>
+   <a href="https://www.buymeacoffee.com/avirana">Pledge</a>
+   <a href="support.html">Support</a>
+   <a href="terms.txt">Terms</a>
+   <br><br>
+   <h5><img src="images/logo.png">@Disha Learning</h5>
+ </footer>
+ <!--/FOOTER-->
+ 
+
+<!--SRC-->
+ <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAgtgskEo8hKwGvVZSjuBUv8H5cdiyRYus",
+  authDomain: "dishalearning-3dc44.firebaseapp.com",
+  projectId: "dishalearning-3dc44",
+  storageBucket: "dishalearning-3dc44.appspot.com",
+  messagingSenderId: "200772129944",
+  appId: "1:200772129944:web:ca0f379d6185effa632ced",
+  measurementId: "G-TTDXWKCZ4F"
+};
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+<script src="script/auth.js"></script>
+<script src="script/load.js"></script>
+<script src="script/index.js"></script>
+    </body>
+</html>
