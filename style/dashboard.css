@@ -84,3 +84,8 @@ height: 100vh;
 #sidebar i {
     color: #18181c;
 }
+
+/* MISC */
+.small {
+    width: fit-content;
+}

@@ -14,6 +14,7 @@
         <script src="https://kit.fontawesome.com/3a3c813962.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style/theme.css">
         <link rel="stylesheet" href="style/dashboard.css">
+        <link rel="stylesheet" href="style/account.css">
                 <!--SEO META-->
                 <meta name="title" content="Disha Learning - Boundless Knowledge Solutions  ">
                 <meta name="description" content="We provide coaching for Maths and Science for classes 9th to 12th in which we prepare students for both board exams and different competitive exams such as JEE & NEET. Revise and test your knowledge with the help of online tests and assignments!">
@@ -30,7 +31,7 @@
 
 </head>
     </head>
-    <body onload="authCheck()">
+    <body onload="userInfo()">
 <!--NAVBAR-->
 <nav class="d-flex justify-content-between">
    <div>
@@ -64,45 +65,22 @@
 <!--/SIDEBAR-->
 
 <div id="content">
-   <br>
-<h1>Dashboard</h1>
-
-<!--QUICK LINKS-->
-<div class="d-flex">
-  <!--11TH-->
-  <div class="item">
-    <small>Physics</small>
-    <h6>Notes: Class 11th</h6>
-    <a href="notes.html#11th">Expand<i class="fas fa-external-link-alt"></i></a>
-  </div>
-  <!--/11TH-->
-
-  <!--12TH-->
-  <div class="item">
-    <small>Physics</small>
-    <h6>Notes: Class 12th</h6>
-    <a href="notes.html#12th">Expand<i class="fas fa-external-link-alt"></i></a>
-  </div>
-  <!--/12TH-->
-</div>
-<!--/QUICK LINKS-->
-
-     <!--SUPPORT-->
-     <div class="item">
-      <small>Support</small>
-      <p>Create a support ticket, if a file is not loading & links are broken. Try reloading the respective page and check your internet connection.</p>
-      <a href="support.html">Open<i class="fas fa-external-link-alt"></i></a>
-     </div>
-     <!--/SUPPORT-->
-
-     <div class="item small">
-      <small>Statistics</small>
-      <p>
-        +2500 Objective Type Questions<br>
-        +1200 Subjective Type Questions
-      </p>
-     </div>
+<br>
+<h1>Account</h1>
+<br>
+<br>
+<p>
+<label for="name">FULL NAME</label>    
+<span id="name">Loading</span>
+<label for="email">EMAIL</label>
+<span id="email">example@dishalearning.in</span>
+<label for="phone">PHONE NUMBER</label>
+<span id="phone">12345678</span>
+<label for="uid">UID</label>
+<span id="uid">12345678</span>
+</p>
           </div>
+
           </div>
 
 <!--FOOTER-->

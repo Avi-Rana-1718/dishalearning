@@ -59,7 +59,7 @@
 <div id="sidebar">
   <h4  onclick="window.location='dashboard.html';"><i class="fas fa-home"></i></h4>
   <h4 onclick="window.location='notes.html';"><i class="fas fa-book"></i></h4>
-  <h4><i class="fas fa-question-circle"></i></h4>
+  <h4><i class="fas fa-life-ring"></i></h4>
 </div>
 <!--/SIDEBAR-->
 
@@ -75,7 +75,7 @@
 </header>
 <div id="support-content">
 <div style="flex-grow: 8;">
-    <form name="support" method="POST" data-netlify-recaptcha="true" netlify>
+    <form name="support" method="POST" netlify>
         <label for="name">Name</label>
         <input type="text" name="name" id="name"><br>
         <label for="email">Email Address</label>
@@ -85,7 +85,6 @@
         <label for="desc">How can we help you?</label>
         <textarea id="desc" name="desc" rows="4"></textarea>
         <br>
-        <div data-netlify-recaptcha="true"></div>
         <button type="submit">Submit</button>
     </form>
 </div>

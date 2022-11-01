@@ -1,10 +1,11 @@
 var email, password;
 
 function signUp() {
-    var username;
+    var username, phone;
     email = document.getElementById("email").value;
     password = document.getElementById("pass").value;
     username = document.getElementById("username").value;
+    phone = document.getElementById("phone").value;
 
 firebase.auth().createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
@@ -16,6 +17,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
     var user = userCredential.user;
     return user.updateProfile({
           displayName: username,
+          phoneNumber: phone,
         })
         
       }).catch((error) => {
@@ -88,4 +90,28 @@ firebase.auth().signOut().then(() => {
 });
 }
 
+//USERINFO
 
+function userInfo() {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      var uid = user.uid;
+      var username =  user.displayName;
+      var email = user.email;
+      var phone = user.phoneNumber;
+      
+      document.getElementById("name").innerHTML = username;
+      document.getElementById("uid").innerHTML = uid;
+      document.getElementById("email").innerHTML = email;
+      document.getElementById("phone").innerHTML = phone;
+      // ...
+    } else {
+      // User is signed out
+      // ...
+      console.log("Signed Out!");
+
+    }
+  });
+}
