@@ -9,6 +9,8 @@ function signUp() {
 
 firebase.auth().createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
+
+    console.log(phone);
     // Signed in 
     document.getElementById("prompt").style.backgroundColor = "#4ca896";
     document.getElementById("promptMessage").innerHTML = "Success";
@@ -101,12 +103,21 @@ function userInfo() {
       var username =  user.displayName;
       var email = user.email;
       var phone = user.phoneNumber;
+console.log(user.emailVerified);
+      console.log(user.phoneNumber);
       
       document.getElementById("name").innerHTML = username;
       document.getElementById("uid").innerHTML = uid;
       document.getElementById("email").innerHTML = email;
       document.getElementById("phone").innerHTML = phone;
       // ...
+      
+      if (user.emailVerified == true) {
+        document.getElementById("name").innerHTML = username + '<i class="fas fa-check-circle"></i>';
+        
+      }
+
+
     } else {
       // User is signed out
       // ...
