@@ -5,7 +5,6 @@ function signUp() {
     email = document.getElementById("email").value;
     password = document.getElementById("pass").value;
     username = document.getElementById("username").value;
-    phone = document.getElementById("phone").value;
 
 firebase.auth().createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
@@ -53,6 +52,7 @@ console.log(user.displayName);
     var errorCode = error.code;
     var errorMessage = error.message;
     //ERROR TIP
+    console.log(errorMessage);
 
   });
 }
@@ -74,6 +74,7 @@ function authCheck() {
       // User is signed out
       // ...
       console.log("Signed Out!");
+      window.location.href = "auth.html";
 
     }
   });
@@ -92,6 +93,20 @@ firebase.auth().signOut().then(() => {
 });
 }
 
+//RESETPASS
+function reset() {
+  firebase.auth().sendPasswordResetEmail(email)
+  .then(() => {
+    // Password reset email sent!
+    // ..
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
+}
+
 //USERINFO
 
 function userInfo() {
@@ -99,18 +114,17 @@ function userInfo() {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
-      var uid = user.uid;
-      var username =  user.displayName;
-      var email = user.email;
-      var phone = user.phoneNumber;
-
-      console.log(user.phoneNumber);
       
-      document.getElementById("name").innerHTML = username;
-      document.getElementById("uid").innerHTML = uid;
-      document.getElementById("email").innerHTML = email;
+      document.getElementById("name").innerHTML = user.displayName;
+      document.getElementById("uid").innerHTML = user.uid;;
+      document.getElementById("email").innerHTML = user.email;
+      document.getElementById("creation-date").innerHTML = new Date(user.metadata.creationTime);
       // ...
-    authCheck();
+      console.log(user.phoneNumber);
+      if (user.emailVerified==true) {
+        document.getElementById("name").innerHTML = user.displayName + "<i class='fas fa-tools'></i>";
+      } 
+
     } else {
       // User is signed out
       // ...
