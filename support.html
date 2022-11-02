@@ -30,7 +30,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600&display=swap" rel="stylesheet">
 </head>
-    <body>
+    <body onload="authCheck()">
 <!--NAVBAR-->
 <nav class="d-flex justify-content-between">
   <div>
@@ -42,13 +42,6 @@
     <div id="dropdown">
     <span id="login" title="Student Auth">
       <a id="username" href="auth.html">Student Login</a>
-      <i id="down" onclick="hideDropdown()" class="fas fa-caret-down"></i>
-      <i id="up" onclick="showDropdown()" class="fas fa-caret-up"></i>
-    </span>
-    <br>
-    <ul id="dropmenu">
-      <li style="color:red;" onclick="logout()"><i class="fas fa-sign-out-alt"></i>Logout</li>
-    </ul>
     </div>
   </div>
 </nav>
@@ -59,7 +52,9 @@
 <div id="sidebar">
   <h4  onclick="window.location='dashboard.html';"><i class="fas fa-home"></i></h4>
   <h4 onclick="window.location='notes.html';"><i class="fas fa-book"></i></h4>
-  <h4><i class="fas fa-life-ring"></i></h4>
+  <hr>
+   <h4 onclick="window.location='account.html';"><i class="fas fa-user-circle"></i></h4>
+   <h4 onclick="window.location='support.html';"><i class="fas fa-life-ring"></i></h4>
 </div>
 <!--/SIDEBAR-->
 
@@ -115,5 +110,36 @@ If some of the files are not opening, try reloading the website. If the embed vi
   <h5><img src="images/logo.png">@Disha Learning</h5>
 </footer>
 <!--/FOOTER-->
+
+
+
+<!--SRC-->
+ <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAgtgskEo8hKwGvVZSjuBUv8H5cdiyRYus",
+  authDomain: "dishalearning-3dc44.firebaseapp.com",
+  projectId: "dishalearning-3dc44",
+  storageBucket: "dishalearning-3dc44.appspot.com",
+  messagingSenderId: "200772129944",
+  appId: "1:200772129944:web:ca0f379d6185effa632ced",
+  measurementId: "G-TTDXWKCZ4F"
+};
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+<script src="script/auth.js"></script>
     </body>
 </html>

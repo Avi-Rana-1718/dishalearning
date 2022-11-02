@@ -39,18 +39,11 @@
      </a>
    </div>
    <div id="opt">
-     <div id="dropdown">
-     <span id="login" title="Student Auth">
-       <a id="username" href="auth.html">Student Login</a>
-       <i id="down" onclick="hideDropdown()" class="fas fa-caret-down"></i>
-       <i id="up" onclick="showDropdown()" class="fas fa-caret-up"></i>
-     </span>
-     <br>
-     <ul id="dropmenu">
-       <li style="color:red;" onclick="logout()"><i class="fas fa-sign-out-alt"></i>Logout</li>
-     </ul>
-     </div>
-   </div>
+    <div id="dropdown">
+    <span id="login" title="Student Auth">
+      <a id="username" href="auth.html">Student Login</a>
+    </div>
+  </div>
  </nav>
 <!--/NAVBAR-->
   
@@ -59,8 +52,10 @@
 <div id="sidebar">
    <h4><i class="fas fa-home"></i></h4>
    <h4 onclick="window.location='notes.html';"><i class="fas fa-book"></i></h4>
+   <hr>
+   <h4 onclick="window.location='account.html';"><i class="fas fa-user-circle"></i></h4>
    <h4 onclick="window.location='support.html';"><i class="fas fa-life-ring"></i></h4>
-</div>
+  </div>
 <!--/SIDEBAR-->
 
 <div id="content">
@@ -144,7 +139,6 @@ const firebaseConfig = {
 </script>
 
 <script src="script/auth.js"></script>
-<script src="script/load.js"></script>
 <script src="script/index.js"></script>
     </body>
 </html>

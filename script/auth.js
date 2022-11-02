@@ -40,12 +40,13 @@ function signIn() {
   .then((userCredential) => {
     // Signed in
 
-
-
     var user = userCredential.user;
     console.log("Signed In");
+
     window.location.href="dashboard.html";
+
 console.log(user.displayName);
+
   })
   
   .catch((error) => {
@@ -66,9 +67,8 @@ function authCheck() {
       var uid = user.uid;
       var username =  user.displayName;
       
-      document.getElementById("down").style.display="inline";
-      document.getElementById("username").innerHTML = username + "</span>";
-      document.getElementById("username").href = "#"
+      document.getElementById("username").innerHTML = '<i class="fas fa-user"></i>' + username;
+      document.getElementById("username").href = "account.html";
       // ...
     } else {
       // User is signed out
@@ -103,21 +103,14 @@ function userInfo() {
       var username =  user.displayName;
       var email = user.email;
       var phone = user.phoneNumber;
-console.log(user.emailVerified);
+
       console.log(user.phoneNumber);
       
       document.getElementById("name").innerHTML = username;
       document.getElementById("uid").innerHTML = uid;
       document.getElementById("email").innerHTML = email;
-      document.getElementById("phone").innerHTML = phone;
       // ...
-      
-      if (user.emailVerified == true) {
-        document.getElementById("name").innerHTML = username + '<i class="fas fa-check-circle"></i>';
-        
-      }
-
-
+    authCheck();
     } else {
       // User is signed out
       // ...

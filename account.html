@@ -16,19 +16,18 @@
         <link rel="stylesheet" href="style/dashboard.css">
         <link rel="stylesheet" href="style/account.css">
                 <!--SEO META-->
-                <meta name="title" content="Disha Learning - Boundless Knowledge Solutions  ">
+                <meta name="title" content="Disha Learning - Boundless Knowledge Solutions">
                 <meta name="description" content="We provide coaching for Maths and Science for classes 9th to 12th in which we prepare students for both board exams and different competitive exams such as JEE & NEET. Revise and test your knowledge with the help of online tests and assignments!">
                 <meta name="keywords" content="Disha Learning Chandigarh, Coaching, Physics, Maths, JEE, NEET">
                 <meta name="robots" content="index, follow">
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
                 <meta name="language" content="English">
-                <!--SEO META-->
+                <!--/SEO META-->
         <!--FONTS-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
 </head>
     </head>
     <body onload="userInfo()">
@@ -43,23 +42,17 @@
      <div id="dropdown">
      <span id="login" title="Student Auth">
        <a id="username" href="auth.html">Student Login</a>
-       <i id="down" onclick="hideDropdown()" class="fas fa-caret-down"></i>
-       <i id="up" onclick="showDropdown()" class="fas fa-caret-up"></i>
-     </span>
-     <br>
-     <ul id="dropmenu">
-       <li style="color:red;" onclick="logout()"><i class="fas fa-sign-out-alt"></i>Logout</li>
-     </ul>
      </div>
    </div>
  </nav>
 <!--/NAVBAR-->
-  
           <div id="main">
             <!--SIDEBAR-->
 <div id="sidebar">
-   <h4><i class="fas fa-home"></i></h4>
+   <h4 onclick="window.location='dashboard.html';"><i class="fas fa-home"></i></h4>
    <h4 onclick="window.location='notes.html';"><i class="fas fa-book"></i></h4>
+   <hr>
+   <h4 onclick="window.location='account.html';"><i class="fas fa-user-circle"></i></h4>
    <h4 onclick="window.location='support.html';"><i class="fas fa-life-ring"></i></h4>
 </div>
 <!--/SIDEBAR-->
@@ -74,11 +67,11 @@
 <span id="name">Loading</span>
 <label for="email">EMAIL</label>
 <span id="email">example@dishalearning.in</span>
-<label for="phone">PHONE NUMBER</label>
-<span id="phone">12345678</span>
 <label for="uid">UID</label>
 <span id="uid">12345678</span>
 </p>
+
+<span id="logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i>Logout</span>
           </div>
 
           </div>
