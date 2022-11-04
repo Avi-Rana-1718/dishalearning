@@ -64,11 +64,12 @@ font-family: 'Open Sans', sans-serif;
 
 }
 @media only screen and (max-width:800px) {
-    #main {
+    #support-content {
         display: block;
     }
 #faq {
     max-width: 100%;
+    display: none;
 }
 input, textarea {
     max-width: 90vw;
