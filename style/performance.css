@@ -1,0 +1,39 @@
+#avg-div {
+    padding: 14px;
+    margin: 6px;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+#avg {
+    text-decoration: underline;
+    text-decoration-color: #04AA6D;
+}
+#avg-div small {
+    color: #888;
+    font-size: smaller;
+    margin: 3px;
+    font-family: 'Open Sans', sans-serif;
+}
+#list {
+    list-style: none;
+}
+#list li {
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+    margin: 6px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+#list li small {
+    color: #888;
+    font-size: smaller;
+    margin: 3px;
+    font-family: 'Poppins', sans-serif;
+}
+#list li h5 {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    color: #888;
+
+}
