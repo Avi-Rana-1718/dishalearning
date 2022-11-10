@@ -62,42 +62,52 @@
 <div id="content">
    <br>
 <h1>Dashboard</h1>
+<br><br>
 
 <!--QUICK LINKS-->
+<!--AVG MARKS-->
+<a href="performance.html" class="item">
+  <small>Performance</small>
+  <h6 id="avg">NaN</h6>
+  <span>Expand<i class="fas fa-external-link-alt"></i></span>
+</a>
+
+
 <div class="d-flex">
   <!--11TH-->
-  <div class="item">
+  <a href="notes.html#11th"class="item">
     <small>Physics</small>
     <h6>Notes: Class 11th</h6>
-    <a href="notes.html#11th">Expand<i class="fas fa-external-link-alt"></i></a>
-  </div>
+    <span>Expand<i class="fas fa-external-link-alt"></i></span>
+  </a>
   <!--/11TH-->
 
   <!--12TH-->
-  <div class="item">
+  <a href="notes.html#12th" class="item">
     <small>Physics</small>
     <h6>Notes: Class 12th</h6>
-    <a href="notes.html#12th">Expand<i class="fas fa-external-link-alt"></i></a>
-  </div>
+    <span>Expand<i class="fas fa-external-link-alt"></i></span>
+  </a>
   <!--/12TH-->
 </div>
 <!--/QUICK LINKS-->
 
      <!--SUPPORT-->
-     <div class="item">
+     <a href="support.html" class="item">
       <small>Support</small>
       <p>Create a support ticket, if a file is not loading & links are broken. Try reloading the respective page and check your internet connection.</p>
-      <a href="support.html">Open<i class="fas fa-external-link-alt"></i></a>
-     </div>
+      <span>Open<i class="fas fa-external-link-alt"></i></span>
+     </a>
      <!--/SUPPORT-->
 
-     <div class="item small">
+     <!-- <a href="#" class="item small">
       <small>Statistics</small>
       <p>
         +2500 Objective Type Questions<br>
         +1200 Subjective Type Questions
       </p>
-     </div>
+    </a> -->
+
           </div>
           </div>
 
@@ -120,7 +130,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
 <script>
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -140,6 +150,7 @@ const firebaseConfig = {
 </script>
 
 <script src="script/auth.js"></script>
+<script src="script/db.js"></script>
 <script src="script/index.js"></script>
     </body>
 </html>

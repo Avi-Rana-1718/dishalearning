@@ -60,6 +60,7 @@ console.log(user.displayName);
 //
 
 function authCheck() {
+  console.log("Getting User");
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
@@ -84,11 +85,13 @@ function authCheck() {
 function logout() {
 firebase.auth().signOut().then(() => {
   // Sign-out successful.
+  console.log("Successful logout!");
 
   window.location = "auth.html";
 }).catch((error) => {
   // An error happened.
       //ERROR TIP
+      console.log(error);
 
 });
 }

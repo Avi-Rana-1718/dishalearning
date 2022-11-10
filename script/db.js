@@ -1,4 +1,7 @@
+document.getElementById("avg").innerHTML = "NaN";
+
 const dbRef = firebase.database().ref();
+
 dbRef.child("marks/uid").once('value').then((snapshot) => {
   if (snapshot.exists()) {
     var data = Object.values(snapshot.val());
@@ -13,9 +16,13 @@ dbRef.child("marks/uid").once('value').then((snapshot) => {
       ul.appendChild(li)
     }
 
+
     document.getElementById("avg").innerHTML = total/data.length + "%";
-console.log(data[0]);
-console.log(data[0].score);
+console.log("Data fetched!");
+if (total==0) {
+  document.getElementById("avg").innerHTML = "NaN"; 
+}
+
   } else {
     total=total + data[i].score;
     var ul = document.getElementById("list");

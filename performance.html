@@ -30,7 +30,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
     </head>
-    <body>
+    <body onload="authCheck()">
 <!--NAVBAR-->
 <nav class="d-flex justify-content-between">
    <div>
@@ -63,11 +63,11 @@
 <h1>Performance</h1>
 <br>
 <br>
-<!-- <div id="avg-div">
+<div id="avg-div">
 <small>Average Marks</small>
-  <h3 id="avg"></h3>
+  <h3 id="avg">80%</h3>
   <small>Obtained</small>
-</div> -->
+</div>
 
 <ul id="list">
   <li>No data found.</li>
@@ -120,10 +120,5 @@ const firebaseConfig = {
 <script src="script/db.js"></script>
 <script src="script/auth.js"></script>
 <script src="script/index.js"></script>
-<script>
-  document.body.onload = function() {
-  authCheck();
-  };
-  </script>
     </body>
 </html>
