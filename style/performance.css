@@ -17,7 +17,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 #list {
-    list-style: none;
+    list-style-type: none;
 }
 #list li {
     font-family: 'Open Sans', sans-serif;
@@ -38,3 +38,11 @@
     color: #888;
 
 }
+@media only screen and (max-width:800px) {
+#avg-div {
+    margin: 6px;
+}
+#list li {
+    margin: 0;
+}
+    }
