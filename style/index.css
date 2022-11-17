@@ -153,6 +153,15 @@ iframe {
 h5 {
     font-family: 'Manrope', sans-serif;
 }
+mark {
+    display: block;
+    padding: 5px;
+    color: #fff;
+    background-color: #e92441;
+    margin: 7px;
+    max-width: 35vw;
+    border-radius: 4px;
+}
 
 /* */
 #opt button {
@@ -195,5 +204,8 @@ h5 {
     }
     #contact {
         display: block;
+    }
+    mark {
+        max-width: 100%;
     }
     }

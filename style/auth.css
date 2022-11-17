@@ -1,7 +1,7 @@
 #main {
     display: flex;
 }
-.auth {
+#auth {
     background-color: #fff;
     padding: 30px;
     display: inline-block;
@@ -24,15 +24,15 @@ input {
     font-family: 'Open Sans', sans-serif;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
-.auth button {
+#auth button {
     margin: 4px;
     padding: 10px;
     border: none;
 }
-.auth button:hover {
+#auth button:hover {
     text-decoration: underline;
 }
-.auth small {
+#auth small {
     color: #888;
     font-size: smaller;
     font-family: 'Open Sans', sans-serif;
@@ -48,11 +48,59 @@ input {
     color: #000;
     text-decoration: underline;
 }
+
+#reset {
+    background-color: #fff;
+    padding: 30px;
+    display:none;
+    height: fit-content;
+    margin-left:auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 35vw;
+    border-top: 4px solid #04AA6D;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+#reset p {
+    text-align: center;
+    font-size: x-large;
+}
+#reset button {
+    margin: 4px;
+    padding: 10px;
+    border: none;
+}
+#reset button:hover {
+    text-decoration: underline;
+}
+#reset small {
+    color: #888;
+    font-size: smaller;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+mark {
+    display: none;
+    padding: 5px;
+    color: #fff;
+    font-size: smaller;
+    background-color: #e92441;
+    margin: 3px;
+    margin-bottom: 7px;
+    border-radius: 4px;
+}
 #prompt i {
     color: #f6f6f6;
 }
-lord-icon {
-    color: #fff;
+#back {
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 3px;
+}
+#back:hover {
+    background-color: #f6f6f6;
 }
 @media only screen and (max-width:800px) {
 .auth {

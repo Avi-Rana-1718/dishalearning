@@ -2,6 +2,9 @@
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
 
+
+
+
 document.getElementById("avg").innerHTML = "NaN";
 
 const dbRef = firebase.database().ref();
@@ -26,6 +29,8 @@ if (total==0) {
   } else {
     document.getElementById("avg").innerHTML = "NaN";
   }
+
+
 }).catch((error) => {
   console.log(error);
 });

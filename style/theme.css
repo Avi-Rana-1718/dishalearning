@@ -128,7 +128,9 @@ footer a:hover {
 .active {
     color:#282A35;
     }
-
+i {
+    margin: 5px;
+}
 #prompt {
      padding: 10px;
      display: none;

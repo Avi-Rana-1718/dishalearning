@@ -45,16 +45,32 @@
       </nav>
 <!--/NAVBAR-->
     <div id="main">
-    <div class="auth">
+      
+    <div id="auth">
+
+      <br>
       <h3>Authentication</h3>
       <small>Please authenticate yourself to access the website!</small>
       <br><br>
+      <mark id="error"><i class="fas fa-exclamation-circle"></i> Account creation is disabled.</mark>
       <label for="email">Email</label>
       <input type="text" id="email" autocomplete="off">
       <label for="pass">Password</label>
       <input type="password" id="pass">
       <button onclick="signIn()">SignIn</button>
       <span id="forgot" onclick="resetPass()">Forget Password?</span>
+    </div>
+
+    <div id="reset">
+      <small id="back" onclick="back()"><i class="fas fa-chevron-left"></i>Back</small>
+      <br><br>
+      <h3>Reset Password</h3>
+      <small>Enter your email which has a account with us.</small>
+      <br><br>
+      <mark id="error_reset"><i class="fas fa-exclamation-circle"></i> Account creation is disabled.</mark>
+      <label for="email_reset">Email</label>
+      <input type="text" id="email_reset" autocomplete="off">
+      <button onclick="reset()">Reset</button>
     </div>
     </div>
 

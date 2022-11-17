@@ -24,10 +24,8 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
       }).catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
-    //ERROR TIP
-    document.getElementById("prompt").style.backgroundColor = "#d92324";
-    document.getElementById("promptMessage").innerHTML = "<i class='fas fa-exclamation-circle'></i> " + errorCode + " " + errorMessage;
-    document.getElementById("prompt").style.display = "block";
+    
+    errorHandler(errorMessage);
   });
 }
 
@@ -51,8 +49,7 @@ console.log(user.displayName);
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
-    //ERROR TIP
-    console.log(errorMessage);
+    errorHandler(errorMessage);
 
   });
 }
@@ -91,22 +88,28 @@ firebase.auth().signOut().then(() => {
 }).catch((error) => {
   // An error happened.
       //ERROR TIP
-      console.log(error);
+      errorHandler(errorMessage);
 
 });
 }
 
 //RESETPASS
 function reset() {
-  firebase.auth().sendPasswordResetEmail(email)
+  var email_pass=document.getElementById("email_reset").value;
+  firebase.auth().sendPasswordResetEmail(email_pass)
   .then(() => {
     // Password reset email sent!
     // ..
+    document.getElementById("error_reset").style.display = "block";
+    document.getElementById("error_reset").style.backgroundColor = "#4BB543";
+    document.getElementById("error_reset").innerHTML = '<i class="fas fa-check-circle"></i> Password mail sent succcessfully.';
+
   })
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
-    // ..
+    document.getElementById("error_reset").style.display = "block";
+  document.getElementById("error_reset").innerHTML = '<i class="fas fa-exclamation-circle"></i>' + errorMessage;
   });
 }
 
@@ -135,4 +138,19 @@ function userInfo() {
 
     }
   });
+}
+
+function errorHandler(text) {
+  document.getElementById("error").style.display = "block";
+  document.getElementById("error").innerHTML = '<i class="fas fa-exclamation-circle"></i>' + text;
+}
+
+function resetPass() {
+  document.getElementById("auth").style.display = "none";
+  document.getElementById("reset").style.display = "inline-block";
+
+}
+function back() {
+  document.getElementById("reset").style.display = "none";
+  document.getElementById("auth").style.display = "inline-block";
 }
