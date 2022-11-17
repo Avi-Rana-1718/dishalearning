@@ -9,7 +9,6 @@ function signUp() {
 firebase.auth().createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
 
-    console.log(phone);
     // Signed in 
     document.getElementById("prompt").style.backgroundColor = "#4ca896";
     document.getElementById("promptMessage").innerHTML = "Success";
@@ -17,11 +16,11 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
 
     var user = userCredential.user;
     return user.updateProfile({
-          displayName: username,
-          phoneNumber: phone,
+          displayName: username
         })
         
       }).catch((error) => {
+
     var errorCode = error.code;
     var errorMessage = error.message;
     
@@ -40,9 +39,9 @@ function signIn() {
     var user = userCredential.user;
     console.log("Signed In");
 
+    logger("User logged on: " + user.email, 101);
     window.location.href="dashboard.html";
 
-console.log(user.displayName);
 
   })
   
@@ -50,30 +49,23 @@ console.log(user.displayName);
     var errorCode = error.code;
     var errorMessage = error.message;
     errorHandler(errorMessage);
-
+    logger("Error while logging on: " + email + "\n" + errorMessage, 201);
   });
 }
 
-//
+//AUTHCHECK
 
 function authCheck() {
-  console.log("Getting User");
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      var uid = user.uid;
-      var username =  user.displayName;
       
-      document.getElementById("username").innerHTML = '<i class="fas fa-user"></i>' + username;
+      document.getElementById("username").innerHTML = '<i class="fas fa-user"></i>' + user.displayName;
       document.getElementById("username").href = "account.html";
-      // ...
+
     } else {
-      // User is signed out
-      // ...
+
       console.log("Signed Out!");
       window.location.href = "auth.html";
-
     }
   });
 }
@@ -84,11 +76,13 @@ firebase.auth().signOut().then(() => {
   // Sign-out successful.
   console.log("Successful logout!");
 
+  logger("User logged out", 101);
   window.location = "auth.html";
+
 }).catch((error) => {
-  // An error happened.
-      //ERROR TIP
-      errorHandler(errorMessage);
+
+      errorHandler(error);
+      logger("Error while logging out", 201);
 
 });
 }
@@ -98,16 +92,21 @@ function reset() {
   var email_pass=document.getElementById("email_reset").value;
   firebase.auth().sendPasswordResetEmail(email_pass)
   .then(() => {
-    // Password reset email sent!
-    // ..
+
     document.getElementById("error_reset").style.display = "block";
     document.getElementById("error_reset").style.backgroundColor = "#4BB543";
     document.getElementById("error_reset").innerHTML = '<i class="fas fa-check-circle"></i> Password mail sent succcessfully.';
+
+    logger("Password reset mail send successfully: " + email_pass, 101);
 
   })
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
+
+    logger("Error while sending password reset mail on: " + email_pass + "\n" + errorMessage, 201);
+
+
     document.getElementById("error_reset").style.display = "block";
   document.getElementById("error_reset").innerHTML = '<i class="fas fa-exclamation-circle"></i>' + errorMessage;
   });
@@ -152,4 +151,13 @@ function resetPass() {
 function back() {
   document.getElementById("reset").style.display = "none";
   document.getElementById("auth").style.display = "inline-block";
+}
+
+function logger(text, code) {
+  var timestamp = new Date().getTime();
+
+  firebase.database().ref('log/' + timestamp).set({
+    text: text,
+    code: code
+  });
 }
