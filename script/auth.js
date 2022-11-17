@@ -126,7 +126,6 @@ function userInfo() {
       document.getElementById("email").innerHTML = user.email;
       document.getElementById("creation-date").innerHTML = new Date(user.metadata.creationTime);
       // ...
-      console.log(user.phoneNumber);
       if (user.emailVerified==true) {
         document.getElementById("name").innerHTML = user.displayName + "<i class='fas fa-tools'></i>";
       } 
