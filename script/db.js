@@ -11,12 +11,21 @@ dbRef.child("marks/" + user.uid).once('value').then((snapshot) => {
   if (snapshot.exists()) {
     var data = Object.values(snapshot.val());
     var total=0;
-
+var color;
     for (i=0;i<data.length;i++) {
       total=total + data[i].score;
       var ul = document.getElementById("list");
       var li = document.createElement("li");
-      li.innerHTML = "<small>" + data[i].topic + "</small><p>" + data[i].chp + "</p><h5>" + data[i].score + "/100</h5>";
+      if (data[i].topic=="Physics") {
+        color="#9333EA";
+      } else if (data[i].topic=="Chemistry") {
+        color="#DB2777";
+      } else if (data[i].topic=="Biology") {
+        color="#22C55E";
+      } else if (data[i].topic=="Mathematics") {
+        color="#EAB308";
+      }
+      li.innerHTML ="<small style='color:" + color + ";'>" + data[i].topic + "</small><p>" + data[i].chp + "</p><small>Marks Obtained: " + data[i].score + "%</small>";
       ul.appendChild(li)
     }
 

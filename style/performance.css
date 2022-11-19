@@ -29,13 +29,18 @@
 #list li small {
     color: #888;
     font-size: smaller;
-    margin: 3px;
+    display: block;
+    margin: 5px;
     font-family: 'Poppins', sans-serif;
 }
-#list li h5 {
-    display: block;
+#list li p {
+    display: inline;
+}
+#list li h6 {
+    display: inline;
+    margin-left: 10px;
     font-family: 'Poppins', sans-serif;
-    color: #888;
+    color: #181818;
 
 }
 @media only screen and (max-width:800px) {
