@@ -51,38 +51,6 @@ header {
 
 /* REVIEWS */
 
-#reviews {
-    display: block;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 5px;
-    font-family: 'Open Sans', sans-serif;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-}
-#reviews h5 {
-    font-family: 'Open Sans', sans-serif;
-}
-#reviews i {
-    margin: 3px;
-    color:#FFD700;
-}
-#reviews a {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 3px;
-    color: #197BFF;
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    transition: background-color 0.1s;
-}
-#reviews a:hover {
-    background-color: #F6F8FA;
-    color: #000;
-}
-#review-no {
-    color: #888;
-    font-size: 75%;
-}
 
 /* ABOUT */
 
@@ -174,7 +142,28 @@ mark {
     margin: 6px;
     color: #fff;
 }
+#notice {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 20px;
+    color: #5B6473;
+    font-size: small;
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    padding: 5px 8px;
+    cursor: pointer;
+}
 
+#notice a {
+    color: #04AA6D;
+    text-decoration: none;
+padding:0px;
+    margin: 0;
+    background-color: #fff;
+}
+#notice a:hover {
+    background-color: #fff;
+    text-decoration: underline;
+}
 @media only screen and (max-width:800px) {
     #head { 
         background-size: 50vw;
@@ -207,5 +196,9 @@ mark {
     }
     mark {
         max-width: 100%;
+    }
+    #notice {
+        font-size:x-small;
+margin-bottom: 10px;
     }
     }

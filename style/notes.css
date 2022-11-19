@@ -16,13 +16,14 @@
 /* ALERT */
 
 #alert {
-    color: #fff;
+    color: #000;
     display: block;
     padding: 17px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     margin: 14px;
     border-radius: 5px;
-    background-color: #282A35;
+    background-color: #FFFCF4;
+    border: 2px solid #FDF3D7;
 
 }
 
