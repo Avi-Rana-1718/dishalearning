@@ -1,10 +1,9 @@
 #main {
     display: flex;
 }
-#auth {
+.div {
     background-color: #fff;
     padding: 30px;
-    display: inline-block;
     height: fit-content;
     margin-left:auto;
     margin-right: auto;
@@ -14,6 +13,10 @@
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
+
+#auth {
+   display: inline-block;
+}
 input {
     outline: none;
     border: none;
@@ -21,46 +24,48 @@ input {
     border-radius: 3px;
     margin: 4px;
     display: block;
+    text-decoration: none;
     font-family: 'Open Sans', sans-serif;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
-#auth button {
+input:focus {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+button {
     margin: 4px;
     padding: 10px;
     border: none;
 }
-#auth button:hover {
+button:hover {
     text-decoration: underline;
 }
-#auth small {
+small {
     color: #888;
     font-size: smaller;
     font-family: 'Open Sans', sans-serif;
 
 }
-#forgot {
+span {
     color: #888;
     font-family: 'Open Sans', sans-serif;
     font-size: smaller;
     cursor: pointer;
 }
-#forgot:hover {
+span:hover {
     color: #000;
     text-decoration: underline;
 }
-
+#create {
+ display: none; 
+}
+#code-div {
+    display: none;
+}
 #reset {
-    background-color: #fff;
-    padding: 30px;
+
     display:none;
-    height: fit-content;
-    margin-left:auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 35vw;
     border-top: 4px solid #04AA6D;
-    border-radius: 2px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    border-left: none;
 }
 #reset p {
     text-align: center;

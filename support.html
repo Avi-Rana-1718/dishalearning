@@ -72,9 +72,9 @@
 <div style="flex-grow: 8;">
     <form name="support" method="POST" netlify>
         <label for="name">Name</label>
-        <input type="text" name="name" id="name"><br>
+        <input type="text" name="name" id="name" disabled><br>
         <label for="email">Email Address</label>
-        <input type="email" name="email" id="email"><br>
+        <input type="email" name="email" id="email" disabled><br>
         <label for="subject">Subject</label>
         <input type="text" name="subject" id="subject"><br>
         <label for="desc">How can we help you?</label>
@@ -138,6 +138,27 @@ const firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+</script>
+
+<script>
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+
+      document.getElementById("name").value = user.displayName;
+      document.getElementById("email").value = user.email;
+      // ...
+      if (user.emailVerified==true) {
+        document.getElementById("name").innerHTML = user.displayName + "<i class='fas fa-tools'></i>";
+      } 
+
+    } else {
+      // User is signed out
+      // ...
+      console.log("Signed Out!");
+
+    }
+  });
+
 </script>
 
 <script src="script/auth.js"></script>

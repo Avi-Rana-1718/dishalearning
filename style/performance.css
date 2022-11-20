@@ -1,7 +1,6 @@
 #avg-div {
     padding: 14px;
     margin: 6px;
-    margin-left: 30px;
     border-radius: 5px;
     display: inline-block;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -18,6 +17,8 @@
 }
 #list {
     list-style-type: none;
+    padding: 0;
+
 }
 #list li {
     font-family: 'Open Sans', sans-serif;
@@ -45,9 +46,9 @@
 }
 @media only screen and (max-width:800px) {
 #avg-div {
-    margin: 6px;
+    margin-left: 6px;
 }
-#list li {
-    margin: 0;
+#list li  h6 {
+margin-left: 0;
 }
     }

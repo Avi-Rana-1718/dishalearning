@@ -45,9 +45,34 @@
       </nav>
 <!--/NAVBAR-->
     <div id="main">
-      
-    <div id="auth">
 
+      <div id="create" class="div">
+        <h3>Create Account</h3>
+        <small>Create an account to access the website!</small>
+        <br><br>
+        <mark id="error-create"><i class="fas fa-exclamation-circle"></i> Account creation is disabled.</mark>
+        <label for="username">Username</label>
+        <input type="text" id="username" autocomplete="off" required>
+        <label for="email_create">Email</label>
+        <input type="email" id="email_create" autocomplete="off" required>
+        <label for="pass_create">Password</label>
+        <input type="password" id="pass_create"autocomplete="off" required>
+        <button id="sign" onclick="code()">SignUp</button>
+        <br>
+        <span onclick="back()">Already have a account. Log In</span>
+      </div>
+
+<div class="div" id="code-div">
+  <h3>Enter Access Code</h3>
+  <small>Kindly enter the <u>access code</u> to successfully create a account.</small>
+  <br><br>
+  <label for="code">Code</label>
+  <input type="text" id="code" autocomplete="off" required>
+  <button id="sign" onclick="signUp()">Confirm</button>
+  <br>
+</div>
+
+    <div id="auth" class="div">
       <br>
       <h3>Authentication</h3>
       <small>Please authenticate yourself to access the website!</small>
@@ -56,12 +81,14 @@
       <label for="email">Email</label>
       <input type="text" id="email" autocomplete="off">
       <label for="pass">Password</label>
-      <input type="password" id="pass">
+      <input type="password" autocomplete="off" id="pass">
       <button onclick="signIn()">Log In</button>
       <span id="forgot" onclick="resetPass()">Forget Password?</span>
+      <br>
+      <span onclick="create()">Don't have a account. Create one</span>
     </div>
 
-    <div id="reset">
+    <div id="reset" class="div">
       <small id="back" onclick="back()"><i class="fas fa-chevron-left"></i>Back</small>
       <br><br>
       <h3>Reset Password</h3>
@@ -101,18 +128,6 @@ const firebaseConfig = {
   firebase.analytics();
 </script>
 <script src="script/auth.js"></script>
-<script>
-    firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      window.location="dashboard.html";
-      // ...
-    } else {
-      // User is signed out
-      // ...
-    }
-  });
-</script>
+
 </body>
 </html>

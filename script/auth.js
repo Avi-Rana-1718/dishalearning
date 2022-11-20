@@ -1,31 +1,44 @@
 var email, password;
 
 function signUp() {
-    var username, phone;
-    email = document.getElementById("email").value;
-    password = document.getElementById("pass").value;
+  if (document.getElementById("code").value == 3449) {
+
+    document.getElementById("code-div").style.display = "none";
+    document.getElementById("create").style.display = "inline-block";
+
+
+    var username;
+    email_create = document.getElementById("email_create").value;
+    password_create = document.getElementById("pass_create").value;
     username = document.getElementById("username").value;
 
-firebase.auth().createUserWithEmailAndPassword(email, password)
+firebase.auth().createUserWithEmailAndPassword(email_create, password_create)
   .then((userCredential) => {
 
     // Signed in 
-    document.getElementById("prompt").style.backgroundColor = "#4ca896";
-    document.getElementById("promptMessage").innerHTML = "Success";
-    document.getElementById("prompt").style.display = "block";
-
+    
     var user = userCredential.user;
-    return user.updateProfile({
-          displayName: username
-        })
+    user.updateProfile({
+      displayName: username
+    }).then(() => {
+      // Update successful
+      console.log("Profile Set Successfully.");
+      window.location.href="dashboard.html";
+    }).catch((error) => {
+      // An error occurred
+     console.log(error);
+    });  
         
       }).catch((error) => {
 
     var errorCode = error.code;
     var errorMessage = error.message;
-    
-    errorHandler(errorMessage);
+    document.getElementById("error-create").style.display = "block";
+    document.getElementById("error-create").innerHTML = '<i class="fas fa-exclamation-circle"></i>' + errorMessage;
   });
+} else {
+  alert("Entered Access Code is wrong.")
+}
 }
 
 function signIn() {
@@ -51,6 +64,7 @@ function signIn() {
     errorHandler(errorMessage);
     logger("Error while logging on: " + email + "\n" + errorMessage, 201);
   });
+  
 }
 
 //AUTHCHECK
@@ -121,7 +135,7 @@ function userInfo() {
       // https://firebase.google.com/docs/reference/js/firebase.User
       
       document.getElementById("name").innerHTML = user.displayName;
-      document.getElementById("uid").innerHTML = user.uid;;
+      document.getElementById("uid").innerHTML = user.uid;
       document.getElementById("email").innerHTML = user.email;
       document.getElementById("creation-date").innerHTML = new Date(user.metadata.creationTime);
       // ...
@@ -148,10 +162,21 @@ function resetPass() {
   document.getElementById("reset").style.display = "inline-block";
 
 }
+function create() {
+  document.getElementById("reset").style.display = "none";
+  document.getElementById("create").style.display = "inline-block";
+  document.getElementById("auth").style.display = "none";
+}
 function back() {
   document.getElementById("reset").style.display = "none";
+  document.getElementById("create").style.display = "none";
   document.getElementById("auth").style.display = "inline-block";
 }
+function code() {
+  document.getElementById("create").style.display = "none";
+  document.getElementById("code-div").style.display = "inline-block";
+  }
+
 
 function logger(text, code) {
   var timestamp = new Date().getTime();
