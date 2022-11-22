@@ -108,10 +108,8 @@ mark {
     background-color: #f6f6f6;
 }
 @media only screen and (max-width:800px) {
-#auth {
+.div {
     max-width: 90vw;
 }
-#reset {
-    max-width: 90vw;
-}
+
     }
