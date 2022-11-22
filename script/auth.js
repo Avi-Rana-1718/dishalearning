@@ -1,6 +1,9 @@
 var email, password;
 
 function signUp() {
+  document.getElementById("signup").disabled = true;
+  document.getElementById("error-create").style.display = "none";
+  redirect = false;
   if (document.getElementById("code").value == 3449) {
 
     document.getElementById("code-div").style.display = "none";
@@ -33,17 +36,20 @@ firebase.auth().createUserWithEmailAndPassword(email_create, password_create)
 
     var errorCode = error.code;
     var errorMessage = error.message;
+    document.getElementById("signup").disabled = false;
     document.getElementById("error-create").style.display = "block";
     document.getElementById("error-create").innerHTML = '<i class="fas fa-exclamation-circle"></i>' + errorMessage;
   });
 } else {
   alert("Entered Access Code is wrong.")
+  document.getElementById("signup").disabled = false;
 }
 }
 
 function signIn() {
   email = document.getElementById("email").value;
     password = document.getElementById("pass").value;
+    document.getElementById("error").style.display = "none";
 
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
@@ -53,7 +59,7 @@ function signIn() {
     console.log("Signed In");
 
     logger("User logged on: " + user.email, 101);
-    window.location.href="dashboard.html";
+
 
 
   })

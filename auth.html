@@ -33,6 +33,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
+<!--LOADING-->
+
+<!--/LOADING-->
+
          <!--NAVBAR-->
       <nav id="top" class="d-flex justify-content-between">
         <div>
@@ -57,7 +61,7 @@
         <input type="email" id="email_create" autocomplete="off" required>
         <label for="pass_create">Password</label>
         <input type="password" id="pass_create"autocomplete="off" required>
-        <button id="sign" onclick="code()">SignUp</button>
+        <button id="signup" onclick="code()">SignUp</button>
         <br>
         <span onclick="back()">Already have a account. Log In</span>
       </div>
@@ -128,6 +132,18 @@ const firebaseConfig = {
   firebase.analytics();
 </script>
 <script src="script/auth.js"></script>
+<script>
+  var redirect = true;
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      if (redirect==true) {
+        window.location.href="dashboard.html";
+      }
 
+    } else {
+//nothing
+    }
+  });
+</script>
 </body>
 </html>
