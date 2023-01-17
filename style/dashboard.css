@@ -89,6 +89,7 @@ height: 100vh;
 }
 #sidebar i {
     color: #18181c;
+    cursor: pointer;
 }
 
 /* MISC */
