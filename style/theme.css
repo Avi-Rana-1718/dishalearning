@@ -4,10 +4,9 @@
 }
 
 body {
-    background-color: #fffffe;
+    background-color: #F7F8FA;
     color: #000;
     font-family: 'Poppins', sans-serif;
-    height: 100%;
 }
 /* NAV */
 nav {
@@ -40,7 +39,6 @@ nav a {
 }
 nav a:hover {
 color: #282828;
-background-color: #f6f6f6;
 }
 
 /* BRAND */
@@ -73,6 +71,8 @@ background-color: #f6f6f6;
     }
     #username {
         color: #000;
+        cursor: pointer;
+
     }
     #username:hover {
         text-decoration: underline;
@@ -114,6 +114,7 @@ margin-right: 3px;
 footer a {
     text-decoration: none;
     color: #08081B;
+    background-color: #fff;
     padding: 7px;
     transition: background-color 0.2s;
     margin: 2px;
@@ -150,6 +151,15 @@ i {
     
     i {
         margin: 4px;
+    }
+
+    #section {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 4px;
+        display: inline-block;
     }
 
 /* width */

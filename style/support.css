@@ -42,8 +42,17 @@ form button {
     border-radius: 3px;
     border: none;
 }
+#content {
+    
+}
 #support-content {
-    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 4px;
+    overflow: scroll;
+    display: inline-block;
+    min-width: 40vw;
 }
 #faq {
     margin: 25px;
@@ -51,7 +60,8 @@ form button {
     padding: 20px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-max-width: 30vw;
+    background-color: #fff;
+    max-width: 30vw;
 font-family: 'Open Sans', sans-serif;
 
 }
