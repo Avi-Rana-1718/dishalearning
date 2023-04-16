@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Performance | Disha Learning</title>
+        <title>Test | Disha Learning</title>
         <link rel="icon"
            type="image/png"
-           href="images/logo.png">
+           href="../../images/logo.png">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="theme-color" content="#04AA6D">
@@ -12,9 +12,9 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="https://kit.fontawesome.com/3a3c813962.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="style/theme.css">
-        <link rel="stylesheet" href="style/dashboard.css">
-        <link rel="stylesheet" href="style/performance.css">
+        <link rel="stylesheet" href="../../style/theme.css">
+        <link rel="stylesheet" href="../../style/dashboard.css">
+        <link rel="stylesheet" href="../../style/attempt.css">
                 <!--SEO META-->
                 <meta name="title" content="Disha Learning - Boundless Knowledge Solutions">
                 <meta name="description" content="We provide coaching for Maths and Science for classes 9th to 12th in which we prepare students for both board exams and different competitive exams such as JEE & NEET. Revise and test your knowledge with the help of online tests and assignments!">
@@ -34,8 +34,8 @@
 <!--NAVBAR-->
 <nav class="d-flex justify-content-between">
    <div>
-     <a id="brand" href="dashboard.html">
-         <img src="images/logo.png" alt="Logo">Disha Learning
+     <a id="brand" href="../../dashboard.html">
+         <img src="../../images/logo.png" alt="Logo">Disha Learning
      </a>
    </div>
    <div id="opt">
@@ -48,41 +48,39 @@
 <!--/NAVBAR-->
           <div id="main">
             <!--SIDEBAR-->
-<div id="sidebar">
-   <h4 onclick="window.location='dashboard.html';"><i class="fas fa-home"></i></h4>
-   <h4 onclick="window.location='notes.html';"><i class="fas fa-book"></i></h4>
-   <h4 onclick="window.location='performance.html';"><i class="fas fa-poll"></i></h4>
-   <hr>
-   <h4 onclick="window.location='account.html';"><i class="fas fa-user-circle"></i></h4>
-   <h4 onclick="window.location='support.html';"><i class="fas fa-life-ring"></i></h4>
-</div>
+            <div id="sidebar">
+              <a href='../../dashboard.html'><h4><i class="fas fa-home"></i></h4></a>
+              <a href='../../notes.html'><h4><i class="fas fa-book"></i></h4></a>
+              <a href='../../practice.html'><h4><i class="fas fa-clipboard-list"></i></h4></a>
+              <hr>
+              <a href='../../account.html'><h4><i class="fas fa-user-circle"></i></h4></a>
+              <a href='../../support.html'><h4><i class="fas fa-life-ring"></i></h4></a>
+           </div>
 <!--/SIDEBAR-->
 
 <div id="content">
 <br>
-<h1>Performance</h1>
-<br>
-<br>
-<div id="avg-div">
-<small>Average Marks</small>
-  <h3 id="avg">NaN</h3>
-  <small>Obtained</small>
+<h6 id="title"></h6>
+
+<div id="result">
+  <p id="resultMessage"></p>
 </div>
 
 <ul id="list">
 </ul>
 
-          
+<button id="submit" onclick="submit()">Submit</button>
+
 </div>
           </div>
 
 <!--FOOTER-->
 <footer>
    <a href="https://www.buymeacoffee.com/avirana">Pledge</a>
-   <a href="support.html">Support</a>
-   <a href="terms.txt">Terms</a>
+   <a href="../../support.html">Support</a>
+   <a href="../../terms.txt">Terms</a>
    <br><br>
-   <h5><img src="images/logo.png">@Disha Learning</h5>
+   <h5><img src="../../images/logo.png">@Disha Learning</h5>
  </footer>
  <!--/FOOTER-->
  
@@ -116,8 +114,8 @@ const firebaseConfig = {
   firebase.database();
 </script>
 
-<script src="script/db.js"></script>
-<script src="script/auth.js"></script>
-<script src="script/index.js"></script>
+<script src="../../script/testLoader.js"></script>
+<script src="../../script/auth.js"></script>
+<script src="../../script/index.js"></script>
     </body>
 </html>

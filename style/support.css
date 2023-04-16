@@ -12,7 +12,6 @@ header small {
 }
 form {
     padding: 14px;
-    margin: 10px;
 }
 label {
     font-family: 'Open Sans', sans-serif;
@@ -21,20 +20,33 @@ label {
 input {
     padding: 6px;
     border-radius: 3px;
-    border: 0.7px solid #282828;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     outline: none;
+    border: none;
     display: block;
     width:100%;
     max-width: 30vw;
     font-family: 'Open Sans', sans-serif;
-
+}
+input:hover {
+    background-color: #f3f3f3;
+}
+input:disabled {
+    cursor: no-drop;
 }
 textarea {
     display: block;
+    padding: 6px;
     width:100%;
     max-width: 30vw;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
     font-family: 'Open Sans', sans-serif;
-
+}
+textarea:hover {
+    background-color: #f3f3f3;
 }
 form button {
     padding: 10px;
@@ -42,9 +54,10 @@ form button {
     border-radius: 3px;
     border: none;
 }
-#content {
-    
+form button:hover {
+    text-decoration: underline;
 }
+
 #support-content {
     padding: 10px;
     background-color: #fff;

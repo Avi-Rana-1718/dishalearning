@@ -4,9 +4,7 @@ function signUp() {
   document.getElementById("signup").disabled = true;
   document.getElementById("error-create").style.display = "none";
   redirect = false;
-  if (document.getElementById("code").value == 3449) {
 
-    document.getElementById("code-div").style.display = "none";
     document.getElementById("create").style.display = "inline-block";
 
 
@@ -40,13 +38,11 @@ firebase.auth().createUserWithEmailAndPassword(email_create, password_create)
     document.getElementById("error-create").style.display = "block";
     document.getElementById("error-create").innerHTML = '<i class="fas fa-exclamation-circle"></i>' + errorMessage;
   });
-} else {
-  alert("Entered Access Code is wrong.")
-  document.getElementById("signup").disabled = false;
-}
 }
 
 function signIn() {
+  document.getElementById("loginBtn").disabled = true;
+
   email = document.getElementById("email").value;
     password = document.getElementById("pass").value;
     document.getElementById("error").style.display = "none";
@@ -85,7 +81,7 @@ function authCheck() {
     } else {
 
       console.log("Signed Out!");
-      window.location.href = "auth.html";
+      // window.location.href = "auth.html";
     }
   });
 }
@@ -178,10 +174,6 @@ function back() {
   document.getElementById("create").style.display = "none";
   document.getElementById("auth").style.display = "inline-block";
 }
-function code() {
-  document.getElementById("create").style.display = "none";
-  document.getElementById("code-div").style.display = "inline-block";
-  }
 
 
 function logger(text, code) {

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>Support - Disha Learning</title>
+        <title>Support | Disha Learning</title>
         <link rel="icon"
            type="image/png"
            href="images/logo.png">
@@ -49,14 +49,14 @@
  
          <div id="main">
            <!--SIDEBAR-->
-<div id="sidebar">
-   <h4 onclick="window.location='dashboard.html';"><i class="fas fa-home"></i></h4>
-   <h4 onclick="window.location='notes.html';"><i class="fas fa-book"></i></h4>
-   <h4 onclick="window.location='performance.html';"><i class="fas fa-poll"></i></h4>
-   <hr>
-   <h4 onclick="window.location='account.html';"><i class="fas fa-user-circle"></i></h4>
-   <h4 onclick="window.location='support.html';"><i class="fas fa-life-ring"></i></h4>
-</div>
+           <div id="sidebar">
+            <a href='dashboard.html'><h4><i class="fas fa-home"></i></h4></a>
+            <a href='notes.html'><h4><i class="fas fa-book"></i></h4></a>
+            <a href='practice.html'><h4><i class="fas fa-clipboard-list"></i></h4></a>
+            <hr>
+            <a href='account.html'><h4><i class="fas fa-user-circle"></i></h4></a>
+            <a href='support.html'><h4><i class="fas fa-life-ring"></i></h4></a>
+         </div>
 <!--/SIDEBAR-->
 
 <div id="content">
@@ -71,11 +71,11 @@
 <div>
     <form name="support" method="POST" netlify>
         <label for="name">Name</label>
-        <input type="text" name="name" id="name" disabled><br>
+        <input type="text" name="name" id="name" autocomplete="off"><br>
         <label for="email">Email Address</label>
-        <input type="email" name="email" id="email" disabled><br>
+        <input type="email" name="email" id="email" autocomplete="off"><br>
         <label for="subject">Subject</label>
-        <input type="text" name="subject" id="subject"><br>
+        <input type="text" name="subject" id="subject" autocomplete="off"><br>
         <label for="desc">How can we help you?</label>
         <textarea id="desc" name="desc" rows="3"></textarea>
         <br>
@@ -83,19 +83,6 @@
     </form>
 </div>
 
-<!-- <div id="faq">
-<h3>FAQ</h3><br>
-<p>
-
-<b>Q. What should i do if the website is not opening?</b><br>
-Check your internet connection and reload the website. If the problem persists for a long time, it might be a problem on our side.
-<br><br>
-
-<b>Q. What should i do if notes & tests are not loading?</b><br>
-If some of the files are not opening, try reloading the website. If the embed view is not loading try downloading the file and opening it directly on your system.
-<br>
-</p>
-</div> -->
 </div>
          </div>
          </div>
@@ -144,8 +131,10 @@ const firebaseConfig = {
     if (user) {
 
       document.getElementById("name").value = user.displayName;
+      document.getElementById("name").disabled = true;
       document.getElementById("email").value = user.email;
-      // ...
+      document.getElementById("email").disabled = true;
+
       if (user.emailVerified==true) {
         document.getElementById("name").innerHTML = user.displayName + "<i class='fas fa-tools'></i>";
       } 

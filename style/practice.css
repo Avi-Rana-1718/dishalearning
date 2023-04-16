@@ -1,0 +1,33 @@
+#content  section {
+    display: flex;
+}
+#content section div {
+    padding: 10px;
+}
+#content section div ul {
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+}
+.item {
+    font-family: 'Open Sans', sans-serif;
+}
+.item u {
+    margin-bottom: 10px;
+}
+.item a {
+    text-decoration: none;
+    background-color: #f3f3f3;
+    color: #000;
+    border-radius: 3px;
+    padding: 6px;
+    margin-top: 10px;
+    display: inline-block;
+
+}
+
+#address i {
+    color: #686868;
+    font-size: smaller;
+    margin: 2px;
+}

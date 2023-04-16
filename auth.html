@@ -61,20 +61,11 @@
         <input type="email" id="email_create" autocomplete="off" required>
         <label for="pass_create">Password</label>
         <input type="password" id="pass_create"autocomplete="off" required>
-        <button id="signup" onclick="code()">SignUp</button>
+        <button id="signup" onclick="signUp()">SignUp</button>
         <br>
         <span onclick="back()">Already have a account. Log In</span>
       </div>
 
-<div class="div" id="code-div">
-  <h3>Enter Access Code</h3>
-  <small>Kindly enter the <u>access code</u> to successfully create a account.</small>
-  <br><br>
-  <label for="code">Code</label>
-  <input type="text" id="code" autocomplete="off" required>
-  <button id="sign" onclick="signUp()">Confirm</button>
-  <br>
-</div>
 
     <div id="auth" class="div">
       <br>
@@ -86,7 +77,7 @@
       <input type="text" id="email" autocomplete="off">
       <label for="pass">Password</label>
       <input type="password" autocomplete="off" id="pass">
-      <button onclick="signIn()">Log In</button>
+      <button id="loginBtn" onclick="signIn()">Log In</button>
       <span id="forgot" onclick="resetPass()">Forget Password?</span>
       <br>
       <span onclick="create()">Don't have a account. Create one</span>
