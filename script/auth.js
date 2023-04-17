@@ -81,7 +81,7 @@ function authCheck() {
     } else {
 
       console.log("Signed Out!");
-      // window.location.href = "auth.html";
+      window.location.href = "auth.html";
     }
   });
 }
