@@ -29,6 +29,13 @@ var points=0;
 function submit() {
   console.log(ans.length);
   for(var i=0;i<ans.length;i++) {
+
+    document.getElementById("submit").disabled = true;
+    document.getElementById(`${i}option1`).disabled=true;
+    document.getElementById(`${i}option2`).disabled=true;
+    document.getElementById(`${i}option3`).disabled=true;
+    document.getElementById(`${i}option4`).disabled=true;
+
     if(document.getElementById(`${i}option${ans[i]}`).checked) {
       points++;
       document.getElementsByClassName("item")[i].style.backgroundColor = "#A3CFBB";
@@ -37,6 +44,7 @@ function submit() {
     }
   }
 
-  document.getElementById("result").innerHTML = `You scored <span style="color:#04AA6D;">${points}</span>/${ans.length}`;
+  document.getElementById("result").style.display = "inline-block";
+  document.getElementById("resultMessage").innerHTML = `Marks: ${points}/${ans.length}<br>Percentage: ${Math.floor((points/ans.length)*100)}%`;
   window.location.href = "#result";
 }

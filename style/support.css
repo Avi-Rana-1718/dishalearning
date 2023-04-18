@@ -31,9 +31,6 @@ input {
 input:hover {
     background-color: #f3f3f3;
 }
-input:disabled {
-    cursor: no-drop;
-}
 textarea {
     display: block;
     padding: 6px;
