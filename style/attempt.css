@@ -7,6 +7,9 @@
     flex-direction: column;
     overflow-y: scroll;
 }
+#list li {
+    width: 100%;
+}
 #title {
     font-family: 'Open Sans', sans-serif;
 }
@@ -55,3 +58,9 @@ label::first-letter {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
+@media only screen and (max-width:800px) {
+    #list {
+        padding: 0;
+        margin: 0;
+    }
+    }
