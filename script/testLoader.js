@@ -1,11 +1,12 @@
 var ans =[];
+let url = new URLSearchParams(window.location.search)
 
-fetch("ch1.json")
+fetch(url.get("id") + ".json")
 .then(res => res.json())
 .then(data => {
 document.getElementById("title").innerHTML = data.testName;
 
-  for(var i=0;i<data.answers.length;i++) {
+  for(var i=0;i<data.questions.length;i++) {
     ans[i]=data.answers[i];
     var ul = document.getElementById("list");
     var li = document.createElement("li");
@@ -46,5 +47,5 @@ function submit() {
 
   document.getElementById("result").style.display = "inline-block";
   document.getElementById("resultMessage").innerHTML = `Marks: ${points}/${ans.length}<br>Percentage: ${Math.floor((points/ans.length)*100)}%`;
-  window.location.href = "#result";
+  window.location.href = "#title";
 }

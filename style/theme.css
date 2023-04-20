@@ -54,12 +54,6 @@ color: #282828;
     #brand h4 {
         padding: 0;
     }
-    #brand:hover {
-        box-shadow: none;
-    text-decoration: underline;
-    color: #000;
-    border-radius: 0px;
-    }
     #login {
         box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     margin: 4px;

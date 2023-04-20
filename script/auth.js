@@ -1,6 +1,6 @@
 var email, password;
 
-let params = new URLSearchParams(window.location.search)
+let params = new URLSearchParams(window.location.search);
 
 function signUp() {
   document.getElementById("signup").disabled = true;
