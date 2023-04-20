@@ -124,11 +124,19 @@ const firebaseConfig = {
 </script>
 <script src="script/auth.js"></script>
 <script>
+  let param = new URLSearchParams(window.location.search)
   var redirect = true;
+
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       if (redirect==true) {
-        window.location.href="dashboard.html";
+
+        if(param.has("backlink")) {
+        window.location.href = params.get("backlink");
+      } else {
+      window.location.href="dashboard.html";
+      }
+
       }
 
     } else {

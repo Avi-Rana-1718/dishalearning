@@ -1,5 +1,7 @@
 var email, password;
 
+let params = new URLSearchParams(window.location.search)
+
 function signUp() {
   document.getElementById("signup").disabled = true;
   document.getElementById("error-create").style.display = "none";
@@ -24,7 +26,11 @@ firebase.auth().createUserWithEmailAndPassword(email_create, password_create)
     }).then(() => {
       // Update successful
       console.log("Profile Set Successfully.");
+      if(params.has("backlink")) {
+        window.location.href = params.get("backlink");
+      } else {
       window.location.href="dashboard.html";
+      }
     }).catch((error) => {
       // An error occurred
      console.log(error);
@@ -80,8 +86,10 @@ function authCheck() {
 
     } else {
 
+      document.getElementById("authPrompt").style.display="block";
+      document.getElementById("content").style.filter= "blur(5px)";
+
       console.log("Signed Out!");
-      window.location.href = "auth.html";
     }
   });
 }
@@ -93,7 +101,7 @@ firebase.auth().signOut().then(() => {
   console.log("Successful logout!");
 
   logger("User logged out", 101);
-  window.location = "auth.html";
+  window.location.href = "auth.html";
 
 }).catch((error) => {
 

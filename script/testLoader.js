@@ -5,7 +5,7 @@ fetch("ch1.json")
 .then(data => {
 document.getElementById("title").innerHTML = data.testName;
 
-  for(var i=0;i<data.totalQuestions;i++) {
+  for(var i=0;i<data.answers.length;i++) {
     ans[i]=data.answers[i];
     var ul = document.getElementById("list");
     var li = document.createElement("li");
