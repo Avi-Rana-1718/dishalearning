@@ -70,7 +70,7 @@ function signIn() {
     var errorCode = error.code;
     var errorMessage = error.message;
     errorHandler(errorMessage);
-    logger("Error while logging on: " + email + "\n" + errorMessage, 201);
+    logger("Error while logging on: " + email + "\n" + errorMessage);
   });
   
 }
@@ -83,12 +83,12 @@ function authCheck() {
       
       document.getElementById("username").innerHTML = '<i class="fas fa-user"></i>' + user.displayName;
       document.getElementById("username").href = "account.html";
-
+      logger(`Logged in user(${user.email}) accessed: ${window.location.href}`);
     } else {
 
       document.getElementById("authPrompt").style.display="block";
       document.getElementById("content").style.filter= "blur(5px)";
-
+      logger(`Logged out user tried to accessed: ${window.location.href}`);
       console.log("Signed Out!");
     }
   });
@@ -100,13 +100,13 @@ firebase.auth().signOut().then(() => {
   // Sign-out successful.
   console.log("Successful logout!");
 
-  logger("User logged out", 101);
+  logger("User logged out");
   window.location.href = "auth.html";
 
 }).catch((error) => {
 
       errorHandler(error);
-      logger("Error while logging out", 201);
+      logger("Error while logging out");
 
 });
 }
@@ -121,14 +121,14 @@ function reset() {
     document.getElementById("error_reset").style.backgroundColor = "#4BB543";
     document.getElementById("error_reset").innerHTML = '<i class="fas fa-check-circle"></i> Password mail sent succcessfully.';
 
-    logger("Password reset mail send successfully: " + email_pass, 101);
+    logger("Password reset mail send successfully: " + email_pass);
 
   })
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
 
-    logger("Error while sending password reset mail on: " + email_pass + "\n" + errorMessage, 201);
+    logger("Error while sending password reset mail on: " + email_pass + "\n" + errorMessage);
 
 
     document.getElementById("error_reset").style.display = "block";
@@ -184,11 +184,12 @@ function back() {
 }
 
 
-function logger(text, code) {
+function logger(text) {
   var timestamp = new Date().getTime();
+  var date = new Date();
 
   firebase.database().ref('log/' + timestamp).set({
     text: text,
-    code: code
+    date: date.toString()
   });
 }
