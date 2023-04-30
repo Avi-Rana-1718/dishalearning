@@ -6,6 +6,13 @@
             "class":"10th",
             "totalQuestions":6,
             "link":"10th/science/ch6"
-    }
+    },
+    {
+        "name":"Chapter 10 - Light",
+        "subject":"Science",
+        "class":"10th",
+        "totalQuestions":15,
+        "link":"10th/science/ch10"
+}
 ]
 }

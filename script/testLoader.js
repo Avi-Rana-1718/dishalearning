@@ -1,4 +1,5 @@
 var ans =[];
+var optionsLength=[0];
 let url = new URLSearchParams(window.location.search)
 
 fetch(url.get("id") + ".json")
@@ -7,6 +8,13 @@ fetch(url.get("id") + ".json")
 document.getElementById("title").innerHTML = data.testName;
 
   for(var i=0;i<data.questions.length;i++) {
+
+    var optionsData="";
+    for(var j=1;j<=data.options[i].length;j++) {
+      optionsData += `<input type="radio" name="ans${i}" id="${i}option${j}"></input><label for="${i}option${j}">${data.options[i][j-1]}</label><br>`;
+      optionsLength[i]++;
+    }    
+
     ans[i]=data.answers[i];
     var ul = document.getElementById("list");
     var li = document.createElement("li");
@@ -15,10 +23,7 @@ document.getElementById("title").innerHTML = data.testName;
 
     <div class="accordianContent">
       <p class="question">${data.questions[i]}</p><br>
-      <input type="radio" name="ans${i}" id="${i}option1"></input><label for="${i}option1">${data.options[i][0]}</label><br>
-      <input type="radio" name="ans${i}" id="${i}option2"></input><label for="${i}option2">${data.options[i][1]}</label><br>
-      <input type="radio" name="ans${i}" id="${i}option3"></input><label for="${i}option3">${data.options[i][2]}</label><br>
-      <input type="radio" name="ans${i}" id="${i}option4"></input><label for="${i}option4">${data.options[i][3]}</label><br>
+        ${optionsData}
     </div>`);
     ul.appendChild(li);
   }
@@ -32,10 +37,10 @@ function submit() {
   for(var i=0;i<ans.length;i++) {
 
     document.getElementById("submit").disabled = true;
-    document.getElementById(`${i}option1`).disabled=true;
-    document.getElementById(`${i}option2`).disabled=true;
-    document.getElementById(`${i}option3`).disabled=true;
-    document.getElementById(`${i}option4`).disabled=true;
+
+    for(var j=0;j<optionsLength;j++) {
+      document.getElementById(`${i}option${j}`).disabled=true;
+    }
 
     if(document.getElementById(`${i}option${ans[i]}`).checked) {
       points++;
