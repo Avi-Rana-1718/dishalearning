@@ -31,43 +31,19 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2591722971865211"
      crossorigin="anonymous"></script>
      <script async src="https://arc.io/widget.min.js#jwRko9Kk"></script>
-</head>
+    </head>
     <body onload="authCheck()">
-<!--NAVBAR-->
-<nav class="d-flex justify-content-between">
-   <div>
-     <a id="brand" href="#">
-         <img src="images/logo.png" alt="Logo">Disha Learning
-     </a>
-   </div>
-   <div id="opt">
-    <div id="dropdown">
-    <span id="login" title="Student Auth">
-      <a id="username" href="auth.html">Student Login</a>
-    </div>
-  </div>
- </nav>
-<!--/NAVBAR-->
   
           <div id="main">
-            <!--SIDEBAR-->
-            <div id="sidebar">
-              <a href='dashboard.html'><h4><i class="fas fa-home"></i></h4></a>
-              <a href='notes.html'><h4><i class="fas fa-book"></i></h4></a>
-              <a href='practice.html'><h4><i class="fas fa-clipboard-list"></i></h4></a>
-              <hr>
-              <a href='account.html'><h4><i class="fas fa-user-circle"></i></h4></a>
-              <a href='support.html'><h4><i class="fas fa-life-ring"></i></h4></a>
-           </div>
-<!--/SIDEBAR-->
+
+            <div id="sidebar"></div>
 
 <div id="content">
-   <br>
+
 <h1>Dashboard</h1>
-<br><br>
+
 
 <!--QUICK LINKS-->
-
 <div class="d-flex">
   <!--11TH-->
   <a href="notes.html#11th" class="item">
@@ -95,6 +71,8 @@
      </a>
 
           </div>
+
+
           </div>
     <!--/SUPPORT-->
 
@@ -106,15 +84,8 @@
       </div>
     <!--/AUTH PROMPT-->
 
-<!--FOOTER-->
-<footer>
-   <a href="https://www.buymeacoffee.com/avirana">Pledge</a>
-   <a href="support.html">Support</a>
-   <a href="terms.txt">Terms</a>
-   <br><br>
-   <h5><img src="images/logo.png">@Disha Learning</h5>
- </footer>
- <!--/FOOTER-->
+
+<footer id="footer"></footer>
  
 
 <!--SRC-->
@@ -143,6 +114,14 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>
+<!--REACT-->
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<!--React Component-->
+<script type="text/babel" src="react/sidebar.js"></script>
+<script type="text/babel" src="react/rightbar.js"></script>
+<script type="text/babel" src="react/footer.js"></script>
 
 <script src="script/auth.js"></script>
 </body>

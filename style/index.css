@@ -1,11 +1,49 @@
-body {
-    background-color: #fff;
+/* NAV */
+nav {
+    z-index: 1001;
+font-family: 'Poppins', sans-serif;
+display:inline-block;
+padding:14px;
+color: #fff;
+justify-items: center;
+display: none;
 }
 
-/* HEADER */
-header {
-
+nav img {
+width: 1.5em;
+height: 1.5em;
+margin-right: 3px;
 }
+
+nav div {
+    margin:0;
+    padding:0;
+}
+
+nav a {
+    padding:6px;
+    margin-right:6px;
+    color: #888;
+    text-decoration: none;
+    border-radius: 3px;
+}
+nav a:hover {
+color: #282828;
+}
+
+/* BRAND */
+#brand {
+    text-decoration: none;
+    padding:0px;
+    color: #000;
+    font-size: large;
+    cursor: pointer;
+    } 
+    #brand h4 {
+        padding: 0;
+    }
+
+
 #head {
     padding: 20px;
     background-image: url('../images/teacher.png');
@@ -60,6 +98,9 @@ header {
 #about {
     padding: 0px;
     font-family: 'Open Sans', sans-serif;
+}
+#about h4 {
+    color: #fff;
 }
 #about h5 {
     padding: 20px;

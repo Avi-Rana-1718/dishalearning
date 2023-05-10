@@ -80,9 +80,7 @@ function signIn() {
 function authCheck() {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      
-      document.getElementById("username").innerHTML = '<i class="fas fa-user"></i>' + user.displayName;
-      document.getElementById("username").href = "account.html";
+      document.getElementById("rightbarUsername").innerHTML = user.displayName;
       logger(`Logged in user(${user.email}) accessed: ${window.location.href}`);
     } else {
 

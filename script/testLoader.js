@@ -1,5 +1,5 @@
 var ans =[];
-var optionsLength=[0];
+var optionsLength=[];
 let url = new URLSearchParams(window.location.search)
 
 fetch(url.get("id") + ".json")
@@ -12,9 +12,9 @@ document.getElementById("title").innerHTML = data.testName;
     var optionsData="";
     for(var j=1;j<=data.options[i].length;j++) {
       optionsData += `<input type="radio" name="ans${i}" id="${i}option${j}"></input><label for="${i}option${j}">${data.options[i][j-1]}</label><br>`;
-      optionsLength[i]++;
     }    
 
+    optionsLength[i]=data.options[i].length;
     ans[i]=data.answers[i];
     var ul = document.getElementById("list");
     var li = document.createElement("li");
@@ -33,12 +33,12 @@ document.getElementById("title").innerHTML = data.testName;
 var points=0;
 
 function submit() {
-  console.log(ans.length);
+
   for(var i=0;i<ans.length;i++) {
 
     document.getElementById("submit").disabled = true;
 
-    for(var j=0;j<optionsLength;j++) {
+    for(var j=1;j<=optionsLength[i];j++) {
       document.getElementById(`${i}option${j}`).disabled=true;
     }
 
