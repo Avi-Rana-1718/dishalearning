@@ -60,6 +60,7 @@ function signIn() {
     var user = userCredential.user;
     console.log("Signed In");
 
+
     logger("User logged on: " + user.email, 101);
 
 
@@ -67,6 +68,7 @@ function signIn() {
   })
   
   .catch((error) => {
+    document.getElementById("loginBtn").disabled = false;
     var errorCode = error.code;
     var errorMessage = error.message;
     errorHandler(errorMessage);
@@ -80,7 +82,6 @@ function signIn() {
 function authCheck() {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      document.getElementById("rightbarUsername").innerHTML = user.displayName;
       logger(`Logged in user(${user.email}) accessed: ${window.location.href}`);
     } else {
 
