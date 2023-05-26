@@ -10,12 +10,20 @@
 #list li {
     width: 100%;
 }
+#list li:hover {
+    background-color: #f3f3f3;
+}
 #title {
     font-family: 'Open Sans', sans-serif;
 }
 .qNo {
     display: block;
     margin-bottom: 10px;
+}
+input[type="radio"] {
+    border: none;
+    display: inline;
+    box-shadow: none;
 }
 input[type="radio"]:hover {
     cursor: pointer;
