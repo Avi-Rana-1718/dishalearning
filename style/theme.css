@@ -160,7 +160,7 @@ footer a:hover {
   }
 
   /* Input */
-  input {
+  input,textarea {
     outline: none;
     border: none;
     padding: 7px;
