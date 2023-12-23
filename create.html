@@ -96,6 +96,8 @@
             </tr>
           </table>
         </div>
+
+        <button onclick="getJSON()">Get JSON</button>
       </main>
   
 
@@ -136,6 +138,11 @@
         tr.append(td1, td2, td3, td4, td5);
         table.append(tr);
       }
+    }
+
+    function getJSON() {
+      let data = JSON.parse(localStorage.getItem("data"));
+      document.write(data);
     }
 </script>
     </body>
