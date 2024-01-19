@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Disha Learning</title>
+        <link rel="icon"
+           type="image/png"
+           href="images/logo.png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#04AA6D">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="https://kit.fontawesome.com/c57dc26725.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style/theme.css">
+        <link rel="stylesheet" href="style/index.css">
+        <!--SEO META-->
+        <meta name="title" content="Disha Learning - Boundless Knowledge Solutions">
+<meta name="description" content="We provide coaching for Maths and Science for classes 9th to 12th in which we prepare students for both board exams and different competitive exams such as JEE & NEET. Revise and test your knowledge with the help of online tests and assignments!">
+<meta name="keywords" content="Disha Learning Chandigarh, Coaching, Physics, Maths, JEE, NEET">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
+<!--SEO META-->
+
+     <style>
+        body {
+            font-family: "Open-sans", sans-serif;
+        }
+        main {
+            padding: 10px;
+            display: flex;
+        }
+        main div {
+          width: 45vw;
+        }
+        input, textarea {
+          max-width: 100%;
+        }
+        table tr {
+          padding: 10px;
+          border: 1px solid #282828;
+        }
+        table td, th {
+          padding: 10px;
+          border: 1px solid #282828;
+
+        }
+        @media screen and (max-width:800px) {
+          main {
+            display: block;
+          }
+          main div {
+            padding: 10px;
+          width: 95vw;
+          }
+        }
+     </style>
+</head>
+    <body onload="showData()">
+
+          <br>
+      <main>
+        <div>
+          <input id="title" placeholder="Question">
+          <textarea rows="10" id="ans" placeholder="Answer"></textarea>
+          <br>
+          <label for="subject">Subject</label>
+          <select id="subject">
+              <option>Physics</option>
+              <option>Chemistry</option>
+              <option>Biology</option>
+              <option>Maths</option>
+              <option disabled><br></option>
+              <option>Science</option>
+          </select>
+          <br>
+          <label for="Class">Class</label>
+          <select id="class">
+              <option>9th</option>
+              <option>10th</option>
+              <option>11th</option>
+              <option>12th</option>
+          </select>
+          <br>
+          <button class="btn btn-primary" onclick="submit()">Submit</button>
+        </div>
+        <div>
+          <table id="list" border="1">
+            <tr>
+              <th>Question</th>
+              <th>Answer</th>
+              <th>Date</th>
+              <th>Subject</th>
+              <th>Class</th>
+            </tr>
+          </table>
+        </div>
+
+        <button onclick="getJSON()">Get JSON</button>
+      </main>
+  
+
+<script>
+    function submit() {
+      let obj = {
+                question: document.getElementById("title").value,
+                answer: document.getElementById("ans").value,
+                date: Date.now(),
+                subject: document.getElementById("subject").value,
+                class: document.getElementById("class").value
+            }
+        if(localStorage.getItem("data")==null) {
+            localStorage.setItem("data", JSON.stringify([obj]));
+        } else {
+          let oldData = JSON.parse(localStorage.getItem("data"));
+          oldData.push(obj);
+          localStorage.setItem("data", JSON.stringify(oldData));
+        }
+        location.reload();
+    }
+    function showData() {
+      let table = document.getElementById("list");
+      let data = JSON.parse(localStorage.getItem("data"));
+
+      for(let i=0;i<data.length;i++) {
+        let tr=document.createElement("tr");
+        let td1=document.createElement("td");
+        td1.innerHTML = data[i].question;
+        let td2=document.createElement("td");
+        td2.innerHTML = data[i].answer;
+        let td3=document.createElement("td");
+        td3.innerHTML = Date(data[i].date);
+        let td4=document.createElement("td");
+        td4.innerHTML = data[i].subject;
+        let td5=document.createElement("td");
+        td5.innerHTML = data[i].class;
+        tr.append(td1, td2, td3, td4, td5);
+        table.append(tr);
+      }
+    }
+
+    function getJSON() {
+      let data = localStorage.getItem("data");
+      document.write(data);
+    }
+</script>
+    </body>
+</html>

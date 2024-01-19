@@ -1,0 +1,10 @@
+{
+    "testName":"Chapter 1 & 2 - Physical World & Units and Measurements",
+    "subject":"Physics",
+    "class":"11th",
+    "id":11121,
+    "totalQuestions":7,
+    "questions": ["Einstein's name is associated with the discovery of:","Who discovered the principle of inertia?","Two India born American scientists who were awarded Nobel Prize are","Who invented wireless telegraphy","Who was awarded Nobel Prize for the theory of the unification of weak and electromagnetic interactions?","Rocket propulsion is based on the principle of","In a hydroelectric power station"],
+    "options":[["nuclear model of atom", "neutron", "theory of relativity", "expansion of the universe"], ["Newton", "Galileo", "Tycho Brahe", "Kepler"],["S. Bose and Narlikar", "E.C.G. Sudarshan and Bhagwantam", "C.V. Raman and H'J' Bhabha", "S. Chandrashekhar and A' Salam"],["Maxwell", "Marconi", "Hertz", "Faraday"],["Rutherford", "A'Salam", "H.J. Bhabha", "S. chandrashekhar"],["nuclear fusion", "nuclear fission", "Newton's laws of motion", "thermodynamics"],["thermal energy is converted into electrical energy", "gravitational potential energy is converted into electrical energy", "kinetic energy is converted into potential energy", "chemical energy is converted into electrical energy"]],
+    "answers":[2,1,3,1,1,2,1]
+}

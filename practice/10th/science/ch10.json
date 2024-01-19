@@ -1,0 +1,39 @@
+{
+    "testName":"Chapter 10 - Light",
+    "id":10101,
+    "questions":[
+        "Which of the following can make a parallel beam of light when light from a point source is incident on it?",
+        "A 10 mm long awl pin is placed vertically in front of a concave mirror. A 5 mm long image of the awl pin is formed at 30 cm in front of the mirror. The focal length of this mirror is",
+        "Under which of the following conditions a concave mirror can form an image larger than the actual object?",
+        "Which of the following statements is true?",
+        "Magnification produced by a rear view mirror fitted in vehicles",
+        "Rays from Sun converge at a point 15 cm in front of a concave mirror. Where should an object be placed so that size of its image is equal to the size of the object?",
+        "A full length image of a distant tall building can definitely be seen by using",
+        "In torches, search lights and headlights of vehicles the bulb is placed",
+        "The laws of reflection hold good for",
+        "You are given water, mustard oil, glycerine and kerosene. In which of these media a ray of light incident obliquely at same angle would bend the most?",
+        "A child is standing in front of a magic mirror. She finds the image of her head bigger, the middle portion of her body of the same size and that of the legs smaller. The following is the order of combinations for the magic mirror from the top.",
+        "In which of the following, the image of an object placed at infinity will be highly diminished and point sized?",
+        "Concave mirror, convex mirror, concave lens and convex lens",
+        "laws of reflection are applicable to all types of reflecting surfaces including spherical surfaces",
+        "A spherical mirror, whose reflecting surface is curved inwards, is called a convex mirror."
+    ],
+    "options":[
+        ["Concave mirror as well as convex lens", "Convex mirror as well as concave lens", "Two plane mirrors placed at 90° to each other","Concave mirror as well as concave lens"],
+        ["–30 cm","–20 cm ","–40 cm " ,"–60 cm"],
+        ["When the object is kept at a distance equal to its radius of curvature"," When object is kept at a distance less than its focal length","When object is placed between the focus and centre of curvature","When object is kept at a distance greater than its radius of curvature"],
+        ["A convex lens has 4 dioptre power having a focal length 0.25 m", "A convex lens has –4 dioptre power having a focal length 0.25 m", "A concave lens has 4 dioptre power having a focal length 0.25 m", " A concave lens has –4 dioptre power having a focal length 0.25 m"],
+        ["is less than one", "is more than one", "is equal to one", "can be more than or less than one depending upon the position of the object in front of it"],
+        ["15 cm in front of the mirror", "30 cm in front of the mirror", "between 15 cm and 30 cm in front of the mirror", "more than 30 cm in front of the mirror"],
+        ["a concave mirror", "a convex mirror", "a plane mirror", "both concave as well as plane mirror"],
+        ["between the pole and the focus", "very near to the focus of the reflector", "between the focus and centre of curvature of the reflector", "at the centre of curvature of the reflector"],
+        ["plane mirror only", "concave mirror only", "convex mirror only", "all mirrors irrespective of their shape"],
+        ["Kerosene", "Water", "Mustard oil", "Glycerine"],
+        ["Plane, convex and concave", "Convex, concave and plane", "Concave, plane and convex", "Convex, plane and concave"],
+        ["Concave mirror only", "Convex mirror only", "Convex lens only", "Concave mirror, convex mirror, concave lens and convex lens"],
+        ["True", "False"],
+        ["True", "False"],
+        ["True", "False"]
+    ],
+    "answers":[1,2,3,1,1,2,2,2,4,4,3,4,2,1,2]
+}

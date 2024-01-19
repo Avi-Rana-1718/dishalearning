@@ -1,0 +1,19 @@
+{
+    "testName":"Chapter 6 - Life Process",
+    "id":1061,
+    "questions": [
+    "In which of the following groups of organisms, food material is broken down outside the body and absorbed?",
+    "Select the correct statement",
+    "If salivary amylase is lacking in the saliva, which of the following events in the mouth cavity will be affected?",
+    "Which of the following statement(s) is (are) true about respiration?<br>(i) During inhalation, ribs move inward and diaphragm is raised<br>(ii) In the alveoli, exchange of gases takes place i.e., oxygen from alveolar air diffuses into blood and carbon dioxide from blood into alveolar air<br> (iii) Haemoglobin has greater affinity for carbon dioxide than oxygen<br> (iv) Alveoli increase surface area for exchange of gases",
+    "During respiration exchange of gases take place in",
+    "Which of the following statement (s) is (are) true about heart? <br> (i) Left atrium receives oxygenated blood from different parts of body while right atrium receives deoxygenated blood from lungs<br> (ii) Left ventricle pumps oxygenated blood to different body parts while right ventricle pumps deoxygenated blood to lungs <br> (iii) Left atrium transfers oxygenated blood to right ventricle which sends it to different body parts<br> (iv) Right atrium receives deoxygenated blood from different parts of the body while left ventricle pumps oxygenated blood to different parts of the body" ],
+    "options":[
+        ["Mushroom, green plants, Amoeba", "Yeast, mushroom, bread mould", "Paramecium, Amoeba, Cuscuta", "Cuscuta, lice, tapeworm"],
+        ["Heterotrophs do not synthesise their own food", "Heterotrophs utilise solar energy for photosynthesis", "Heterotrophs synthesise their own food", "Heterotrophs are capable of converting carbon dioxide and  water into carbohydrates"],
+        ["Proteins breaking down into amino acids", "Starch breaking down into sugars", "Fats breaking down into fatty acids and glycerol", "Absorption of vitamins"],
+        ["(i) and (iv)", "(ii) and (iii)", "(i) and (iii)", "(ii) and (iv)"],
+        ["trachea and larynx", "alveoli of lungs", "alveoli and throat", "throat and larynx"],
+        ["(i)", "(ii)", "(ii) and (iv)", "(i) and (iii)"]],
+    "answers":[2,1,2,4,2,3]
+}
