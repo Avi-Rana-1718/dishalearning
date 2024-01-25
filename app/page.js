@@ -12,7 +12,7 @@ export default function Home() {
 
     <section className="flex justify-between items-center p-4">
       <div className="md:max-w-[30vw]">
-      <h1 className="text-4xl md:text-6xl leading-tight">
+      <h1 className="text-4xl md:text-6xl">
       Boundless<br />
       <span className="text-[#04AA6D] bg-[#BEFFCC] p-1.5">
 Knowledge<br/>
