@@ -11,8 +11,8 @@ export default function Home() {
       </nav>
 
     <section className="flex justify-between items-center p-4">
-      <div className="max-w-[30vw]">
-      <h1 className="text-6xl leading-tight">
+      <div className="md:max-w-[30vw]">
+      <h1 className="text-4xl md:text-6xl leading-tight">
       Boundless<br />
       <span className="text-[#04AA6D] bg-[#BEFFCC] p-1.5">
 Knowledge<br/>
@@ -26,7 +26,7 @@ Solutions
       </small>
       </div>
     <div>
-      <img src="/teacher.png" alt="banner" className="max-w-[30vw]"/>
+      <img src="/teacher.png" alt="banner" className="max-w-[30vw] float-right"/>
     </div>
     </section>
     </header>
@@ -64,7 +64,7 @@ Solutions
     
     <section className="p-5">
       <h3 className="text-lg mb-2">Contact us</h3>
-      <div className="flex">
+      <div className="md:flex">
       <div>
       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d905.4136219952284!2d76.7634665246705!3d30.697314882049962!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fec4230c95f01%3A0x5d1b19688b9e39d1!2sDisha%20Learning%2CChandigarh!5e0!3m2!1sen!2sin!4v1663610557067!5m2!1sen!2sin" className="w-[350px] h-[350px]" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
