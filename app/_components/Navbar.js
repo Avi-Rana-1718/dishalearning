@@ -6,7 +6,7 @@ export default function Navbar(props) {
 
   if (forum == "true") {
     return (
-      <nav className="flex text-xl md:text-2xl font-normal p-2 justify-between ">
+      <nav className="flex text-xl md:text-2xl font-normal p-2 justify-between align-middle">
         <div>
           <Link href="/" className="font-medium">
             <img src="/logo.png" className="inline mr-1 size-12" alt="Logo" />
@@ -20,18 +20,16 @@ export default function Navbar(props) {
     );
   } else {
     return (
-      <nav className="flex text-xl md:text-2xl font-normal p-2 justify-between ">
+      <nav className="flex text-xl md:text-2xl font-normal p-2 justify-between items-center">
         <Link href="/" className="font-medium">
           <img src="/logo.png" className="inline mr-1 size-12" alt="Logo" />
           Disha Learning
         </Link>
-        <div>
-          <ul className="flex text-sm md:text-xl">
+          <ul className="flex text-sm md:text-xl leading-none">
             <ListLink link="/forums" label="Forums" />
             <ListLink link="/" label="Blog" />
             <ListLink link="/" label="Contact" />
           </ul>
-        </div>
       </nav>
     );
   }
