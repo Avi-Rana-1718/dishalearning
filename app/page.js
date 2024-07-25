@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <header className="p-5 md:p-8 flex justify-between">
+      <header className="p-5 mb-10 md:mb-0 md:p-8 flex justify-between">
         <div>
           <h4 className="text-2xl md:text-3xl">Looking for Quality</h4>
           <h2 className="text-4xl md:text-6xl text-[#21B77C] py-3 font-medium">
@@ -28,7 +28,8 @@ export default function Home() {
           <h2 className="text-4xl md:text-6xl text-[#21B77C] mb-3 font-medium">
             Chandigarh?
           </h2>
-          <p className={"mb-4 text-[#6a6a6a] " + lato.className}>Look no futher, get in touch with us!</p>
+          <p className={"mb-4 text-[#6a6a6a] " + lato.className}>We providing coaching services for classes 9th, 10th, 11th & 12th for Mathematics and Science.<br/>
+            Look no futher, get in touch with us!</p>
           <PrimaryBtn link="/" label="Get in touch" /> <span className="text-[#6a6a6a]">or read <Link href="#reviews" className="dashed underline hover:text-[#1e1e1e]">reviews</Link>!</span>
         </div>
         <div>
@@ -36,12 +37,12 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="bg-[#50C396] p-5 md:p-10 pb-20">
-        <h3 className="text-2xl text-[#1e1e1e] flex">
+      <div className="bg-[#69d5ac] p-5 mb-15 md:p-10 md:pb-20">
+        <h3 className="text-2xl text-[#313232] flex items-center">
         <FontAwesomeIcon icon={faGraduationCap} className="w-7 mr-2" /> Meet the faculty
         </h3>
-        <ul className="md:flex">
-          <li className="p-4">
+        <ul className="md:flex text-base">
+          <li className="p-1 mt-1 md:p-4">
             <h5 className="text-[#1e1e1e] text-xl">Vandana Rana</h5>
             <p className={lato.className}>
               Ex-government teacher
@@ -49,7 +50,7 @@ export default function Home() {
               <small>15 year of teaching experience</small>
             </p>
           </li>
-          <li className="p-4">
+          <li className="p-1 mt-1 md:p-4">
             <h5 className="text-[#1e1e1e] text-xl">
               Ajay Rana <span className={"text-sm " + lato.className}>(1969-2022)</span>
             </h5>
