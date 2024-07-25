@@ -12,7 +12,7 @@ export default function Forum() {
     <main>
       <header className="bg-[#ceffd8] pb-10">
         <Navbar forum="true" />
-        <div className="text-center">
+        <div className="text-center pt-10">
           <h3 className="text-4xl text-[#1e1e1e] mb-3">
             Forums
           </h3>

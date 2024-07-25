@@ -31,7 +31,7 @@ export default function Home() {
             We providing coaching services for classes 9th, 10th, 11th & 12th
             for Mathematics and Science.
             <br />
-            Look no futher, get in touch with us!
+            Look no further, get in touch with us!
           </p>
           <PrimaryBtn link="/" label="Get in touch" />{" "}
           <span className="text-[#6a6a6a]">
@@ -54,7 +54,7 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="bg-[#69d5ac] p-5 mb-15 md:p-10 md:pb-20">
+      <div className="bg-[#69d5ac] p-5 mb-10 md:p-10 md:pb-20">
         <h3 className="text-2xl text-[#313232] flex items-center">
           <FontAwesomeIcon icon={faGraduationCap} className="w-7 mr-2" /> Meet
           the faculty
