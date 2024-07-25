@@ -30,7 +30,7 @@ export default function Bento() {
             <ReviewLi message="Excellent teachers who help student's to go beyond the level. There hardwork , guidance and true motivation has helped a lot of student's. 📚" author="Sara Narula" />
             <ReviewLi message="The best Institute in sec 46. Teachers give amazing output to the parents. There fees is also reasonable. Teachers help the students beyond there limits." author="Gokul Gupta" />
             <ReviewLi message="The best institute in the area, the humor of the teachers is amazing , the way they teach is too amazing the methods of teaching is outstanding." author="Aryan Dadwal" />
-            <li className="md:row-span-2 col-span-2 text-left outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded">
+            <li className="md:row-span-2 md:col-span-1 col-span-2 text-left outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded">
             <FontAwesomeIcon icon={faCertificate} className="w-6 m-1 text-[#acd5c4] mb-3 inline" /> Experience <br/>
             <small>
             +14 years of experience <br />
