@@ -4,16 +4,15 @@ import { faGraduationCap, faComments } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SecondaryBtn from "./_components/SecondaryBtn";
 
-import { Lato } from 'next/font/google'
+import { Lato } from "next/font/google";
 import Footer from "./_components/Footer";
 import Link from "next/link";
 import Bento from "./_components/Bento";
- 
-const lato = Lato({
-  subsets: ['latin'],
-  weight: ['100', '300', '400', '700', '900'],
-})
 
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "700", "900"],
+});
 
 export default function Home() {
   return (
@@ -28,51 +27,77 @@ export default function Home() {
           <h2 className="text-4xl md:text-6xl text-[#21B77C] mb-3 font-medium">
             Chandigarh?
           </h2>
-          <p className={"mb-4 text-[#6a6a6a] " + lato.className}>We providing coaching services for classes 9th, 10th, 11th & 12th for Mathematics and Science.<br/>
-            Look no futher, get in touch with us!</p>
-          <PrimaryBtn link="/" label="Get in touch" /> <span className="text-[#6a6a6a]">or read <Link href="#reviews" className="dashed underline hover:text-[#1e1e1e]">reviews</Link>!</span>
+          <p className={"mb-4 text-[#6a6a6a] " + lato.className}>
+            We providing coaching services for classes 9th, 10th, 11th & 12th
+            for Mathematics and Science.
+            <br />
+            Look no futher, get in touch with us!
+          </p>
+          <PrimaryBtn link="/" label="Get in touch" />{" "}
+          <span className="text-[#6a6a6a]">
+            or read{" "}
+            <Link
+              href="#reviews"
+              className="dashed underline hover:text-[#1e1e1e]"
+            >
+              reviews
+            </Link>
+            !
+          </span>
         </div>
         <div>
-          <img src="teacher.png" className="max-w-[35vw] hidden md:block" alt="teacher" />
+          <img
+            src="teacher.png"
+            className="max-w-[35vw] hidden md:block"
+            alt="teacher"
+          />
         </div>
       </header>
 
       <div className="bg-[#69d5ac] p-5 mb-15 md:p-10 md:pb-20">
         <h3 className="text-2xl text-[#313232] flex items-center">
-        <FontAwesomeIcon icon={faGraduationCap} className="w-7 mr-2" /> Meet the faculty
+          <FontAwesomeIcon icon={faGraduationCap} className="w-7 mr-2" /> Meet
+          the faculty
         </h3>
         <ul className="md:flex text-base">
           <li className="p-1 mt-1 md:p-4">
             <h5 className="text-[#1e1e1e] text-xl">Vandana Rana</h5>
             <p className={lato.className}>
-              Ex-government teacher
-              <br />
-              <small>15 year of teaching experience</small>
+              <small>
+                Ex-government teacher <br />
+                15 year of teaching experience
+              </small>
             </p>
           </li>
           <li className="p-1 mt-1 md:p-4">
             <h5 className="text-[#1e1e1e] text-xl">
-              Ajay Rana <span className={"text-sm " + lato.className}>(1969-2022)</span>
+              Ajay Rana{" "}
+              <span className={"text-sm " + lato.className}>(1969-2022)</span>
             </h5>
             <p className={lato.className}>
-              Ex-PEC engineer <br />
-              <small>15 year of teaching experience</small>
+              <small>
+                Ex-PEC engineer <br />
+                15 year of teaching experience
+              </small>
             </p>
           </li>
         </ul>
       </div>
 
       <div className="p-5 md:p-12 text-center" id="reviews">
-      <h3 className="text-2xl text-[#1e1e1e] mb-3">Reviews</h3>
-    <Bento />
+        <h3 className="text-2xl text-[#1e1e1e] mb-3">Reviews</h3>
+        <Bento />
       </div>
 
       <div className="text-[#F3F3F3] bg-[#F3F6FC] p-5 md:p-12">
         <h3 className="text-2xl text-[#1e1e1e] flex mb-3">
-        <FontAwesomeIcon icon={faComments} className="w-8 mr-2 text-[#FF8800]"/>
+          <FontAwesomeIcon
+            icon={faComments}
+            className="w-8 mr-2 text-[#FF8800]"
+          />
           Forums
         </h3>
-        <p className={"text-[#6a6a6a] mb-4 " + lato.className }>
+        <p className={"text-[#6a6a6a] mb-4 " + lato.className}>
           103+ questions & answers on your finger tips! <br />
           Verified answers by our faculty. <br />
           Every growing database!
