@@ -117,7 +117,7 @@ export default function Home() {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d905.4136219952284!2d76.7634665246705!3d30.697314882049962!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fec4230c95f01%3A0x5d1b19688b9e39d1!2sDisha%20Learning%2CChandigarh!5e0!3m2!1sen!2sin!4v1663610557067!5m2!1sen!2sin"
               className="w-[350px] h-[350px] rounded-sm"
-              allowFullscreen=""
+              allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
