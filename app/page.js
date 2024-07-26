@@ -1,6 +1,6 @@
 import Navbar from "./_components/Navbar";
 import PrimaryBtn from "./_components/PrimaryBtn";
-import { faGraduationCap, faComments } from "@fortawesome/free-solid-svg-icons";
+import { faGraduationCap, faComments, faQuestion } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SecondaryBtn from "./_components/SecondaryBtn";
 
@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <header className="p-5 mb-10 md:mb-0 md:p-8 flex justify-between">
+      <header className="p-5 my-7 md:my-10 md:mb-0 md:p-8 flex justify-between">
         <div>
           <h4 className="text-2xl md:text-3xl">Looking for Quality</h4>
           <h2 className="text-4xl md:text-6xl text-[#21B77C] py-3 font-medium">
@@ -65,7 +65,7 @@ export default function Home() {
             <p className={lato.className}>
               <small>
                 Ex-government teacher <br />
-                15 year of teaching experience
+                20 year of teaching experience
               </small>
             </p>
           </li>
@@ -97,12 +97,17 @@ export default function Home() {
           />
           Forums
         </h3>
+        <div className="flex justify-between">
         <p className={"text-[#6a6a6a] mb-4 " + lato.className}>
           103+ questions & answers on your finger tips! <br />
           Verified answers by our faculty. <br />
           Every growing database!
+          <br />
+          <SecondaryBtn link="/" label="Ask a question" />
         </p>
-        <SecondaryBtn link="/" label="Ask a question" />
+
+        <FontAwesomeIcon icon={faQuestion} className="w-20 rotate-12 text-[#FBA748]" />
+        </div>
       </div>
 
       <div className="p-5 md:p-10 bg-[#fff] ">

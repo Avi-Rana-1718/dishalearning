@@ -33,7 +33,7 @@ export default function Bento() {
             <li className="md:row-span-2 md:col-span-1 col-span-2 text-left outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded">
             <FontAwesomeIcon icon={faCertificate} className="w-6 m-1 text-[#acd5c4] mb-3 inline" /> Experience <br/>
             <small>
-            +14 years of experience <br />
+            +{timeY} years of experience <br />
             Started in November of 2009 <br/>
             Thats, {timeY} years and {timeM} months ago!
             </small>
