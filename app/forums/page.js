@@ -38,8 +38,9 @@ export default function Forum() {
       </div>
 
       <div>
+      <aside className="md:sticky md:top-3">
       <h3 className="text-xl m-3 mb-0">More</h3>
-        <div className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded m-3">
+      <div className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded m-3">
           <h4><FontAwesomeIcon icon={faQuestion} className="w-4 text-[#FBA748] inline" /> Ask a question</h4>
           <small className="block mb-1 text-[#6a6a6a]">Have a doubt? Submit a question!</small>
           <Link href="/"  className="text-sm hover:underline text-[#f3f3f3] bg-[#4e88de] px-2 py-1.5 rounded">
@@ -54,6 +55,7 @@ export default function Forum() {
           Report<FontAwesomeIcon icon={faUpRightFromSquare} className="inline w-3.5 ml-2"/>
           </Link>
         </div>
+      </aside>
       </div>
       </div>
       <Footer />
