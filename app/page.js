@@ -17,7 +17,6 @@ const lato = Lato({
 export default function Home() {
   return (
     <>
-      <Navbar />
       <header className="p-5 my-7 md:my-10 md:mb-0 md:p-8 flex justify-between">
         <div>
           <h4 className="text-2xl md:text-3xl">Looking for Quality</h4>
@@ -33,9 +32,9 @@ export default function Home() {
             <br />
             Look no further, get in touch with us!
           </p>
-          <PrimaryBtn link="/" label="Get in touch" />{" "}
-          <span className="text-[#6a6a6a]">
-            or read{" "}
+          <PrimaryBtn link="#contact" label="Get in touch" />{" "}
+          <span className="text-[#6a6a6a] ml-2 text-sm">
+            or find out more, read{" "}
             <Link
               href="#reviews"
               className="dashed underline hover:text-[#1e1e1e]"
@@ -85,7 +84,7 @@ export default function Home() {
       </div>
 
       <div className="p-5 md:p-12 text-center" id="reviews">
-        <h3 className="text-2xl text-[#1e1e1e] mb-3">Reviews</h3>
+        <h3 className="text-2xl text-[#1e1e1e] mb-9">Reviews</h3>
         <Bento />
       </div>
 
@@ -110,7 +109,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="p-5 md:p-10 bg-[#fff] ">
+      <div className="p-5 md:p-10 bg-[#fff]" id="contact">
         <h3 className="text-2xl text-[#1e1e1e] mb-3">Contact us</h3>
         <div className="md:p-3 md:flex">
           <div>
@@ -136,8 +135,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 }

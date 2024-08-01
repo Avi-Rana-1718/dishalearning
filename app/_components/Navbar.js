@@ -1,12 +1,17 @@
+"use client"
+
 import Link from "next/link";
 import ListLink from "./ListLink";
+import { usePathname } from "next/navigation";
 
 export default function Navbar(props) {
   const { forum } = props;
 
-  if (forum == "true") {
+  const pathname = usePathname();
+
+  if (pathname.includes("/forums")) {
     return (
-      <nav className="flex text-xl md:text-2xl font-normal p-2 justify-between align-middle">
+      <nav className="flex text-xl md:text-2xl bg-[#ceffd8] font-normal p-2 justify-between align-middle">
         <div>
           <Link href="/" className="font-medium">
             <img src="/logo.png" className="inline mr-1 size-12" alt="Logo" />
@@ -28,7 +33,7 @@ export default function Navbar(props) {
           <ul className="flex text-sm md:text-xl leading-none">
             <ListLink link="/forums" label="Forums" />
             <ListLink link="/" label="Blog" />
-            <ListLink link="/" label="Contact" />
+            <ListLink link="#contact" label="Contact" />
           </ul>
       </nav>
     );

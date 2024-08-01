@@ -1,3 +1,4 @@
+import Footer from "./_components/Footer";
 import Navbar from "./_components/Navbar";
 import "./globals.css";
 
@@ -16,7 +17,11 @@ const epilogue = Epilogue({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={epilogue.className}>{children}</body>
+      <body className={epilogue.className}>
+        <Navbar />
+        {children}
+        <Footer />
+        </body>
     </html>
   );
 }
