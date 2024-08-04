@@ -33,7 +33,7 @@ export default function Home() {
             Look no further, get in touch with us!
           </p>
           <PrimaryBtn link="#contact" label="Get in touch" />{" "}
-          <span className="text-[#6a6a6a] ml-2 text-sm">
+          <span className="block md:inline text-[#6a6a6a] ml-2 text-sm">
             or find out more, read{" "}
             <Link
               href="#reviews"
