@@ -1,3 +1,4 @@
+import Footer from "./_components/Footer";
 import "./globals.css";
 import { Epilogue } from 'next/font/google'
  
@@ -14,7 +15,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={epilogue.className}>{children}</body>
+      <body className={epilogue.className}>
+        {children}
+        <Footer />
+        </body>
     </html>
   );
 }

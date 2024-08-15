@@ -33,7 +33,7 @@ export default function Home() {
             <PrimaryBtn link="/contact" label="Contact us"/>
             <small className="ml-2 text-sm">or find out more, read <Link href="#reviews" className="underline">reviews</Link>!</small>
         </div>
-        <div className="hidden md:block flex justify-end flex-col items-end">
+        <div className="hidden md:flex justify-end flex-col items-end">
           <video src="banner.mp4" autoPlay muted loop className="w-3/4"></video>
         </div>
       </header>
@@ -66,7 +66,7 @@ export default function Home() {
       </div>
       
 
-    <div className="md:m-4">
+    <div className="md:m-4" id="reviews">
     <h4 className="text-2xl mt-10">Reviews</h4>
       <div className="grid grid-cols-2 md:grid-cols-3">
         <div className="rounded p-3 m-2 md:row-span-2 outline outline-2 outline-slate-400/25">
@@ -92,7 +92,7 @@ export default function Home() {
       </div>
     </div>
 
-    <div className="bg-[#F1F3F0] p-5 rounded-md">
+    <div className="bg-[#F1F3F0] p-5 mt-10 rounded-md">
     <h4 className="text-2xl">
     <FontAwesomeIcon
             icon={faComments}
