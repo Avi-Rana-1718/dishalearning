@@ -21,9 +21,9 @@ export default function Home() {
     <>
     <Nav />
     <main className="m-4 bg-[radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(134,213,105,1) 100%)]">
-      <header className="mb-10 mt-20 md:mt-5 md:mb-3 flex items-center justify-between ml-4">
+      <header className="mb-10 mt-20 md:mt-5 md:mb-3 flex items-center justify-between md:ml-4">
         <div className="leading-loose">
-          <small className="text-3xl text-[#8e8d8d] font-semibold leading-loose">Are you looking for</small>
+          <small className="text-xl md:text-3xl text-[#8e8d8d] font-semibold leading-loose">Are you looking for</small>
           <h1 className="text-3xl md:text-6xl text-[#21B77C] font-semibold ">Quality Coaching<br /> in Chandigarh?</h1>
             <p className="text-sm text-[#6A6A6A] md:w-[40vw] mt-3 mb-3">
             We providing coaching services for classes 9th, 10th, 11th & 12th for Mathematics and Science.
@@ -66,7 +66,7 @@ export default function Home() {
       </div>
       
 
-    <div className="m-4">
+    <div className="md:m-4">
     <h4 className="text-2xl mt-10">Reviews</h4>
       <div className="grid grid-cols-2 md:grid-cols-3">
         <div className="rounded p-3 m-2 md:row-span-2 outline outline-2 outline-slate-400/25">
