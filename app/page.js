@@ -140,7 +140,7 @@ Every growing database!
               +91 9779103449<br />
               +91 8847342181<br />
               <br />
-              <a href="tel:+91884732181" className="mt-4 text-[#F3F3F3] rounded-md bg-[#282828] py-2 px-3 hover:underline"><FontAwesomeIcon icon={faPhone} className="w-3.5 mr-2 inline"/>Get in touch</a>
+              <a href="tel:+918847342181" className="mt-4 text-[#F3F3F3] rounded-md bg-[#282828] py-2 px-3 hover:underline"><FontAwesomeIcon icon={faPhone} className="w-3.5 mr-2 inline"/>Get in touch</a>
               </p>
           </div>
           </div>
