@@ -3,7 +3,7 @@ import Item from "./_components/Item";
 import Nav from "./_components/Nav";
 import PrimaryBtn from "./_components/PrimaryBtn";
 
-import { faStar, faCertificate, faComments, faQuestion, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faCertificate, faComments, faLocationDot, faQuestion, faUpRightFromSquare, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -71,7 +71,7 @@ export default function Home() {
       <div className="grid grid-cols-2 md:grid-cols-3">
         <div className="rounded p-3 m-2 md:row-span-2 outline outline-2 outline-slate-400/25">
         Average rating of <br/>
-        <h3 className="text-2xl">4.8 <FontAwesomeIcon icon={faStar}  className="w-7 m-1 text-[#FF8800] inline"/></h3>
+        <h3 className="text-2xl">4.8 <FontAwesomeIcon icon={faStar} className="w-7 m-1 text-[#FF8800] inline"/></h3>
         out of 36 reviews!
         <h3 className="text-2xl mt-3">86%</h3>
         of <strong>5</strong> stars reviews.
@@ -127,15 +127,21 @@ Every growing database!
             ></iframe>
 
           <div className="m-5 text-left">
-            <h5 className="text-xl">Address</h5>
+            <h5 className="text-base">Visit us</h5>
             <p className="text-sm text-[#6a6a6a]">
-              #3449 <br />
-              Sector 46/C <br />
-              Chandigarh
+              Come talk to us at our office.<br />+
+            <FontAwesomeIcon icon={faLocationDot} className="w-3 m-1 text-[#6A6A6A] inline" /> #3449, Sector 46/C, Chandigarh
+            
             </p>
 
-            <h5 className="text-xl mt-4">Mobile</h5>
-            <p className="text-sm text-[#6a6a6a]">+91 9779103449</p>
+            <h5 className="text-base mt-4">Call us</h5>
+            <p className="text-sm text-[#6a6a6a]">
+              Mon-Fri from 1pm to 8pm<br />
+              +91 9779103449<br />
+              +91 8847342181<br />
+              <br />
+              <a href="tel:+91884732181" className="mt-4 text-[#F3F3F3] rounded-md bg-[#282828] py-2 px-3 hover:underline"><FontAwesomeIcon icon={faPhone} className="w-3.5 mr-2 inline"/>Get in touch</a>
+              </p>
           </div>
           </div>
 
