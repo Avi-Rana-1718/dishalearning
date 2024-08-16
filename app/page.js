@@ -114,8 +114,8 @@ Every growing database!
 
     </div>
 
-    <div className="m-4 text-center">
-    <h4 className="text-2xl mt-10">Contact us</h4>
+    <div className="m-4 md:text-center">
+    <h4 className="text-2xl  mb-4 mt-10">Contact us</h4>
     <div className="md:p-3 md:flex ">
           <div className="md:flex">
             <iframe
@@ -126,7 +126,7 @@ Every growing database!
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
 
-          <div className="m-5 text-left">
+          <div className="mt-5 md:m-5  text-left">
             <h5 className="text-base">Visit us</h5>
             <p className="text-sm text-[#6a6a6a]">
               Come talk to us at our office.<br />+
