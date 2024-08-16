@@ -129,7 +129,7 @@ Every growing database!
           <div className="mt-5 md:m-5  text-left">
             <h5 className="text-base">Visit us</h5>
             <p className="text-sm text-[#6a6a6a]">
-              Come talk to us at our office.<br />+
+              Come talk to us at our office.<br />
             <FontAwesomeIcon icon={faLocationDot} className="w-3 m-1 text-[#6A6A6A] inline" /> #3449, Sector 46/C, Chandigarh
             
             </p>
