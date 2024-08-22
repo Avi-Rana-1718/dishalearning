@@ -114,7 +114,7 @@ Every growing database!
 
     </div>
 
-    <div className="m-4 md:text-center">
+    <div className="m-4 md:text-center" id="contact">
     <h4 className="text-2xl  mb-4 mt-10">Contact us</h4>
     <div className="md:p-3 md:flex ">
           <div className="md:flex">
