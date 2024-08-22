@@ -2,10 +2,47 @@ import Nav from "@/app/_components/Nav";
 import { faTriangleExclamation, faUpRightFromSquare, faQuestion } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, child, get } from "firebase/database";
 
+async function getData(id) {
+  
+const firebaseConfig = {
+  apiKey: "AIzaSyCciV3sOwkss506-379tA5SanyezujbYNA",
+  authDomain: "ans-dishalearning.firebaseapp.com",
+  databaseURL: "https://ans-dishalearning-default-rtdb.firebaseio.com",
+  projectId: "ans-dishalearning",
+  storageBucket: "ans-dishalearning.appspot.com",
+  messagingSenderId: "82099435116",
+  appId: "1:82099435116:web:f4f39e49e614a93968ca49",
+  measurementId: "G-L2JJWD8DNT"
+};
 
-export default function Page() {
-    return (
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+let data;
+
+const dbRef = ref(getDatabase());
+await get(child(dbRef, `data/${id}`)).then((snapshot) => {
+  if (snapshot.exists()) {
+    data = snapshot.val();
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+}); 
+
+return data;
+}
+
+export default async function Page({params}) {
+
+  let data = await getData(params.id);
+  console.log(data);
+  
+  return (
         <>
          <header className="bg-[#ceffd8] pb-10">
         <Nav navLinks={false} />
@@ -16,16 +53,11 @@ export default function Page() {
       </header>
         <main className="p-5 md:flex">
             <div className="grow outline oultine-1 outline-2 min-h-[70vh] outline-slate-400/25 rounded md:max-w-[80vw] p-4">
-            <h4 className="text-[#04AA6D] inline text-xl">Question : </h4>
-            <span className="text-xl">It is a hot summer day Priyanshi and Ali are wearing cotton and nylon clothes respectively. Who do you think would be more comfortable and why?</span>
-            <small className="block mt-1">Submitted on 21/8/2024 | Answered by Vandana Rana</small>
-            <h4 className="text-[#04AA6D] text-xl mt-5">Answer : </h4>
-            <p>
-            Priyanshi would be more comfortable.
-The reason is that we get a lot of sweat on our body in a hot summer day.
-Cotton being a good absorber of water, absorbs sweat from the body and provides larger surface area for evaporation which causes more cooling effect.
-The Nylon clothes do not absorb much of sweat, so they fail to keep our body cool in summer.Ali would feel uncomfortable.
-            </p>
+            <h4 className="text-[#04AA6D] inline">Question : </h4>
+            <span className="" dangerouslySetInnerHTML={{__html:data.question}}></span>
+            <small className="block mt-1">Submitted on {(new Date(data.timestamp).getDate() + "/" + (new Date(data.timestamp).getMonth()+1) + "/" + new Date(data.timestamp).getFullYear())} | Answered by {(data.hasOwnProperty("author")?data.author:"Vandana Rana")}</small>
+            <h4 className="text-[#04AA6D] mt-5">Answer : </h4>
+            <p dangerouslySetInnerHTML={{__html:data.answer}}></p>
             </div>
 
             <aside className="md:sticky md:top-3">
