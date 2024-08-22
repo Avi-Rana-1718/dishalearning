@@ -62,7 +62,7 @@ export default async function Forums() {
               Object.keys(data).map(el => {
                 // console.log(el)
                 
-                return <ForumList question={data[el].question} timestamp={data[el].timestamp} url={el} />
+                return <ForumList question={data[el].question} timestamp={data[el].timestamp} url={el} key={el} />
               })
             }
           </ul>
