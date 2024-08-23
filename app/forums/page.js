@@ -54,7 +54,7 @@ export default async function Forums() {
         </div>
       </header>
       <main className="md:flex p-2">
-        <div className="grow">
+        <div className="md:max-w-[80vw]">
           <h3 className="text-2xl m-3 mb-0">List</h3>
           <ul>
             

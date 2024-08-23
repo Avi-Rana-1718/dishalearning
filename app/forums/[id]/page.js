@@ -62,7 +62,7 @@ export default async function Page({params}) {
             </div>
 
             <aside>
-          <div className="outline oultine-1 outline-2 bg-[#fff] outline-slate-400/25 p-3 rounded md:m-3 mt-3">
+          <div className="outline oultine-1 outline-2 bg-[#fff] outline-slate-400/25 p-3 rounded md:m-3 mt-3 md:mt-0">
             <h4>
               <FontAwesomeIcon
                 icon={faQuestion}
