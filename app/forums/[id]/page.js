@@ -52,7 +52,7 @@ export default async function Page({params}) {
           <span className="text-[#6a6a6a]">Answers to all your questions</span>
         </div>
       </header>
-        <main className="p-5 md:flex bg-[#ceffd8] md:bg-[#fff]">
+        <main className="p-3 md:p-5 md:flex bg-[#ceffd8] md:bg-[#fff]">
             <div className="grow outline oultine-1 outline-2 min-h-[70vh] outline-slate-400/25 rounded md:max-w-[80vw] p-4 bg-[#fff]">
             <h4 className="text-[#04AA6D] inline">Question : </h4>
             <span className="" dangerouslySetInnerHTML={{__html:data.question}}></span>
