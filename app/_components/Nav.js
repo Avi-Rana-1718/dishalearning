@@ -7,9 +7,17 @@ export default function Nav(props) {
     <nav className="flex justify-between p-3">
         <h3>
         <Link href="/">
-        <img src="/logo.png" className="inline mr-1 size-12" alt="Logo" />
+        <img src="/logo.png" className="inline mr-1 size-10" alt="Logo" />
         Disha Learning
         </Link>
+        {
+            (navLinks!=undefined)?(<span className="md:hidden text-xs ml-0.5">
+                <Link href="/forums">
+                /forums
+                </Link>
+            </span>):null
+        }
+        
         </h3>
         {(navLinks==undefined?
         <ul className="flex items-center">

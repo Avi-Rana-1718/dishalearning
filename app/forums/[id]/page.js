@@ -1,5 +1,5 @@
 import Nav from "@/app/_components/Nav";
-import { faTriangleExclamation, faUpRightFromSquare, faQuestion } from "@fortawesome/free-solid-svg-icons";
+import { faTriangleExclamation, faUpRightFromSquare, faQuestion, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { initializeApp } from "firebase/app";
@@ -44,15 +44,16 @@ export default async function Page({params}) {
   
   return (
         <>
-         <header className="bg-[#ceffd8] pb-10">
+         <header className=" bg-[#ceffd8] md:pb-10">
         <Nav navLinks={false} />
-        <div className="text-left px-10 py-10">
-          <h3 className="text-4xl text-[#1e1e1e] mb-3">Forums</h3>
+        <div className="hidden md:block text-left md:px-10 md:py-10">
+          {/* <span className="text-xs flex align-baseline p-2"><FontAwesomeIcon icon={faChevronLeft} className="inline w-[0.5em] mr-0.5"/>Back to list</span> */}
+          <h3 className="text-4xl text-[#1e1e1e] mb-3 hover:underline"><Link href="/forums">Forums</Link></h3>
           <span className="text-[#6a6a6a]">Answers to all your questions</span>
         </div>
       </header>
-        <main className="p-5 md:flex">
-            <div className="grow outline oultine-1 outline-2 min-h-[70vh] outline-slate-400/25 rounded md:max-w-[80vw] p-4">
+        <main className="p-5 md:flex bg-[#ceffd8] md:bg-[#fff]">
+            <div className="grow outline oultine-1 outline-2 min-h-[70vh] outline-slate-400/25 rounded md:max-w-[80vw] p-4 bg-[#fff]">
             <h4 className="text-[#04AA6D] inline">Question : </h4>
             <span className="" dangerouslySetInnerHTML={{__html:data.question}}></span>
             <small className="block mt-1">Submitted on {(new Date(data.timestamp).getDate() + "/" + (new Date(data.timestamp).getMonth()+1) + "/" + new Date(data.timestamp).getFullYear())} | Answered by {(data.hasOwnProperty("author")?data.author:"Vandana Rana")}</small>
@@ -60,9 +61,8 @@ export default async function Page({params}) {
             <p dangerouslySetInnerHTML={{__html:data.answer}}></p>
             </div>
 
-            <aside className="md:sticky md:top-3">
-          <h3 className="text-xl m-3 mb-0">More</h3>
-          <div className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded m-3">
+            <aside>
+          <div className="outline oultine-1 outline-2 bg-[#fff] outline-slate-400/25 p-3 rounded md:m-3 mt-3">
             <h4>
               <FontAwesomeIcon
                 icon={faQuestion}
@@ -85,7 +85,7 @@ export default async function Page({params}) {
             </Link>
           </div>
 
-          <div className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded m-3">
+          <div className="outline oultine-1 outline-2 bg-[#fff] outline-slate-400/25 p-3 rounded md:m-3 mt-3">
             <h4>
               <FontAwesomeIcon
                 icon={faTriangleExclamation}

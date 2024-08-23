@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function Footer() {
     return (
         <footer className="border-b-4 border-[#21B77C] p-4 flex justify-between">
-            <h3 className="text-xl">
-                <img src="/logo.png" className="inline mr-1 size-12" alt="Logo" />
+            <h3 className="text-base">
+                <img src="/logo.png" className="inline mr-1 size-9" alt="Logo" />
                 Disha Learning
                 
             </h3>
