@@ -1,5 +1,5 @@
 import Nav from "@/app/_components/Nav";
-import { faTriangleExclamation, faUpRightFromSquare, faQuestion, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faTriangleExclamation, faUpRightFromSquare, faHouse, faQuestion, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { initializeApp } from "firebase/app";
@@ -40,7 +40,7 @@ return data;
 export default async function Page({params}) {
 
   let data = await getData(params.id);
-  console.log(data);
+  // console.log(data);
   
   return (
         <>
@@ -54,6 +54,10 @@ export default async function Page({params}) {
       </header>
         <main className="p-3 md:p-5 md:flex bg-[#ceffd8] md:bg-[#fff]">
             <div className="grow outline oultine-1 outline-2 min-h-[70vh] outline-slate-400/25 rounded md:max-w-[80vw] p-4 bg-[#fff]">
+                    {/* BREADCRUMB */}
+        <div className="md:text-sm text-xs mb-2">
+        <Link href="/" className="text-blue-500 mx-0.5 hover:underline">Home</Link>{">"}<Link href="/forums" className="text-blue-500 mx-1 hover:underline">Forums</Link>
+        </div>
             <h4 className="text-[#04AA6D] inline">Question : </h4>
             <span className="" dangerouslySetInnerHTML={{__html:data.question}}></span>
             <small className="block mt-1">Submitted on {(new Date(data.timestamp).getDate() + "/" + (new Date(data.timestamp).getMonth()+1) + "/" + new Date(data.timestamp).getFullYear())} | Answered by {(data.hasOwnProperty("author")?data.author:"Vandana Rana")}</small>
@@ -74,7 +78,7 @@ export default async function Page({params}) {
               Have a doubt? Submit a question!
             </small>
             <Link
-              href="/"
+              href="/forums/ask"
               className="text-sm hover:underline text-[#f3f3f3] bg-[#4e88de] px-2 py-1.5 rounded"
             >
               Ask

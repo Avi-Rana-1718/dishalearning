@@ -82,7 +82,7 @@ export default async function Forums() {
               Have a doubt? Submit a question!
             </small>
             <Link
-              href="/"
+              href="/forums/ask"
               className="text-sm hover:underline text-[#f3f3f3] bg-[#4e88de] px-2 py-1.5 rounded"
             >
               Ask

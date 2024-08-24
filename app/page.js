@@ -30,7 +30,7 @@ export default function Home() {
             We prepare our students for BOARD exams, JEE and NEET by providing them with the best lessons and supplementary learning materials.
             Look no further, get in touch with us!
             </p>
-            <PrimaryBtn link="/contact" label="Contact us"/>
+            <PrimaryBtn link="#contact" label="Contact us"/>
             <small className="ml-2 text-sm">or find out more, read <Link href="#reviews" className="underline">reviews</Link>!</small>
         </div>
         <div className="hidden md:flex justify-end flex-col items-end">
@@ -107,7 +107,7 @@ Verified answers by our faculty.<br/>
 Every growing database!
 <br />
 <br />
-<Link href="#" className="mt-4 text-[#F3F3F3] rounded-md bg-[#282828] py-2 px-3 hover:underline">Ask a question <FontAwesomeIcon icon={faUpRightFromSquare} className="inline w-3.5 ml-2"/></Link>
+<Link href="/forums/ask" className="mt-4 text-[#F3F3F3] rounded-md bg-[#282828] py-2 px-3 hover:underline">Ask a question <FontAwesomeIcon icon={faUpRightFromSquare} className="inline w-3.5 ml-2"/></Link>
       </p>
       <FontAwesomeIcon icon={faQuestion} className="w-20 rotate-12 text-[#FBA748]" />
       </div>
