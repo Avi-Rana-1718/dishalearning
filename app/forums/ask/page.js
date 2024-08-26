@@ -3,10 +3,13 @@
 import Nav from "@/app/_components/Nav";
 import Link from "next/link";
 import { initializeApp } from "firebase/app";
+import { faCircleCheck, faCircleExclamation} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { getDatabase, ref, child, set } from "firebase/database";
 import { useState } from "react";
 
-async function sendData(e) {
+async function sendData(e, setSendStatus) {
   
   const firebaseConfig = {
     apiKey: "AIzaSyCciV3sOwkss506-379tA5SanyezujbYNA",
@@ -24,28 +27,22 @@ async function sendData(e) {
 
   console.log(e);
 
-  let f;
-  
-
     const db = getDatabase();
-    set(ref(db, 'ask/' + Date.now()), {
+    set(ref(db, '/' + Date.now()), {
       title: e.target[0].value,
       desc: e.target[1].value,
       timestamp : Date.now()
     }).then(()=>{
-      {};
+      setSendStatus(true)
     }).catch((err)=>{
       console.error(err);
-      f= false;
+      setSendStatus(false)
     });
-
-    return f;
-  
   }
 
 export default function Ask() {
 
-  const [sendStatus, setSendStatus] = useState({status:null});
+  const [sendStatus, setSendStatus] = useState(null);
 
     return (
         <>
@@ -58,20 +55,19 @@ export default function Ask() {
       </header>
       <main className="p-5 md:p-7 bg-[#fff]">
     
-      {/* {
-      sendStatus.status=="fulfilled"?(
-       <span>Question send! Our experts will look into it.</span>
-      ):((sendStatus=="rejected")?(
-      <span>An error occured! We were unable to send the message.</span>
+      {
+      sendStatus==true?(
+       <span className="p-3 rounded bg-green-300 text-green-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleCheck} /> Question send! Our experts will look into it.</span>
+      ):((sendStatus==false)?(
+      <span className="p-3 rounded bg-red-300 text-red-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleExclamation} /> An error occured! We were unable to send the message.</span>
       ):(console.log(133)
       ))
-      } */}
+      }
 
         <form onSubmit={(e)=>{
               e.preventDefault();
               console.log(e);
-              setSendStatus(sendData(e));
-              console.log(sendStatus);
+              sendData(e, setSendStatus);
               
               
             }}>
@@ -79,12 +75,12 @@ export default function Ask() {
                 Title<span className="text-red-600">*</span>
                 <small className="block text-[#6A6A6A]">Be specific and imagine you’re asking a question to another person.</small>
                 </label>
-            <input id="fTitle" type="text" className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded my-3 max-w-[70vw] block" placeholder="Ask the question"></input>
+            <input id="fTitle" type="text" className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded my-3 max-w-[70vw] block" placeholder="Ask the question" required></input>
             <label htmlFor="fDesc">
                 Details<span className="text-red-600">*</span>
             <small className="block text-[#6A6A6A]">Describe the problem in detail, write as much as possible!</small>
             </label>
-            <textarea id="fDesc" type="text" cols={50} rows={5} className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded my-3 max-w-[70vw] block"></textarea>
+            <textarea id="fDesc" type="text" cols={50} rows={5} className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded my-3 max-w-[70vw] block" required></textarea>
             <button className="text-sm hover:underline text-[#f3f3f3] bg-[#6A6A6A] px-2 py-1.5 rounded" type="submit">
                 Submit
               </button>
