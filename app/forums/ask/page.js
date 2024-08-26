@@ -28,7 +28,7 @@ async function sendData(e, setSendStatus) {
   console.log(e);
 
     const db = getDatabase();
-    set(ref(db, '/' + Date.now()), {
+    set(ref(db, 'ask/' + Date.now()), {
       title: e.target[0].value,
       desc: e.target[1].value,
       timestamp : Date.now()
