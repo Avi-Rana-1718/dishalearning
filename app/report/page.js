@@ -28,7 +28,7 @@ async function sendData(e, setSendStatus) {
   console.log(e);
 
     const db = getDatabase();
-    set(ref(db, 'ask/' + Date.now()), {
+    set(ref(db, 'report/' + Date.now()), {
       title: e.target[0].value,
       desc: e.target[1].value,
       timestamp : Date.now()
@@ -40,7 +40,7 @@ async function sendData(e, setSendStatus) {
     });
   }
 
-export default function Ask() {
+export default function Report() {
 
   const [sendStatus, setSendStatus] = useState(null);
 
@@ -49,18 +49,17 @@ export default function Ask() {
  <header className="bg-[#ceffd8] pb-10">
         <Nav navLinks={false} />
         <div className="text-center px-10 pt-10">
-          <h3 className="text-4xl text-[#1e1e1e] mb-3">Ask a question</h3>
-          <span className="text-[#6a6a6a]">Resolve any and all queries.</span>
+          <h3 className="text-4xl text-[#1e1e1e] mb-3">Report a problem</h3>
+          <span className="text-[#6a6a6a]">Something not working? Let us know.</span>
         </div>
       </header>
       <main className="p-5 md:p-7 bg-[#fff]">
-    
       {
       sendStatus==true?(
-       <span className="p-3 rounded bg-green-300 text-green-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleCheck} /> Question send! Our experts will look into it.</span>
+       <span className="p-3 rounded bg-green-300 text-green-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleCheck} /> Report send! We look into it asap.</span>
       ):((sendStatus==false)?(
       <span className="p-3 rounded bg-red-300 text-red-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleExclamation} /> An error occured! We were unable to send the message.</span>
-      ):(null))
+      ):null)
       }
 
         <form onSubmit={(e)=>{
@@ -72,9 +71,9 @@ export default function Ask() {
             }}>
             <label htmlFor="fTitle">
                 Title<span className="text-red-600">*</span>
-                <small className="block text-[#6A6A6A]">Be specific and imagine you’re asking a question to another person.</small>
+                <small className="block text-[#6A6A6A]">Be specific and try to write as much as possible.</small>
                 </label>
-            <input id="fTitle" type="text" className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded my-3 max-w-[70vw] block" placeholder="Ask the question" required></input>
+            <input id="fTitle" type="text" className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded my-3 max-w-[70vw] block" placeholder="Enter the issue" required></input>
             <label htmlFor="fDesc">
                 Details<span className="text-red-600">*</span>
             <small className="block text-[#6A6A6A]">Describe the problem in detail, write as much as possible!</small>
