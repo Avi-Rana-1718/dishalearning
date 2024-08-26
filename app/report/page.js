@@ -56,7 +56,7 @@ export default function Report() {
       <main className="p-5 md:p-7 bg-[#fff]">
       {
       sendStatus==true?(
-       <span className="p-3 rounded bg-green-300 text-green-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleCheck} /> Report send! We look into it asap.</span>
+       <span className="p-3 rounded bg-green-300 text-green-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleCheck} /> Report sent! We look into it asap.</span>
       ):((sendStatus==false)?(
       <span className="p-3 rounded bg-red-300 text-red-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleExclamation} /> An error occured! We were unable to send the message.</span>
       ):null)

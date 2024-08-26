@@ -57,7 +57,7 @@ export default function Ask() {
     
       {
       sendStatus==true?(
-       <span className="p-3 rounded bg-green-300 text-green-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleCheck} /> Question send! Our experts will look into it.</span>
+       <span className="p-3 rounded bg-green-300 text-green-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleCheck} /> Question sent! Our experts will look into it.</span>
       ):((sendStatus==false)?(
       <span className="p-3 rounded bg-red-300 text-red-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleExclamation} /> An error occured! We were unable to send the message.</span>
       ):(null))
