@@ -1,11 +1,12 @@
 import Link from "next/link";
 import ForumList from "../_components/forumList";
 import Nav from "../_components/Nav";
-import { faTriangleExclamation, faUpRightFromSquare, faQuestion } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, child, get } from "firebase/database";
 import AsideBtns from "../_components/AsideBtns";
+import ForumSearch from "../_components/ForumSearch";
 
 
 async function getData() {
@@ -56,22 +57,28 @@ export default async function Forums() {
       </header>
       <main className="md:flex p-2">
         <div className="md:max-w-[80vw]">
-          <h3 className="text-2xl m-3 mb-0">List</h3>
+          <h3 className="text-2xl m-3 mb-0 flex items-center justify-between">List <ForumSearch /></h3>
           <ul>
             
             {
-              Object.keys(data).map(el => {
-                // console.log(el)
-                
-                return <ForumList question={data[el].question} timestamp={data[el].timestamp} url={el} key={el} />
-              })
+              Object.keys(data).sort((a, b)=>{
+                if(data[a].timestamp>data[b].timestamp) {
+                 return -1;
+                } else  if(data[a].timestamp<data[b].timestamp) {
+                 return 0;
+                } else {
+                 return 0;
+                }
+             }).map(el=>{
+             return <ForumList question={data[el].question} timestamp={data[el].timestamp} url={el} key={el} />;
+             })
             }
           </ul>
         </div>
 
         <aside className="md:sticky md:top-3">
-          <h3 className="text-xl m-3 mb-0">More</h3>
-          <AsideBtns />
+          <h3 className="text-xl m-3 mb-4">More</h3>
+          <AsideBtns/>
         </aside>
       </main>
     </>
