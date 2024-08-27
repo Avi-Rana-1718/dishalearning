@@ -45,24 +45,19 @@ export default async function Page({params}) {
   
   return (
         <>
-         <header className=" bg-[#ceffd8] md:pb-10">
+         <header className=" bg-[#ceffd8]">
         <Nav navLinks={false} />
-        <div className="hidden md:block text-left md:px-10 md:py-10">
-          {/* <span className="text-xs flex align-baseline p-2"><FontAwesomeIcon icon={faChevronLeft} className="inline w-[0.5em] mr-0.5"/>Back to list</span> */}
-          <h3 className="text-4xl text-[#1e1e1e] mb-3 hover:underline"><Link href="/forums">Forums</Link></h3>
-          <span className="text-[#6a6a6a]">Answers to all your questions</span>
-        </div>
-      </header>
-        <main className="p-3 md:p-5 md:flex bg-[#ceffd8] md:bg-[#fff]">
-            <div className="grow outline oultine-1 outline-2 min-h-[70vh] outline-slate-400/25 rounded md:max-w-[80vw] p-4 bg-[#fff]">
-                    {/* BREADCRUMB */}
-        <div className="md:text-sm text-xs mb-2">
+        {/* BREADCRUMB */}
+        <div className="md:text-sm text-xs pl-3 mt-5">
         <Link href="/" className="text-blue-500 mx-0.5 hover:underline">Home</Link>{">"}<Link href="/forums" className="text-blue-500 mx-1 hover:underline">Forums</Link>
         </div>
-            <h4 className="text-[#04AA6D] inline">Question : </h4>
-            <span className="" dangerouslySetInnerHTML={{__html:data.question}}></span>
+      </header>
+        <main className="p-3 bg-[#ceffd8] md:flex">
+            <div className="grow outline oultine-1 outline-2 min-h-[80vh] outline-slate-400/25 rounded md:max-w-[80vw] p-4 bg-[#fff]">
+            <h4 className="text-[#04AA6D] inline font-medium">Question : </h4>
+            <span className="text-base" dangerouslySetInnerHTML={{__html:data.question}}></span>
             <small className="block mt-1">Submitted on {(new Date(data.timestamp).getDate() + "/" + (new Date(data.timestamp).getMonth()+1) + "/" + new Date(data.timestamp).getFullYear())} | Answered by {(data.hasOwnProperty("author")?data.author:"Vandana Rana")}</small>
-            <h4 className="text-[#04AA6D] mt-5">Answer : </h4>
+            <h4 className="text-[#04AA6D] mt-5 font-medium">Answer : </h4>
             <p dangerouslySetInnerHTML={{__html:data.answer}}></p>
             </div>
 
