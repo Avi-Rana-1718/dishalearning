@@ -57,7 +57,7 @@ export default async function Forums() {
       </header>
       <main className="md:flex p-2">
         <div className="md:max-w-[80vw]">
-          <h3 className="text-2xl m-3 mb-0 flex items-center justify-between">List <ForumSearch /></h3>
+          <h3 className="text-2xl m-3 mb-0 flex items-center justify-between">List</h3>
           <ul>
             
             {
