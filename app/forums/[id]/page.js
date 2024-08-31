@@ -6,6 +6,7 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, ref, child, get } from "firebase/database";
 import AsideBtns from "@/app/_components/AsideBtns";
 import Header from "@/app/_components/Header";
+import Breadcrumb from "@/app/_components/Breadcrumb";
 
 async function getData(id) {
   
@@ -49,6 +50,7 @@ export default async function Page({params}) {
       <Header />
         <main className="p-3 pt-0 bg-[#CEFFD8] md:flex">
             <div className="grow outline oultine-1 outline-2 min-h-[80vh] outline-slate-400/25 rounded md:max-w-[80vw] p-4 bg-[#fff]">
+            <Breadcrumb links={["/forums"]} />
             <h4 className="text-[#04AA6D] inline font-medium">Question : </h4>
             <span className="text-base" dangerouslySetInnerHTML={{__html:data.question}}></span>
             <small className="block mt-1">Submitted on {(new Date(data.timestamp).getDate() + "/" + (new Date(data.timestamp).getMonth()+1) + "/" + new Date(data.timestamp).getFullYear())} | Answered by {(data.hasOwnProperty("author")?data.author:"Vandana Rana")}</small>

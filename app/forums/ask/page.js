@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getDatabase, ref, child, set } from "firebase/database";
 import { useState } from "react";
 import Header from "@/app/_components/Header";
+import Breadcrumb from "@/app/_components/Breadcrumb";
 
 async function sendData(e, setSendStatus) {
   
@@ -49,6 +50,7 @@ export default function Ask() {
         <>
       <Header title="Ask a question" subtitle="Resolve your queries and questions"/>
       <main className="p-6">
+        <Breadcrumb links={["/forums", "/ask"]} />
       <div>
       {
       sendStatus==true?(
