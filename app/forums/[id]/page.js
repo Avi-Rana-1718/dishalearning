@@ -45,14 +45,14 @@ export default async function Page({params}) {
   
   return (
         <>
-         <header className=" bg-[#ceffd8]">
+         <header className="bg-[#CEFFD8]">
         <Nav navLinks={false} />
         {/* BREADCRUMB */}
-        <div className="md:text-sm text-xs pl-3 mt-5">
+        <div className="md:text-sm text-xs pl-3 md:mt-7">
         <Link href="/" className="text-blue-500 mx-0.5 hover:underline">Home</Link>{">"}<Link href="/forums" className="text-blue-500 mx-1 hover:underline">Forums</Link>
         </div>
       </header>
-        <main className="p-3 bg-[#ceffd8] md:flex">
+        <main className="p-3 bg-[#CEFFD8] md:flex">
             <div className="grow outline oultine-1 outline-2 min-h-[80vh] outline-slate-400/25 rounded md:max-w-[80vw] p-4 bg-[#fff]">
             <h4 className="text-[#04AA6D] inline font-medium">Question : </h4>
             <span className="text-base" dangerouslySetInnerHTML={{__html:data.question}}></span>

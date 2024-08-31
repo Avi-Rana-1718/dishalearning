@@ -46,15 +46,16 @@ export default function Ask() {
 
     return (
         <>
- <header className="bg-[#ceffd8] pb-10">
+ <header className=" bg-[#ceffd8]">
         <Nav navLinks={false} />
-        <div className="text-center px-10 pt-10">
-          <h3 className="text-4xl text-[#1e1e1e] mb-3">Ask a question</h3>
-          <span className="text-[#6a6a6a]">Resolve any and all queries.</span>
+        {/* BREADCRUMB */}
+        <div className="md:text-sm text-xs pl-3 mt-5">
+        <Link href="/" className="text-blue-500 mx-0.5 hover:underline">Home</Link>{">"}<Link href="/forums" className="text-blue-500 mx-1 hover:underline">Forums</Link>{">"}<Link href="/forums/ask" className="text-blue-500 mx-1 hover:underline">Ask</Link>
         </div>
       </header>
-      <main className="p-5 md:p-7 bg-[#fff]">
+      <main className="p-5 md:p-7 bg-[#ceffd8] flex justify-center">
     
+      <div className="grow outline oultine-1 outline-2 min-h-[80vh] outline-slate-400/25 rounded p-4 bg-[#fff]">
       {
       sendStatus==true?(
        <span className="p-3 rounded bg-green-300 text-green-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleCheck} /> Question sent! Our experts will look into it.</span>
@@ -84,6 +85,8 @@ export default function Ask() {
                 Submit
               </button>
         </form>
+      </div>
+    
       </main>
 
         </>
