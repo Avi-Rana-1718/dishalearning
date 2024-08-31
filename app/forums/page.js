@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ForumList from "../_components/forumList";
 import Nav from "../_components/Nav";
+import Header from "../_components/Header";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { initializeApp } from "firebase/app";
@@ -48,13 +49,7 @@ export default async function Forums() {
 
   return (
     <>
-      <header className="bg-[#ceffd8] pb-10">
-        <Nav navLinks={false} />
-        <div className="text-center px-10 pt-10">
-          <h3 className="text-4xl text-[#1e1e1e] mb-3">Forums</h3>
-          <span className="text-[#6a6a6a]">Answers to all your questions</span>
-        </div>
-      </header>
+    <Header title="Forums" subtitle="Answers to all your questions" />
       <main className="md:flex p-2">
         <div className="md:max-w-[80vw]">
           <h3 className="text-2xl m-3 mb-0 flex items-center justify-between">List</h3>

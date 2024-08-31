@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { getDatabase, ref, child, set } from "firebase/database";
 import { useState } from "react";
+import Header from "@/app/_components/Header";
 
 async function sendData(e, setSendStatus) {
   
@@ -46,16 +47,9 @@ export default function Ask() {
 
     return (
         <>
- <header className=" bg-[#ceffd8]">
-        <Nav navLinks={false} />
-        {/* BREADCRUMB */}
-        <div className="md:text-sm text-xs pl-3 mt-5">
-        <Link href="/" className="text-blue-500 mx-0.5 hover:underline">Home</Link>{">"}<Link href="/forums" className="text-blue-500 mx-1 hover:underline">Forums</Link>{">"}<Link href="/forums/ask" className="text-blue-500 mx-1 hover:underline">Ask</Link>
-        </div>
-      </header>
-      <main className="p-5 md:p-7 bg-[#ceffd8] flex justify-center">
-    
-      <div className="grow outline oultine-1 outline-2 min-h-[80vh] outline-slate-400/25 rounded p-4 bg-[#fff]">
+      <Header title="Ask a question" subtitle="Resolve your queries and questions"/>
+      <main className="p-6">
+      <div>
       {
       sendStatus==true?(
        <span className="p-3 rounded bg-green-300 text-green-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleCheck} /> Question sent! Our experts will look into it.</span>

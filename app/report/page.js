@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { getDatabase, ref, child, set } from "firebase/database";
 import { useState } from "react";
+import Header from "../_components/Header";
 
 async function sendData(e, setSendStatus) {
   
@@ -46,13 +47,7 @@ export default function Report() {
 
     return (
         <>
- <header className="bg-[#ceffd8] pb-10">
-        <Nav navLinks={false} />
-        <div className="text-center px-10 pt-10">
-          <h3 className="text-4xl text-[#1e1e1e] mb-3">Report a problem</h3>
-          <span className="text-[#6a6a6a]">Something not working? Let us know.</span>
-        </div>
-      </header>
+      <Header title="Report a problem" subtitle="Something not working? Let us know" />
       <main className="p-5 md:p-7 bg-[#fff]">
       {
       sendStatus==true?(
