@@ -9,6 +9,9 @@ import { getDatabase, ref, child, get } from "firebase/database";
 import AsideBtns from "../_components/AsideBtns";
 import ForumSearch from "../_components/ForumSearch";
 
+export const metadata = {
+  title: "Forums - Disha Learning"
+} 
 
 async function getData() {
   

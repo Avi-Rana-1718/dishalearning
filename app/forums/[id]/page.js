@@ -40,6 +40,27 @@ await get(child(dbRef, `data/${id}`)).then((snapshot) => {
 return data;
 }
 
+export async function generateMetadata({params}) {
+  let data = await getData(params.id);
+  if(data==null) {
+    return {
+      title: "Forums - Disha Learning"
+    }
+  }
+  
+  return {
+    title: data.question + " | Forums - Disha Learning",
+    description: data.answer.replace(/<[^>]*>?/gm, ''),
+    openGraph : {
+      title: data.question + " | Forums - Disha Learning",
+      description: data.answer.replace(/<[^>]*>?/gm, ''),
+      type: "article",
+      url: "https://dishalearning.in/forums/" + params.id
+    }
+}
+}
+
+
 export default async function Page({params}) {
 
   let data = await getData(params.id);
