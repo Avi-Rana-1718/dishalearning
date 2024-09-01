@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getDatabase, ref, child, set } from "firebase/database";
 import { useState } from "react";
 import Header from "../_components/Header";
+import Breadcrumb from "../_components/Breadcrumb";
 
 async function sendData(e, setSendStatus) {
   
@@ -48,7 +49,11 @@ export default function Report() {
     return (
         <>
       <Header title="Report a problem" subtitle="Something not working? Let us know" />
-      <main className="p-5 md:p-7 bg-[#fff]">
+      <main className="p-5 md:p-7 bg-[#fff] flex justify-center">
+      
+      <div>
+      <Breadcrumb links={["/report"]} />
+
       {
       sendStatus==true?(
        <span className="p-3 rounded bg-green-300 text-green-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleCheck} /> Report sent! We look into it asap.</span>
@@ -78,6 +83,7 @@ export default function Report() {
                 Submit
               </button>
         </form>
+        </div>
       </main>
 
         </>

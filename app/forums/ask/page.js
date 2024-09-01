@@ -49,9 +49,9 @@ export default function Ask() {
     return (
         <>
       <Header title="Ask a question" subtitle="Resolve your queries and questions"/>
-      <main className="p-6">
-        <Breadcrumb links={["/forums", "/ask"]} />
+      <main className="p-6 flex justify-center">
       <div>
+      <Breadcrumb links={["/forums", "/ask"]} />
       {
       sendStatus==true?(
        <span className="p-3 rounded bg-green-300 text-green-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleCheck} /> Question sent! Our experts will look into it.</span>
