@@ -1,7 +1,3 @@
-import Nav from "@/app/_components/Nav";
-import { faTriangleExclamation, faUpRightFromSquare, faHouse, faQuestion, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, child, get } from "firebase/database";
 import AsideBtns from "@/app/_components/AsideBtns";
@@ -69,8 +65,15 @@ export default async function Page({params}) {
   return (
         <>
       <Header />
-        <main className="p-3 pt-0 bg-[#CEFFD8] md:flex">
-            <div className="grow outline oultine-1 outline-2 min-h-[80vh] outline-slate-400/25 rounded md:max-w-[80vw] p-4 bg-[#fff]">
+        <main className="p-3 pt-0 bg-[#CEFFD8] md:flex justify-center">
+
+          <aside className="mr-3 hidden">
+            <div className="outline inline-block outline-2 outline-slate-400/25 rounded px-2 py-1.5 bg-[#fff]"s>
+              <h3>Blogs</h3>
+            </div>
+          </aside>
+
+            <div className="grow outline outline-2 min-h-[80vh] outline-slate-400/25 rounded md:max-w-[50vw] p-4 bg-[#fff]">
             <Breadcrumb links={["/forums"]} />
             <h4 className="text-[#04AA6D] inline font-medium">Question : </h4>
             <span className="text-base" dangerouslySetInnerHTML={{__html:data.question}}></span>

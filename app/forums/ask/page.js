@@ -10,6 +10,8 @@ import { getDatabase, ref, child, set } from "firebase/database";
 import { useState } from "react";
 import Header from "@/app/_components/Header";
 import Breadcrumb from "@/app/_components/Breadcrumb";
+import PageLayout from "@/app/_components/PageLayout";
+import TitleDiv from "@/app/_components/TitleDiv";
 
 async function sendData(e, setSendStatus) {
   
@@ -49,9 +51,8 @@ export default function Ask() {
     return (
         <>
       <Header title="Ask a question" subtitle="Resolve your queries and questions"/>
-      <main className="p-6 flex justify-center">
+      <PageLayout breadLinks={["/forums", "/ask"]}>
       <div>
-      <Breadcrumb links={["/forums", "/ask"]} />
       {
       sendStatus==true?(
        <span className="p-3 rounded bg-green-300 text-green-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleCheck} /> Question sent! Our experts will look into it.</span>
@@ -61,9 +62,13 @@ export default function Ask() {
       }
 
         <form onSubmit={(e)=>{
-              e.preventDefault();
-              console.log(e);
-              sendData(e, setSendStatus);
+              if(sendStatus=="disable") {
+                return;
+              }
+                  e.preventDefault();
+                  console.log(e);
+                  setSendStatus("disable")
+                  sendData(e, setSendStatus);
               
               
             }}>
@@ -77,14 +82,13 @@ export default function Ask() {
             <small className="block text-[#6A6A6A]">Describe the problem in detail, write as much as possible!</small>
             </label>
             <textarea id="fDesc" type="text" cols={50} rows={5} className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded my-3 max-w-[70vw] block" required></textarea>
-            <button className="text-sm hover:underline text-[#f3f3f3] bg-[#6A6A6A] px-2 py-1.5 rounded" type="submit">
+            <button disabled={sendStatus=="disable"} className="text-sm hover:underline text-[#f3f3f3] bg-[#6A6A6A] px-2 py-1.5 rounded disabled:hover:no-underline disabled:opacity-75" type="submit">
                 Submit
               </button>
         </form>
-      </div>
-    
-      </main>
-
+        </div>
+        <TitleDiv title="Guidelines" subtitle="These are some guidelines and suggestions to keep in mind while drafting the title and description for your question." desc={[ "Describe your problem thoroughly", "Use appropriate language", "Be cautious of what you share online", "Have common sense"]} />
+      </PageLayout>
         </>
     )
 }

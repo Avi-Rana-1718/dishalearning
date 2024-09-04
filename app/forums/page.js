@@ -1,13 +1,8 @@
-import Link from "next/link";
 import ForumList from "../_components/forumList";
-import Nav from "../_components/Nav";
 import Header from "../_components/Header";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, child, get } from "firebase/database";
 import AsideBtns from "../_components/AsideBtns";
-import ForumSearch from "../_components/ForumSearch";
 
 export const metadata = {
   title: "Forums - Disha Learning"

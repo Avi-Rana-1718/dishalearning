@@ -1,6 +1,7 @@
 import Footer from "./_components/Footer";
 import "./globals.css";
 import { Epilogue } from 'next/font/google'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
  
 const epilogue = Epilogue({
   subsets: ['latin'],
