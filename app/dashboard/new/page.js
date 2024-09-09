@@ -13,9 +13,10 @@ export default function New() {
         <Header title="New question" subtitle="Add a new question to the forum list" />
         <PageLayout breadLinks={["/dashboard", "/new"]}>
         <div>
-            <label htmlFor="fTitle">Title</label>
+            <form>
+            <label htmlFor="fTitle">Title<span className="text-red-600">*</span></label>
             <input id="fTitle" type="text" className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded my-3 max-w-[70vw] block" placeholder="Enter the issue" required></input>
-            <label htmlFor="fTags">Tags</label>
+            <label htmlFor="fTags">Tags<span className="text-red-600">*</span></label>
             <ul className="flex">
                 {(tags!=null)?(
                     tags.map((el)=>{
@@ -38,6 +39,7 @@ export default function New() {
             className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded my-3 max-w-[70vw] block"
             placeholder="Enter the tags">
             </input>
+            </form>
             </div>
         </PageLayout>
 

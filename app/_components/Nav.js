@@ -27,7 +27,7 @@ export default function Nav(props) {
         </ul>:
         null)}
         <span className="flex items-center hidden md:block">
-            <Link href="/" className="bg-[#21B77C] text-[#fff] px-3.5 py-2 rounded-full hover:underline">
+            <Link href="/auth" className="bg-[#21B77C] text-[#fff] px-3.5 py-2 rounded-full hover:underline">
             Sign up
             </Link>
         </span>
