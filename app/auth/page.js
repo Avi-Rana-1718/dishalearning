@@ -27,6 +27,7 @@ export default function Page() {
     return (
         <>
             <SecondaryLayout navLinks={false}>
+                <div className="w-full">
                 <h3 className="text-xl underline decoration-[#04AA6D]">Authenticate</h3>
                 <small className="mb-3 block text-[#6A6A6A]">Login into an existing account.</small>
                 <form onSubmit={(e)=>{
@@ -51,11 +52,11 @@ export default function Page() {
                 <label htmlFor="fTitle">
                 Email<span className="text-red-600">*</span>
                 </label>
-                <input id="fTitle" type="text" className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded my-3 max-w-[70vw] min-w-[20vw] block" placeholder="Email" autocomplete="off" required></input>
+                <input id="fTitle" type="text" className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded my-3 w-full min-w-[20vw] block" placeholder="Email" autocomplete="off" required></input>
                 <label htmlFor="fPass">
                 Password<span className="text-red-600">*</span>
                 </label>
-                <input id="fPassword" type="password" className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded my-3 max-w-[70vw] min-w-[20vw] block" placeholder="Password" required></input>
+                <input id="fPassword" type="password" className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded my-3 w-full min-w-[20vw] block" placeholder="Password" required></input>
                 <small className="flex justify-end text-[#2f82ff] hover:underline">
                     <Link href="/auth/forgot">Forgot password?</Link>
                 </small>
@@ -64,6 +65,7 @@ export default function Page() {
                  Login
                 </button>
                 </form>
+                </div>
             </SecondaryLayout>
         </>
     )

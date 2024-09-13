@@ -51,7 +51,7 @@ export default function Ask() {
     return (
         <>
       <Header title="Ask a question" subtitle="Resolve your queries and questions"/>
-      <PageLayout breadLinks={["/forums", "/ask"]}>
+      <PageLayout breadLinks={["/ask"]}>
       <div>
       {
       sendStatus==true?(

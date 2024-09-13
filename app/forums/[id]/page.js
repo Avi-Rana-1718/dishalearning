@@ -74,7 +74,7 @@ export default async function Page({params}) {
           </aside>
 
             <div className="grow outline outline-2 min-h-[80vh] outline-slate-400/25 rounded md:max-w-[50vw] p-4 bg-[#fff]">
-            <Breadcrumb links={["/forums"]} />
+            <Breadcrumb links={["/answers"]} />
             <h4 className="text-[#04AA6D] inline font-medium">Question : </h4>
             <span className="text-base" dangerouslySetInnerHTML={{__html:data.question}}></span>
             <small className="block mt-1">Submitted on {(new Date(data.timestamp).getDate() + "/" + (new Date(data.timestamp).getMonth()+1) + "/" + new Date(data.timestamp).getFullYear())} | Answered by {(data.hasOwnProperty("author")?data.author:"Vandana Rana")}</small>
