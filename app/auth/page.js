@@ -2,8 +2,11 @@
 import Link from "next/link";
 import SecondaryLayout from "../_components/SecondaryLayout";
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { useState } from "react";
+import { faCircleCheck, faCircleExclamation} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCciV3sOwkss506-379tA5SanyezujbYNA",
@@ -23,13 +26,26 @@ const firebaseConfig = {
 
 export default function Page() {
 
-    const [sendStatus, setSendStatus] = useState(false);
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+            }
+          }) ;
+
+    const [sendStatus, setSendStatus] = useState(null);
+    const [authStatus, setAuthStatus] = useState(null);
     return (
         <>
             <SecondaryLayout navLinks={false}>
                 <div className="w-full">
                 <h3 className="text-xl underline decoration-[#04AA6D]">Authenticate</h3>
                 <small className="mb-3 block text-[#6A6A6A]">Login into an existing account.</small>
+                {
+                authStatus==true?(
+                <span className="p-3 rounded bg-green-300 text-green-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleCheck} /> Logged In! Redirecting to <Link href="/dashboard" className="hover:underline">dashboard</Link></span>
+                ):((authStatus!=false && authStatus!=null)?(
+                <span className="p-3 rounded bg-red-300 text-red-800 inline-block mb-5"><FontAwesomeIcon icon={faCircleExclamation} /> An error occured! {authStatus}</span>
+                ):(null))
+                }
                 <form onSubmit={(e)=>{
                     e.preventDefault();
                     setSendStatus(true)
@@ -37,14 +53,14 @@ export default function Page() {
                         .then((userCredential) => {
                             // Signed in 
                             const user = userCredential.user;
-                            console.log("logged");
                             setSendStatus(false);
+                            setAuthStatus(true);
                         })
                         .catch((error) => {
                             const errorCode = error.code;
                             const errorMessage = error.message;
-                            console.log(errorMessage);
-                            setSendStatus(false)
+                            setSendStatus(false);
+                            setAuthStatus(errorMessage);
                         });
                         
                     
