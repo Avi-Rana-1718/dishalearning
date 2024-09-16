@@ -6,6 +6,9 @@ import PageLayout from "../_components/PageLayout";
 
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, child, get } from "firebase/database";
+import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCciV3sOwkss506-379tA5SanyezujbYNA",
@@ -82,6 +85,13 @@ export default function Admin() {
                 <small className="block text-[#6a6a6a]">total reports</small>
                 </li>
             </ul>
+            <div className="outline outline-2 outline-slate-400/25 rounded p-4 m-3 bg-[#fff]">
+            <span>
+              <Link href="/dashboard/new" className="hover:underline">
+              Submit a new question <FontAwesomeIcon icon={faUpRightFromSquare} className="text-[#2e2e2e]"/>
+              </Link>
+              </span>
+            </div>
             </div>
         </PageLayout>
         </>
