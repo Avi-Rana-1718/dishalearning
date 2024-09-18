@@ -1,3 +1,4 @@
+
 import ForumList from "../_components/forumList";
 import Header from "../_components/Header";
 import { initializeApp } from "firebase/app";

@@ -101,16 +101,13 @@ export default function CodeEditor(props) {
         newData[i].updateID=Math.random().toString(16).slice(2);
         newData[pos].updateID=Math.random().toString(16).slice(2);
 
-        //console.log(newData[i].inFocus);
-        // console.log(newData);
         setData(newData)
     }
 
     function formatData(data) {
 
         if(data.includes("-")) {
-            // doesnt handle sublists
-            data = `<li>${data.replace("-", "")}</li>`;     
+              data = `<li>${data.replace("-", "")}</li>`;     
         }
 
         if(data.includes("###")) {
@@ -260,16 +257,16 @@ export default function CodeEditor(props) {
     })
 
     return (
-        <div className="flex">
+        <div className="">
         <code>
             {data.map((el, index)=>{
 
                 return <Statement key={el.updateID + el.value} val={el} lineNumber={index+1} changeVal={changeData} addStatement={addStatement} removeStatement={removeStatement} changeFocus={changeFocus} />
             })}
         </code>
-        <div className="bg-[#323233] py-1 m-2 rounded-lg">
-            <h3 className="m-4 mb-1 text-white text-lg underline">Output:</h3>
-            <span dangerouslySetInnerHTML={{__html: rData}} className="text-white p-4"></span>
+        <div className="bg-[#e8e7e7] text-[#282828] p-3 my-2 rounded-lg">
+            <h3 className="text-lg underline">Output:</h3>
+            <span dangerouslySetInnerHTML={{__html: rData}} className="p-4"></span>
         </div>
         </div>
     )

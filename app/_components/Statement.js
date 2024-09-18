@@ -20,7 +20,7 @@ export default function Statement(props) {
     })
 
     return (
-        <div className="flex focus-within:bg-[#303135] bg-[#282828]">
+        <div className="flex focus-within:bg-[#cccccc] bg-[#e8e7e7]">
             <span className="mx-3 my-1 mr-6 text-[#6a6a6a]" onClick={selectAll}>
                 {lineNumber}
             </span>
@@ -82,7 +82,7 @@ export default function Statement(props) {
                     
             }}
             
-            className={"outline-none bg-[#27282A] text-[#f3f3f3] w-full focus:bg-[#303135] peer" + val.style}
+            className={"outline-none bg-[#e8e7e7] text-[#6A6A6A] w-full focus:bg-[#cccccc] peer" + val.style}
             />
             <span className="text-sm hidden text-[#6a6a6a] peer-focus:inline">{val.value.length},{val.inFocus}</span>
         </div>
