@@ -68,16 +68,6 @@ export default function New() {
         }
     ]);
 
-
-    // auth 
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-          setAuthEmail(user.email)
-        } else {
-            router.push("/auth")
-        }
-      });
-
     function remove(el) {
         let arr = [...tags];
         arr=arr.filter(element=>{
@@ -85,6 +75,13 @@ export default function New() {
         });
         setTags(arr);
     }
+
+        // auth 
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+              setAuthEmail(user.email)
+            }
+          });
 
     return (
         <>
@@ -133,12 +130,10 @@ export default function New() {
 
             }
         }
-                
             onKeyPress={(e)=>{
                 if(e.code=="Enter") {
                     e.preventDefault()
-                }
-                
+                }  
             }}
             >
             <label htmlFor="fTitle">Question<span className="text-red-600">*</span></label>

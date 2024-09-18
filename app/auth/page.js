@@ -6,6 +6,7 @@ import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebas
 import { useState } from "react";
 import { faCircleCheck, faCircleExclamation} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter } from "next/navigation";
 
 
 const firebaseConfig = {
@@ -26,10 +27,15 @@ const firebaseConfig = {
 
 export default function Page() {
 
+    let router = useRouter()
+
         onAuthStateChanged(auth, (user) => {
             if (user) {
+                console.log(1);
+                
+                router.push("/dashboard")
             }
-          }) ;
+          });
 
     const [sendStatus, setSendStatus] = useState(null);
     const [authStatus, setAuthStatus] = useState(null);
