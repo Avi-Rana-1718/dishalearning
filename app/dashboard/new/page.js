@@ -90,7 +90,7 @@ export default function New() {
         <>
         <Header title="New question" subtitle="Add a new question to the forum list" />
         <PageLayout breadLinks={["/dashboard", "/new"]}>
-        <div className="mr-3">
+        <div className="mr-3 w-full">
         {
       sendStatus!=null && sendStatus[0]==true?(
        <span className="p-3 rounded bg-green-300 text-green-800 inline-block mb-5">
