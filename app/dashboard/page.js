@@ -67,22 +67,28 @@ export default function Admin() {
             <ul className="flex">
                 <li 
                 key="countQ" 
-                className="outline outline-2 outline-slate-400/25 rounded p-4 m-3 bg-[#fff]">
+                className="outline outline-2 outline-slate-400/25 rounded m-3 bg-[#fff] hover:bg-slate-400/5">
+                <Link href="/forums" className="block p-4">
                 {questionCount}
                 <small className="block text-[#6a6a6a]">total questions</small>
+                </Link>
                 </li>
                 <li 
                 key="countA" 
-                className="outline outline-2 outline-slate-400/25 rounded p-4 m-3 bg-[#fff]"
+                className="outline outline-2 outline-slate-400/25 rounded m-3 bg-[#fff] hover:bg-slate-400/5"
                 >
+                <Link href="/dashboard/view?category=ask" className="block p-4">
                 {askData}
                 <small className="block text-[#6a6a6a]">total doubts</small>
+                </Link>
                 </li>
                 <li 
                 key="countR" 
-                className="outline outline-2 outline-slate-400/25 rounded p-4 m-3 bg-[#fff]">
+                className="outline outline-2 outline-slate-400/25 rounded m-3 bg-[#fff] hover:bg-slate-400/5">
+                <Link href="/dashboard/view?category=report" className="block p-4">
                 {reportData}
                 <small className="block text-[#6a6a6a]">total reports</small>
+                </Link>
                 </li>
             </ul>
             <div className="outline outline-2 outline-slate-400/25 rounded p-4 m-3 bg-[#fff]">

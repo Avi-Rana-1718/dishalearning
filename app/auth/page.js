@@ -31,8 +31,6 @@ export default function Page() {
 
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                console.log(1);
-                
                 router.push("/dashboard")
             }
           });
