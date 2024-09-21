@@ -70,7 +70,7 @@ export default function New() {
 
     function remove(el) {
         let arr = [...tags];
-        arr=arr.filter(element=>{
+        arr=arr.filter((element)=>{ 
             return element!=el;
         });
         setTags(arr);
