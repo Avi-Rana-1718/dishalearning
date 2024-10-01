@@ -4,7 +4,7 @@ import Header from "@/app/_components/Header"
 import PageLayout from "@/app/_components/PageLayout"
 import { useSearchParams } from "next/navigation"
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, child, get, query } from "firebase/database";
+import { getDatabase, ref, child, get, update, push } from "firebase/database";
 import { useState } from "react";
 import ForumList from "@/app/_components/forumList";
 import { useEffect } from "react";

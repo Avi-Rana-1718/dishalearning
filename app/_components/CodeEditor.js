@@ -264,7 +264,7 @@ export default function CodeEditor(props) {
                 return <Statement key={el.updateID + el.value} val={el} lineNumber={index+1} changeVal={changeData} addStatement={addStatement} removeStatement={removeStatement} changeFocus={changeFocus} />
             })}
         </code>
-        <div className="bg-[#e8e7e7] text-[#282828] p-3 my-2 rounded-lg">
+        <div className="bg-[#e8e7e7] text-[#282828] p-3 my-6 rounded-lg">
             <h3 className="text-lg underline">Output:</h3>
             <span dangerouslySetInnerHTML={{__html: rData}} className="p-4"></span>
         </div>
