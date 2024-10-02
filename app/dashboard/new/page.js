@@ -88,7 +88,7 @@ export default function New() {
         const db = getDatabase();
         let key = (obj.question.replace(/[^A-Z0-9]/ig, "")).toLowerCase()
 
-        set(ref(db, 'dataa/' + key), obj).then(()=>{
+        set(ref(db, 'data/' + key), obj).then(()=>{
             submitBtn.current.disabled=false;
             submitBtn.current.innerHTML = "Submit";
             setIsError({
