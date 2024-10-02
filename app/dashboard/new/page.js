@@ -116,7 +116,7 @@ export default function New() {
             {(()=>{
                 if(isError!=null) {
 
-                    return <AlertDiv isError={isError.status} title={isError.title} desc={isError.desc} />
+                    return <AlertDiv isError={isError.status} title={isError.title} desc={isError.desc.message} />
                 }
             })()}
             <label htmlFor="fTitle">Question<span className="text-red-600">*</span></label>

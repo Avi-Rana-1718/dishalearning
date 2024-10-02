@@ -5,34 +5,9 @@ export default function CodeEditor(props) {
     const { setPData } = props;
     const [data, setData] = useState([
         {
-        value: "Hello world",
+        value: "",
         inFocus: -1,
         updateID: Math.random().toString(16).slice(2),
-        },
-        {
-            value: "**This** is a _list_",
-            inFocus: -1,
-            updateID: Math.random().toString(16).slice(2),
-        },
-        {
-            value: "- One",
-            inFocus: -1,
-            updateID: Math.random().toString(16).slice(2),
-        },
-        {
-            value: "- Two",
-            inFocus: -1,
-            updateID: Math.random().toString(16).slice(2),
-        },
-        {
-            value: "- ~~Four~~ Three",
-            inFocus: -1,
-            updateID: Math.random().toString(16).slice(2),
-        },
-        {
-            value: "- Four",
-            inFocus: 6,
-            updateID: Math.random().toString(16).slice(2),
         }
     ])
 
