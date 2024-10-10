@@ -12,7 +12,6 @@ import { faCircleCheck, faCircleExclamation} from "@fortawesome/free-solid-svg-i
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useRef } from "react";
-import format from "@/format";
 import AlertDiv from "@/app/_components/AlertDiv";
 
 
@@ -42,7 +41,13 @@ export default function New() {
     const submitBtn = useRef(null);
 
     const [tags, setTags] = useState([]);
-    const [data, setData] = useState("");
+    const [data, setData] = useState([
+        {
+        value: "Hello world",
+        inFocus: -1,
+        updateID: Math.random().toString(16).slice(2),
+        }
+    ]);
 
     function remove(el) {
         let arr = [...tags];
@@ -65,6 +70,7 @@ export default function New() {
         if(questionRef.current.value.trim().length==0) {
             questionRef.current.reportValidity()
             return;
+            
         }
 
         submitBtn.current.disabled=true;
@@ -80,9 +86,7 @@ export default function New() {
         console.log(obj);
         
         const db = getDatabase();
-        let key = (obj.question.replace(/[^A-Z0-9]/ig, "")).toLowerCase();
-
-        questionRef.current.value=null;
+        let key = (obj.question.replace(/[^A-Z0-9]/ig, "")).toLowerCase()
 
         set(ref(db, 'data/' + key), obj).then(()=>{
             submitBtn.current.disabled=false;
@@ -160,19 +164,7 @@ export default function New() {
                 Add
             </button>
             <label htmlFor="answerInput" className="block">Answer<span className="text-red-600">*</span></label>
-            <div className="">
-        <textarea
-        className="w-full outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded"
-        rows={10}
-        onInput={(e)=>{
-            setData(e.target.value);
-        }}
-        ></textarea>
-        <div className="bg-[#e8e7e7] text-[#282828] p-3 my-6 rounded-lg">
-            <h3 className="text-lg underline">Output:</h3>
-            <span className="p-4" dangerouslySetInnerHTML={{__html: format(data)}}></span>
-        </div>
-        </div>
+            <CodeEditor setPData={setData} className="w-full"/>
             <button
             ref={submitBtn}
             className="text-sm hover:underline text-[#f3f3f3] bg-[#6A6A6A] px-2 py-1.5 rounded disabled:hover:no-underline disabled:opacity-75"
