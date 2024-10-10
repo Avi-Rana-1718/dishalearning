@@ -1,6 +1,7 @@
 "use client"
 
 import CodeEditor from "@/app/_components/CodeEditor";
+import format from "@/format";
 import Header from "@/app/_components/Header";
 import PageLayout from "@/app/_components/PageLayout";
 import { useState } from "react";
@@ -41,13 +42,7 @@ export default function New() {
     const submitBtn = useRef(null);
 
     const [tags, setTags] = useState([]);
-    const [data, setData] = useState([
-        {
-        value: "Hello world",
-        inFocus: -1,
-        updateID: Math.random().toString(16).slice(2),
-        }
-    ]);
+    const [data, setData] = useState("");
 
     function remove(el) {
         let arr = [...tags];
@@ -164,8 +159,18 @@ export default function New() {
                 Add
             </button>
             <label htmlFor="answerInput" className="block">Answer<span className="text-red-600">*</span></label>
-            <CodeEditor setPData={setData} className="w-full"/>
-            <button
+        <textarea
+        className="w-full outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded"
+        rows={10}
+        onInput={(e)=>{
+            setData(e.target.value);
+        }}
+        ></textarea>
+        <div className="bg-[#e8e7e7] text-[#282828] p-3 my-6 rounded-lg">
+            <h3 className="text-lg underline">Output:</h3>
+            <span className="p-4" dangerouslySetInnerHTML={{__html: format(data)}}></span>
+        </div>
+        <button
             ref={submitBtn}
             className="text-sm hover:underline text-[#f3f3f3] bg-[#6A6A6A] px-2 py-1.5 rounded disabled:hover:no-underline disabled:opacity-75"
             type="submit"
