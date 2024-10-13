@@ -3,7 +3,6 @@ import { getDatabase, ref, child, get } from "firebase/database";
 import AsideBtns from "@/app/_components/AsideBtns";
 import Header from "@/app/_components/Header";
 import Breadcrumb from "@/app/_components/Breadcrumb";
-import AdUnit from "@/app/_components/AdUnit";
 
 async function getData(id) {
   
