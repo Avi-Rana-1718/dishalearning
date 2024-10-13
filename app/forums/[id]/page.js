@@ -3,6 +3,7 @@ import { getDatabase, ref, child, get } from "firebase/database";
 import AsideBtns from "@/app/_components/AsideBtns";
 import Header from "@/app/_components/Header";
 import Breadcrumb from "@/app/_components/Breadcrumb";
+import AdUnit from "@/app/_components/AdUnit";
 
 async function getData(id) {
   
@@ -60,7 +61,6 @@ export async function generateMetadata({params}) {
 
 export default async function Page({params}) {
   let data = await getData(params.id);
-  let tags;
   let rData="";
 
   console.log(data);
@@ -224,20 +224,9 @@ if(typeof data.answer != "string") {
         <>
       <Header />
         <main className="p-3 pt-0 bg-[#CEFFD8] md:flex justify-center">
-
+            
             <div className="grow outline outline-2 min-h-[80vh] outline-slate-400/25 rounded md:max-w-[50vw] p-4 bg-[#fff]">
             <Breadcrumb links={["/answers"]} />
-            {/* <ul>
-            {
-              (async ()=>{
-                if(await data.tags!=undefined) {
-                await data.tags.map(async (el)=>{
-                  return <li key={"key-" + el}>{await el}</li>
-                })
-              }
-              })()
-            }
-            </ul> */}
             <h4 className="text-[#04AA6D] inline font-medium">Question : </h4>
             <span className="text-base" dangerouslySetInnerHTML={{__html:data.question}}></span>
             <small className="block mt-1">Submitted on {(new Date(data.timestamp).getDate() + "/" + (new Date(data.timestamp).getMonth()+1) + "/" + new Date(data.timestamp).getFullYear())} | Answered by {(data.hasOwnProperty("author")?data.author:"Vandana Rana")}</small>

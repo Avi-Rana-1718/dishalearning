@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { faHouse, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Breadcrumb(props) {
     const {links} = props;

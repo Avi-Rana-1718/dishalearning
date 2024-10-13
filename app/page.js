@@ -2,9 +2,13 @@ import Link from "next/link";
 import Item from "./_components/Item";
 import Nav from "./_components/Nav";
 import PrimaryBtn from "./_components/PrimaryBtn";
+import teacherImage from "../public/teacher.png";
+import boardImage from "../public/board.png";
+import tropyImage from "../public/trophy.png";
 
 import { faStar, faCertificate, faComments, faLocationDot, faQuestion, faUpRightFromSquare, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 
 
 export default function Home() {
@@ -42,21 +46,27 @@ export default function Home() {
           <h4 className="text-2xl mt-10">Best in class coaching for our students!</h4>
           <ul className="flex flex-col md:flex-row items-center justify-around mt-10 text-center">
             <li className="w-60">
-            <img src="teacher.png"/>
+              <Image
+              src={teacherImage}
+              />
               <h6>Experienced teachers</h6>
               <small className="text-xs">
                 Our teachers have been in the teaching industry for more than 15 years!
               </small>
             </li>
             <li  className="w-60">
-            <img src="board.png"/>
+            <Image 
+              src={boardImage}
+            />
               <h6>Interactive lessons</h6>
               <small className="text-xs">
               We offer engaging, interactive lessons that make learning feel more like a conversation, keeping you involved and connected.
               </small>
             </li>
             <li  className="w-60">
-            <img src="trophy.png"/>
+            <Image
+              src={tropyImage}
+            />
               <h6>Competition focused</h6>
               <small className="text-xs">
               We are competition-focused, continuously adapting our strategies to keep our students ahead in their exams.

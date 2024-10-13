@@ -29,8 +29,6 @@ const app = initializeApp(firebaseConfig);
       await get(child(dbRef, path)).then(async (snapshot) => {
         if (snapshot.exists()) {
           data = await snapshot.val();  
-          console.log(data);
-                
         } else {
           console.log("No data available");
         }
