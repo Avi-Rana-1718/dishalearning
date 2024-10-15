@@ -47,7 +47,7 @@ export async function generateMetadata({params}) {
   
   return {
     title: data.question + " | Forums - Disha Learning",
-    description: (data.answer.length==0)?(data.answer.replace(/<[^>]*>?/gm, '')):null,
+    description: data.answer.replace(/<[^>]*>?/gm, ''),
     // openGraph : {
     //   title: data.question + " | Forums - Disha Learning",
     //   description: data.answer.replace(/<[^>]*>?/gm, ''),
@@ -62,7 +62,7 @@ export default async function Page({params}) {
   let data = await getData(params.id);
   let rData="";
 
-  console.log(data);
+  console.log(await data);
   
 
   function formatData(data) {

@@ -89,7 +89,7 @@ export default function New() {
             setIsError({
                 status:false,
                 title: "Question added to db!",
-                desc: `<Link className="underline" href={"/forums/" + ${key}}>View</Link> question</small>`
+                message: `<Link class="underline" href={"/forums/" + ${key}}>View</Link> question</small>`
             });
         }).catch((err)=>{
             submitBtn.current.disabled=false;
@@ -97,7 +97,7 @@ export default function New() {
          setIsError({
             status:true,
             title: "An error occured!",
-            desc: err
+            message: err
          });
         });
 
@@ -111,7 +111,7 @@ export default function New() {
             {(()=>{
                 if(isError!=null) {
 
-                    return <AlertDiv isError={isError.status} title={isError.title} desc={isError.desc.message} />
+                    return <AlertDiv isError={isError.status} title={isError.title} desc={isError.message} />
                 }
             })()}
             <label htmlFor="fTitle">Question<span className="text-red-600">*</span></label>
