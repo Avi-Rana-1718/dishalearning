@@ -48,12 +48,12 @@ export async function generateMetadata({params}) {
   return {
     title: data.question + " | Forums - Disha Learning",
     description: data.answer.replace(/<[^>]*>?/gm, ''),
-    // openGraph : {
-    //   title: data.question + " | Forums - Disha Learning",
-    //   description: data.answer.replace(/<[^>]*>?/gm, ''),
-    //   type: "article",
-    //   url: "https://dishalearning.in/forums/" + params.id
-    // }
+    openGraph : {
+      title: data.question + " | Forums - Disha Learning",
+      description: data.answer.replace(/<[^>]*>?/gm, ''),
+      type: "article",
+      url: "https://dishalearning.in/forums/" + params.id
+    }
 }
 }
 
