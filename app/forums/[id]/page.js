@@ -25,8 +25,7 @@ let data;
 const dbRef = ref(getDatabase());
 await get(child(dbRef, `data/${id}`)).then((snapshot) => {
   if (snapshot.exists()) {
-    data = snapshot.val();
-    
+    data = snapshot.val();    
   } else {
     console.log("No data available");
   }
@@ -62,7 +61,7 @@ export default async function Page({params}) {
   let data = await getData(params.id);
   let rData="";
 
-  console.log(await data);
+  console.log(data);
   
 
   function formatData(data) {
@@ -223,13 +222,18 @@ if(typeof data.answer != "string") {
         <>
       <Header />
         <main className="p-3 pt-0 bg-[#CEFFD8] md:flex justify-center">
-            
             <div className="grow outline outline-2 min-h-[80vh] outline-slate-400/25 rounded md:max-w-[50vw] p-4 bg-[#fff]">
             <Breadcrumb links={["/answers"]} />
             <h4 className="text-[#04AA6D] inline font-medium">Question : </h4>
             <span className="text-base" dangerouslySetInnerHTML={{__html:data.question}}></span>
             <small className="block mt-1">Submitted on {(new Date(data.timestamp).getDate() + "/" + (new Date(data.timestamp).getMonth()+1) + "/" + new Date(data.timestamp).getFullYear())} | Answered by {(data.hasOwnProperty("author")?data.author:"Vandana Rana")}</small>
-            <h4 className="text-[#04AA6D] mt-5 font-medium">Answer : </h4>
+            <ul className="flex mt-2">
+                {(data.tags!=null)?(data.tags.map(el=>{
+                    return <li className="text-xs bg-[#e8e8e8] rounded-full px-2 py-1 mr-1">{el}</li>
+                })):null}
+
+            </ul>
+            <h4 className="text-[#04AA6D] mt-3 font-medium">Answer : </h4>
             <span dangerouslySetInnerHTML={{__html:rData}}></span>
             </div>
 
