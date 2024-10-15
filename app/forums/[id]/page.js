@@ -229,7 +229,7 @@ if(typeof data.answer != "string") {
             <small className="block mt-1">Submitted on {(new Date(data.timestamp).getDate() + "/" + (new Date(data.timestamp).getMonth()+1) + "/" + new Date(data.timestamp).getFullYear())} | Answered by {(data.hasOwnProperty("author")?data.author:"Vandana Rana")}</small>
             <ul className="flex mt-2">
                 {(data.tags!=null)?(data.tags.map(el=>{
-                    return <li className="text-xs bg-[#e8e8e8] rounded-full px-2 py-1 mr-1">{el}</li>
+                    return <li key={el} className="text-xs bg-[#e8e8e8] rounded-full px-2 py-1 mr-1">{el}</li>
                 })):null}
 
             </ul>
