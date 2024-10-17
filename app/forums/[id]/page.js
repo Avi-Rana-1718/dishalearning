@@ -46,11 +46,11 @@ export async function generateMetadata({params}) {
   }
   
   return {
-    title: data.question.replace(/<[^>]*>?/gm, '') + " | Forums - Disha Learning",
-    description: data.answer.replace(/<[^>]*>?/gm, ''),
+    title: data.question.replace(/[&\/\\#,+()$~%.'":*?<>{}_]/g,'') + " | Forums - Disha Learning",
+    description: data.answer.replace(/[&\/\\#,+()$~%.'":*?<>{}_]/g,''),
     openGraph : {
-      title: data.question.replace(/<[^>]*>?/gm, '') + " | Forums - Disha Learning",
-      description: data.answer.replace(/<[^>]*>?/gm, ''),
+      title: data.question.replace(/[&\/\\#,+()$~%.'":*?<>{}_]/g,'') + " | Forums - Disha Learning",
+      description: data.answer.replace(/[&\/\\#,+()$~%.'":*?<>{}_]/g,''),
       type: "article",
       url: "https://dishalearning.in/forums/" + params.id
     }
