@@ -2,8 +2,6 @@ export default function format(data) {
     console.log(data);
     
     let nData=data.trim().split(/\n/);
-    console.log(nData);
-
 
     nData = nData.map(val=>{
         let el= val.trim();
