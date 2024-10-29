@@ -5,11 +5,11 @@ import PageLayout from "@/app/_components/PageLayout"
 import { useSearchParams } from "next/navigation"
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, child, get, remove } from "firebase/database";
-import { useRef, useState } from "react";
-import ForumList from "@/app/_components/forumList";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faPen } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faPen, faEye } from "@fortawesome/free-solid-svg-icons";
+import format from "@/format";
+import Link from "next/link";
 
 
 const firebaseConfig = {
@@ -28,8 +28,8 @@ const firebaseConfig = {
 
 export default function Page() {
 
-    let params = useSearchParams()
-    let [data, setData] = useState(null)
+    let params = useSearchParams();
+    let [data, setData] = useState(null);
     
    useEffect(()=>{
 
@@ -70,42 +70,49 @@ export default function Page() {
                 let date=(new Date(data[el].timestamp).getDate() + "/" + (new Date(data[el].timestamp).getMonth()+1) + "/" + new Date(data[el].timestamp).getFullYear())
 
              return (
-                <li key={data[el].timestamp} className="group list-none flex justify-between outline outline-2 outline-slate-400/25 p-3 rounded m-3">
+                <li key={data[el].timestamp} className="list-none flex justify-between outline outline-2 outline-slate-400/25 p-3 rounded m-3  hover:bg-slate-300/25 hover:outline-none cursor-pointer">
                     <div>
                         <time className="text-xs text-[#6a6a6a] block">{date}</time>
                             {data[el].title}
-                        <small className="block">{data[el].desc}</small>
+                        <small className="block text-base" dangerouslySetInnerHTML={{__html: (data[el].desc!=null)?data[el].desc:format(data[el].question)}}></small>
+                        <ul className="flex">
+                            {(data[el].tags!=null)?(data[el].tags.map((el, i) => {
+                            return (<li className="text-xs bg-[#e8e8e8] rounded-full px-2 py-1 mr-1 mt-1" key={el + i}>{el}</li>);
+                            })):null}
+                        </ul>
                     </div>
-                    <ul className="hidden group-hover:flex flex-row bg-red-800">
-                        <li
-                            className="bg-slate-400/25 p-1 rounded mr-3 inline outline outline-2 outline-gray-300 text-sm hover:bg-slate-600/25"
-                            onClick={()=>{
-                                console.log();
-                                const dbRef = ref(getDatabase());
-                                remove(dbRef, params.get("category")+"/"+el).then(()=>{
-                                    console.log("Deleted");
-                                }).catch(e=>{
-                                    alert(e) 
-                                })
-                            }}
-                        >
-                            <FontAwesomeIcon icon={faTrash} className="text-[#2b3e50]" />
-                        </li>
-                        <li
-                            className="bg-slate-400/25 p-1 rounded outline outline-2 outline-gray-300 text-sm hover:bg-slate-600/25"
-                            onClick={()=>{
-                                console.log();
-                                const dbRef = ref(getDatabase());
-                                remove(dbRef, params.get("category")+"/"+el).then(()=>{
-                                    console.log("Deleted");
-                                }).catch(e=>{
-                                    alert(e) 
-                                })
-                            }}
-                        >
-                            <FontAwesomeIcon icon={faPen} className="text-[#2b3e50]" />
-                        </li>
-                    </ul>
+                    <div>
+                        <ul className="flex">
+                            <li
+                                className={(params.get("category")=="data")?"block":"hidden"}
+                            >
+                                <Link href={"/forums/" + el}>
+                                    <FontAwesomeIcon icon={faEye} className="text-[#2b3e50] mr-3 p-1 bg-slate-400/25 ml-3 rounded outline outline-2 outline-gray-300 text-sm hover:bg-slate-600/25" />
+                                </Link>
+                            </li>
+                            <li
+                                onClick={()=>{
+                                    let key=params.get("category")+"/"+el
+                                    console.log(key);
+                                    const dbRef = ref(getDatabase());
+                                    remove(dbRef, key).then(()=>{
+                                        console.log("Deleted");
+                                    }).catch(e=>{
+                                        alert(e) 
+                                    })
+                                }}
+                            >
+                                <FontAwesomeIcon icon={faTrash} className="text-[#2b3e50] bg-slate-400/25 p-1 rounded inline outline outline-2 outline-gray-300 text-sm hover:bg-slate-600/25" />
+                            </li>
+                            <li
+                                className={(params.get("category")=="data")?"block":"hidden"}
+                            >
+                                <Link href={"/dashboard/edit/" + el}>
+                                    <FontAwesomeIcon icon={faPen} className="text-[#2b3e50] p-1 bg-slate-400/25 ml-3 rounded outline outline-2 outline-gray-300 text-sm hover:bg-slate-600/25" />
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
              )
 

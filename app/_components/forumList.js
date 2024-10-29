@@ -8,7 +8,7 @@ export default function ForumList(props) {
  
   let date=(new Date(timestamp).getDate() + "/" + (new Date(timestamp).getMonth()+1) + "/" + new Date(timestamp).getFullYear())
   return (
-    <li className="list-none outline outline-2 outline-slate-400/25 p-3 rounded m-3 hover:bg-slate-300/25 hover:outline-none">
+    <li className="list-none outline outline-2 outline-slate-400/25 p-3 rounded m-3 cursor-pointer hover:bg-slate-300/25 hover:outline-none">
       <Link href={`/forums/${url}`}>
       <time className="text-xs text-[#6a6a6a]">{date}</time>
       <h3 className="" dangerouslySetInnerHTML={{__html:format(question)}}></h3>

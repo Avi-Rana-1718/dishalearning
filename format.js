@@ -1,6 +1,4 @@
 export default function format(data) {
-    console.log(data);
-    
     let nData=data.trim().split(/\n/);
 
     nData = nData.map(val=>{

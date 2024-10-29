@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useRef } from "react";
 import AlertDiv from "@/app/_components/AlertDiv";
+import TagsItem from "@/app/_components/TagsItem";
 
 
 const firebaseConfig = {
@@ -134,7 +135,7 @@ export default function New() {
             <ul className="flex">
                 {(tags!=null)?(
                     tags.map((el, index)=>{
-                        return <li key={el + index} onClick={()=>remove(el)} className="m-1 bg-[#b7b7b7] px-3 py-1 rounded-full text-sm hover:underline">{el}</li>
+                        return <TagsItem index={index} el={el} remove={remove}/>
                     })
                 ):null}
             </ul>

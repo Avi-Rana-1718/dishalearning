@@ -7,11 +7,11 @@ import { useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getDatabase, ref, set, get, child } from "firebase/database";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+
 import { useRouter } from "next/navigation";
 import { useRef } from "react";
 import AlertDiv from "@/app/_components/AlertDiv";
+import TagsItem from "@/app/_components/TagsItem";
 
 
 const firebaseConfig = {
@@ -158,15 +158,7 @@ export default function New(props) {
             <ul className="flex">
                 {(tags!=null)?(
                     tags.map((el, index)=>{
-                        return (
-                        <li 
-                            key={el + index} 
-                            onClick={()=>remove(el)} 
-                            className="group m-1 bg-[#b7b7b7] px-3 py-1 rounded-full text-sm hover:underline"
-                        >
-                            {el}
-                            <FontAwesomeIcon icon={faCircleXmark} className="group-hover:inline hidden text-[#555555]"/>
-                        </li>)
+                        return (<TagsItem el={el} index={index} remove={remove}/>)
                     })
                 ):null}
             </ul>

@@ -66,7 +66,7 @@ export default function Admin() {
                 <li 
                 key="countQ" 
                 className="outline outline-2 outline-slate-400/25 rounded m-3 bg-[#fff] hover:bg-slate-400/5">
-                <Link href="/forums" className="block p-4">
+                <Link href="/dashboard/view?category=data" className="block p-4">
                 {questionCount}
                 <small className="block text-[#6a6a6a]">total questions</small>
                 </Link>
