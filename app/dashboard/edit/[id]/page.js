@@ -43,6 +43,7 @@ export default function New(props) {
     const [question, setQuestion] = useState("")
     const [tags, setTags] = useState([]);
     const [data, setData] = useState("");
+    const [time, setTime] = useState(0);
 
     function remove(el) {
         let arr = [...tags];
@@ -75,7 +76,7 @@ export default function New(props) {
             tags: tags,
             answer: data,
             email: authEmail,
-            timestamp: Date.now()
+            timestamp:time
         }
 
         console.log(obj);
@@ -112,9 +113,11 @@ export default function New(props) {
             data = snapshot.val();
             questionRef.current.value=data.question;
             answerRef.current.value=data.answer;
+            
             setQuestion(data.question);
-            setTags(data.tags);
+            setTags((data.tags)?data.tags:[]);
             setData(data.answer);
+            setTime(data.timestamp);
               
         } else {
             console.log("No data available");

@@ -112,7 +112,7 @@ export default function Home() {
       </h4>
       <div className="flex justify-between">
       <p className="text-[#6A6A6A] mt-3">
-      103+ questions & answers on your finger tips!<br/>
+      300+ questions & answers on your finger tips!<br/>
 Verified answers by our faculty.<br/>
 Every growing database!
 <br />
