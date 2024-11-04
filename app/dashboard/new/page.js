@@ -135,7 +135,7 @@ export default function New() {
             <ul className="flex">
                 {(tags!=null)?(
                     tags.map((el, index)=>{
-                        return <TagsItem index={index} el={el} remove={remove} key={index+key}/>
+                        return <TagsItem index={index} el={el} remove={remove} key={index+el}/>
                     })
                 ):null}
             </ul>
