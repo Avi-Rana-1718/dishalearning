@@ -6,11 +6,7 @@ export default function AsideBtns() {
     return (
         <aside>
           <div className="outline oultine-1 outline-2 bg-[#fff] outline-slate-400/25 p-3 rounded md:m-3 mt-3 md:mt-0">
-            <h4>
-              <FontAwesomeIcon
-                icon={faQuestion}
-                className="w-4 text-[#FBA748] inline"
-              />{" "}
+            <h4 className="underline decoration-[#a9a7a7]">
               Ask a question
             </h4>
             <small className="block mb-1 text-[#6a6a6a]">
@@ -29,12 +25,8 @@ export default function AsideBtns() {
           </div>
 
           <div className="outline oultine-1 outline-2 bg-[#fff] outline-slate-400/25 p-3 rounded md:m-3 mt-3">
-            <h4>
-              <FontAwesomeIcon
-                icon={faTriangleExclamation}
-                className="w-4 text-[#d0579e] inline"
-              />{" "}
-              Something wrong?
+          <h4 className="underline decoration-[#a9a7a7]">
+            Something wrong?
             </h4>
             <small className="block mb-1 text-[#6a6a6a]">
               Something not working? Let us know.
