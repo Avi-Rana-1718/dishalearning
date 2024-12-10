@@ -44,6 +44,7 @@ async function getData() {
 export default function Forums() {
 
   let [data, setData] = useState(null);
+  let [tags, setTags] = useState([]);
   let searchRef = useRef(null)
 
   useEffect(()=>{

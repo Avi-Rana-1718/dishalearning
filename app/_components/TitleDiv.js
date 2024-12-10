@@ -6,7 +6,7 @@ export default function TitleDiv(props) {
             <span className="underline">{title}</span>
             </div>
             <div className="rounded text-xs rounded-t-none p-2 border-2 border-slate-400/25">
-            <small className="block text-[#6A6A6A] text-sm">{subtitle}</small>
+            <small className="block text-[#6A6A6A] text-sm" dangerouslySetInnerHTML={{__html:subtitle}}></small>
 
             <ul className="text-[#6A6A6A] text-sm mt-2">
                 {desc.map(el=>{

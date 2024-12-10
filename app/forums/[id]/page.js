@@ -3,7 +3,7 @@ import { getDatabase, ref, child, get } from "firebase/database";
 import AsideBtns from "@/app/_components/AsideBtns";
 import Header from "@/app/_components/Header";
 import Breadcrumb from "@/app/_components/Breadcrumb";
-import format from "@/format";
+import format from "md-extend";
 
 async function getData(id) {
   
@@ -60,10 +60,8 @@ export async function generateMetadata({params}) {
 
 export default async function Page({params}) {
   let data = await getData(params.id);
-  let rData="";
-
-  rData=format(data.answer);
-
+  console.log(data);
+  
   return (
         <>
       <Header />
@@ -72,7 +70,7 @@ export default async function Page({params}) {
             <Breadcrumb links={["/answers"]} />
             <h4 className="text-[#04AA6D] inline font-medium">Question : </h4>
             <span className="text-base" dangerouslySetInnerHTML={{__html:format(data.question)}}></span>
-            <small className="block mt-1">Submitted on {(new Date(data.timestamp).getDate() + "/" + (new Date(data.timestamp).getMonth()+1) + "/" + new Date(data.timestamp).getFullYear())} | Answered by {(data.hasOwnProperty("author")?data.author:"Vandana Rana")}</small>
+            <small className="block mt-1 text-[#3e3e3e]">Submitted on {(new Date(data.timestamp).getDate() + "/" + (new Date(data.timestamp).getMonth()+1) + "/" + new Date(data.timestamp).getFullYear())} | Answered by {(data.hasOwnProperty("author")?data.author:"Vandana Rana")}</small>
             <ul className="flex mt-2">
                 {(data.tags!=null)?(data.tags.map(el=>{
                     return <li key={el} className="text-xs bg-[#e8e8e8] rounded-full px-2 py-1 mr-1">{el}</li>
@@ -80,7 +78,7 @@ export default async function Page({params}) {
 
             </ul>
             <h4 className="text-[#04AA6D] mt-3 font-medium">Answer : </h4>
-            <span dangerouslySetInnerHTML={{__html:rData}}></span>
+            <span dangerouslySetInnerHTML={{__html:format(data.answer)}}></span>
             </div>
 
           <AsideBtns />

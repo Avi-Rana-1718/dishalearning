@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Header from "../_components/Header";
 import PageLayout from "../_components/PageLayout";
-
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, child, get } from "firebase/database";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
@@ -59,9 +58,9 @@ export default function Admin() {
     return (
         <>
         <Header title="Dashboard" subtitle="Every adminstrative tool in one place" />
-        <PageLayout breadLinks={["/dashboard"]}>
+        <PageLayout breadLinks={[]}>
             <div>
-            <h3 className="text-xl mb-5 underline decoration-[#04AA6D]">Dashboard</h3>
+            <h3 className="text-2xl mb-5 underline decoration-[#04AA6D] font-medium">Dashboard</h3>
             <ul className="flex">
                 <li 
                 key="countQ" 

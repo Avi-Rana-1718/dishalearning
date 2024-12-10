@@ -8,7 +8,7 @@ import { getDatabase, ref, child, get, remove } from "firebase/database";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPen, faEye } from "@fortawesome/free-solid-svg-icons";
-import format from "@/format";
+import format from "md-extend";
 import Link from "next/link";
 
 

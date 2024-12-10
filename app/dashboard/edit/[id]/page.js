@@ -1,17 +1,17 @@
 "use client"
 
-import format from "@/format";
+import format from "md-extend";
 import Header from "@/app/_components/Header";
 import PageLayout from "@/app/_components/PageLayout";
 import { useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getDatabase, ref, set, get, child } from "firebase/database";
-
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useRef } from "react";
 import AlertDiv from "@/app/_components/AlertDiv";
 import TagsItem from "@/app/_components/TagsItem";
+import TitleDiv from "@/app/_components/TitleDiv";
 
 
 const firebaseConfig = {
@@ -29,7 +29,7 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-export default function New(props) {
+export default function New(props) {    
 
     const router = useRouter();
     const [authEmail, setAuthEmail] = useState(null);
@@ -89,19 +89,20 @@ export default function New(props) {
             submitBtn.current.innerHTML = "Submit";
             setIsError({
                 status:false,
-                title: "Question added to db!",
-                message: `Submitted successfully! <a class="underline" href="/forums/${key}">View</a> question.</small>`
+                title: "Question editted!",
+                message: `<a class="underline" href="/forums/${key}">View</a> question.</small>`
             });
+            router.push("#alert")
         }).catch((err)=>{
             submitBtn.current.disabled=false;
             submitBtn.current.innerHTML = "Submit";
+            router.push("#alert")
          setIsError({
             status:true,
             title: "An error occured!",
             message: err
          });
         });
-
     }
 
     async function getData(id) {
@@ -131,6 +132,7 @@ export default function New(props) {
         getData(props.params.id)
     }, []);
 
+
     return (
         <>
         <Header title="Edit" subtitle="Add a new question to the forum list" />
@@ -139,7 +141,7 @@ export default function New(props) {
             {(()=>{
                 if(isError!=null) {
 
-                    return <AlertDiv isError={isError.status} title={isError.title} desc={isError.message} />
+                    return <AlertDiv isError={isError.status} title={isError.title} desc={isError.message} id="alert" />
                 }
             })()}
             <label htmlFor="fTitle">Question<span className="text-red-600">*</span></label>
@@ -205,7 +207,7 @@ export default function New(props) {
             setData(e.target.value);
         }}
         ></textarea>
-        <div className="bg-[#e8e7e7] text-[#282828] p-3 my-6 rounded-lg">
+        <div className="bg-slate-400/25 text-[#282828] p-3 my-6 rounded-lg">
             <h3 className="text-lg underline">Output:</h3>
             <span className="p-2 block" dangerouslySetInnerHTML={{__html: "<h5>Question:</h5>" + format(question) + "<h5>Answer:</h5>" + format(data)}}></span>
         </div>
@@ -218,11 +220,7 @@ export default function New(props) {
             }}
             >Submit</button>
             </div>
-            <div>
-                <div  className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded my-3">
-                    <span>Logged in as {authEmail}</span>
-                </div>
-            </div>
+            <TitleDiv title="Markdown basics" subtitle="Improve readiability by using markdown. For help with markdown go to <a href='#' class='text-[#2a74e5] hover:underline'>md-extend</a>." desc={[]}/>
         </PageLayout>
         </>
     )

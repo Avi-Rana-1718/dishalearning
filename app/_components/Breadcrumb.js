@@ -4,6 +4,9 @@ import { faHouse, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Breadcrumb(props) {
     const {links} = props;
+    if(links.length==0) {
+        return null;
+    }
     return  (
         <ul className="flex mb-3 items-center">
             <li key="homeLi"><Link href="/forums"><FontAwesomeIcon icon={faHouse} className="text-[#0D6EFD] mr-1.5"/></Link></li>

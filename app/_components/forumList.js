@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { faQ } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import format from "@/format";
+import format from "md-extend";
 
 export default function ForumList(props) {
   const { question, timestamp, url, tags} = props;

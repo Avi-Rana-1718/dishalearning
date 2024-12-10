@@ -1,7 +1,6 @@
 "use client"
 
-import CodeEditor from "@/app/_components/CodeEditor";
-import format from "@/format";
+import format from "md-extend";
 import Header from "@/app/_components/Header";
 import PageLayout from "@/app/_components/PageLayout";
 import { useState } from "react";
@@ -9,12 +8,10 @@ import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getDatabase, ref, child, set } from "firebase/database";
 import { useRouter } from "next/navigation";
-import { faCircleCheck, faCircleExclamation} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
 import { useRef } from "react";
 import AlertDiv from "@/app/_components/AlertDiv";
 import TagsItem from "@/app/_components/TagsItem";
+import TitleDiv from "@/app/_components/TitleDiv";
 
 
 const firebaseConfig = {
@@ -178,7 +175,7 @@ export default function New() {
             setData(e.target.value);
         }}
         ></textarea>
-        <div className="bg-[#e8e7e7] text-[#282828] p-3 my-6 rounded-lg">
+        <div className="bg-slate-400/25 text-[#282828] p-3 my-6 rounded-lg">
             <h3 className="text-lg underline">Output:</h3>
             <span className="p-2 block" dangerouslySetInnerHTML={{__html: "<h5>Question:</h5>" + format(question) + "<h5>Answer:</h5>" + format(data)}}></span>
         </div>
@@ -189,11 +186,7 @@ export default function New() {
             onClick={submitForm}
             >Submit</button>
             </div>
-            <div>
-                <div  className="outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded my-3">
-                    <span>Logged in as {authEmail}</span>
-                </div>
-            </div>
+            <TitleDiv title="Markdown basics" subtitle="Improve readiability by using markdown. For help with markdown go to <a href='#' class='text-[#2a74e5] hover:underline'>md-extend</a>." desc={[]}/>
         </PageLayout>
         </>
     )
