@@ -90,7 +90,7 @@ export default function New(props) {
             setIsError({
                 status:false,
                 title: "Question editted!",
-                message: `<a class="underline" href="/forums/${key}">View</a> question.</small>`
+                message: `<a class="text-[#0D6EFD] hover:underline" href="/forums/${key}">Go</a> to question.</small>`
             });
             router.push("#alert")
         }).catch((err)=>{

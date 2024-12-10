@@ -88,7 +88,7 @@ export default function New() {
             setIsError({
                 status:false,
                 title: "Question added to db!",
-                message: `Submitted successfully! <a class="underline" href="/forums/${key}">View</a> question.</small>`
+                message: `<a class="text-[#0D6EFD] hover:underline" href="/forums/${key}">Go</a> to question.</small>`
             });
         }).catch((err)=>{
             submitBtn.current.disabled=false;
