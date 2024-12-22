@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'Epilogue';
-  src: url('/fonts/Epilogue.ttf');
+  src: url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
   font-display: swap;
 }
 
