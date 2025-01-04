@@ -4,7 +4,7 @@ import Nav from "./Nav";
 export default function Header(props) {
     const {title, subtitle} = props;
     return (
-        <header className="bg-[#ceffd8] pb-10">
+        <header className={`bg-[#ceffd8] ${title==null&&subtitle==null?"pb-32":"pb-14"}`}>
         <Nav navLinks={false} />
         {(title!=null && subtitle!=null)?(
            <div className="text-center px-10 pt-10">

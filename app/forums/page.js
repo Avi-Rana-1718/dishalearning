@@ -3,7 +3,6 @@ import ForumList from "../_components/forumList";
 import Header from "../_components/Header";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, child, get } from "firebase/database";
-import AsideBtns from "../_components/AsideBtns";
 import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -60,7 +59,7 @@ export default function Forums() {
     <>
     <Header title="Forums" subtitle="Answers to all your questions" />
       <main className="md:flex p-2">
-        <div className="md:max-w-[80vw] w-full">
+        <div className="w-full">
           <div className="text-2xl m-3 mb-0 flex items-baseline justify-between">
             <h3>List</h3>
             <div className="text-sm px-2 py-1 outline-slate-500/25 focus:bg-[#fcfcfc] outline outline-2 rounded">
@@ -93,11 +92,6 @@ export default function Forums() {
             }
           </ul>
         </div>
-
-        <aside className="md:sticky md:top-3">
-          <h3 className="text-xl m-3 mb-4">More</h3>
-          <AsideBtns/>
-        </aside>
       </main>
     </>
   );
