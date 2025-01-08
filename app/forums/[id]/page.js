@@ -70,8 +70,8 @@ export default async function Page({params}) {
             <Breadcrumb links={["/answers"]} />
             <h4 className="text-[#04AA6D] inline font-medium">Question : </h4>
             <span className="text-base" dangerouslySetInnerHTML={{__html:format(data.question)}}></span>
-            <div className="md:flex justify-between">
-            <small className="block mt-1 text-[#3e3e3e]">Submitted on {(new Date(data.timestamp).getDate() + "/" + (new Date(data.timestamp).getMonth()+1) + "/" + new Date(data.timestamp).getFullYear())} | Answered by {(data.hasOwnProperty("author")?data.author:"Vandana Rana")}</small>
+            <div className="flex justify-between align-baseline">
+            <small className="block mt-2 text-[#3e3e3e]">Submitted on {(new Date(data.timestamp).getDate() + "/" + (new Date(data.timestamp).getMonth()+1) + "/" + new Date(data.timestamp).getFullYear())} | Answered by {(data.hasOwnProperty("author")?data.author:"Vandana Rana")}</small>
             <ShareBtn/>
             </div>
             <ul className="flex mt-2">
