@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="border-b-4 border-[#21B77C] p-8 flex justify-between bg-[#f3f3f3]">
+        <footer className="border-b-4 border-[#21B77C] p-8 flex justify-between bg-[#F5F7F9]">
             <h3 className="text-base">
                 <img src="/logo.png" className="inline mr-1 size-9" alt="Logo" />
                 Disha Learning

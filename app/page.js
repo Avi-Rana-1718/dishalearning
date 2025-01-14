@@ -6,7 +6,7 @@ import teacherImage from "../public/teacher.png";
 import boardImage from "../public/board.png";
 import tropyImage from "../public/trophy.png";
 
-import { faStar, faCertificate, faComments, faLocationDot, faQuestion, faUpRightFromSquare, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faCertificate, faComments, faLocationDot, faQuestion, faGraduationCap, faPhone, faUpRightFromSquare  } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
@@ -24,11 +24,20 @@ export default function Home() {
   return (
     <>
     <Nav />
-    <main className="m-4 bg-[radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(134,213,105,1) 100%)]">
-      <header className="mb-10 mt-20 md:mt-5 md:mb-3 flex items-center justify-between md:ml-4">
+    <main className="">
+      <header className="mb-10 mt-20 px-5 md:mt-5 md:mb-3 flex items-center justify-between md:ml-4">
         <div className="leading-loose">
-          <small className="text-xl md:text-3xl text-[#8e8d8d] font-semibold leading-loose">Are you looking for</small>
-          <h1 className="text-3xl md:text-6xl text-[#21B77C] font-semibold ">Quality Coaching<br /> in Chandigarh?</h1>
+          <div className="bg-[#c3c3c3] rounded-full text-sm leading-none px-3 py-2 inline-block mb-4">
+          <FontAwesomeIcon icon={faGraduationCap}  className="mr-1.5"/>
+          Admissions for 2025 open!
+          </div>
+        <h1 className="text-4xl text-[#3e3e3e] md:text-5xl lg:text-6xl font-semibold tracking-tighter">
+                  Looking for{" "}
+                  <span className="text-[#21B77C] block">
+                    Quality Coaching
+                  </span>{" "}
+                  in Chandigarh?
+                </h1>
             <p className="text-sm text-[#6A6A6A] md:w-[40vw] mt-3 mb-3">
             We providing coaching services for classes 9th, 10th, 11th & 12th for Mathematics and Science.
             We prepare our students for BOARD exams, JEE and NEET by providing them with the best lessons and supplementary learning materials.
@@ -42,7 +51,7 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="bg-[#77e6bd] rounded-xl p-5 text-center flex flex-col justify-between">
+      <div className="bg-[#77e6bd] p-5 text-center flex flex-col justify-between">
           <h4 className="text-2xl mt-10">Best in class coaching for our students!</h4>
           <ul className="flex flex-col md:flex-row items-center justify-around mt-10 text-center">
             <li className="w-60">
@@ -76,7 +85,7 @@ export default function Home() {
       </div>
       
 
-    <div className="md:m-4" id="reviews">
+    <div className="m-4" id="reviews">
     <h4 className="text-2xl mt-10">Reviews</h4>
       <div className="grid grid-cols-2 md:grid-cols-3">
         <div className="rounded p-3 m-2 md:row-span-2 outline outline-2 outline-slate-400/25">
@@ -92,7 +101,7 @@ export default function Home() {
         <Item text="Nice institute it is the path where one can learn more." author="Lakshay_verma" />
         <Item text="The best Institute in sec 46. Teachers give amazing output to the parents. There fees is also reasonable. Teachers help the students beyond there limits." author="Gokul Gupta" />
         <div className="p-3 rounded m-2 col-span-2 md:col-span-1 md:row-span-2 text-sm outline outline-2 outline-slate-400/25">
-        <FontAwesomeIcon icon={faCertificate} className="w-6 m-1 text-[#acd5c4] mb-3 inline" /> Experience <br/>
+        <h3 className="text-lg"><FontAwesomeIcon icon={faCertificate} className="text-[#acd5c4] mr-1 inline" /> Experience <br/></h3>
             +{timeY} years of experience <br />
             Started in November of 2009 <br/>
             Thats, {timeY} years and {timeM} months ago!
@@ -102,11 +111,11 @@ export default function Home() {
       </div>
     </div>
 
-    <div className="bg-[#F1F3F0] p-5 mt-10 rounded-md">
+    <div className="bg-[#F1F3F0] m-4 p-5 mt-10 rounded-md">
     <h4 className="text-2xl">
     <FontAwesomeIcon
             icon={faComments}
-            className="w-8 mr-2 text-[#FF8800] inline"
+            className="text-2xl mr-2 text-[#FF8800] inline"
           />
       Forums
       </h4>
@@ -119,7 +128,7 @@ Every growing database!
 <br />
 <Link href="/forums/ask" className="mt-4 text-[#F3F3F3] rounded-md bg-[#282828] py-2 px-3 hover:underline">Ask a question <FontAwesomeIcon icon={faUpRightFromSquare} className="inline w-3.5 ml-2"/></Link>
       </p>
-      <FontAwesomeIcon icon={faQuestion} className="w-20 rotate-12 text-[#FBA748]" />
+      <FontAwesomeIcon icon={faQuestion} className="text-6xl rotate-12 text-[#FBA748]" />
       </div>
 
     </div>

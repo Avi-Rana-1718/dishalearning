@@ -6,7 +6,7 @@ import format from "md-extend";
 export default function ForumList(props) {
   const { question, timestamp, url, tags} = props;
  
-  let date=(new Date(timestamp).getDate() + "/" + (new Date(timestamp).getMonth()+1) + "/" + new Date(timestamp).getFullYear())
+  let date=((new Date(timestamp).getDate()<=9?"0"+new Date(timestamp).getDate():new Date(timestamp).getDate()) + "/" + (new Date(timestamp).getMonth()+1<=9?"0"+(new Date(timestamp).getMonth()+1):new Date(timestamp).getMonth()+1) + "/" + new Date(timestamp).getFullYear());
   return (
     <li className="list-none outline outline-2 outline-slate-400/25 p-3 rounded m-3 cursor-pointer hover:bg-slate-300/25 hover:outline-none">
       <Link href={`/forums/${url}`}>

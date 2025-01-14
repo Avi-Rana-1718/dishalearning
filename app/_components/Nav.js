@@ -26,10 +26,7 @@ export default function Nav(props) {
             <li className="px-1 mx-1"><Link href="#contact" className="hover:underline">Contact</Link></li>
         </ul>:
         null)}
-        <span className="flex items-center hidden md:block">
-            <Link href="/auth" className="bg-[#21B77C] text-[#fff] px-3.5 py-2 rounded-full hover:underline">
-            Sign up
-            </Link>
+        <span className="flex items-center md:block">
         </span>
     </nav>
     )
