@@ -1,17 +1,17 @@
 "use client"
 
 import format from "md-extend";
-import Header from "@/app/_components/Header";
-import PageLayout from "@/app/_components/PageLayout";
-import { useState } from "react";
+import Header from "@/frontend/app/_components/Header";
+import PageLayout from "@/frontend/app/_components/PageLayout";
+import { useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { getDatabase, ref, child, set } from "firebase/database";
-import { useRouter } from "next/navigation";
+import { getDatabase, ref, set, get, child } from "firebase/database";
+import { redirect, useRouter } from "next/navigation";
 import { useRef } from "react";
-import AlertDiv from "@/app/_components/AlertDiv";
-import TagsItem from "@/app/_components/TagsItem";
-import TitleDiv from "@/app/_components/TitleDiv";
+import AlertDiv from "@/frontend/app/_components/AlertDiv";
+import TagsItem from "@/frontend/app/_components/TagsItem";
+import TitleDiv from "@/frontend/app/_components/TitleDiv";
 
 
 const firebaseConfig = {
@@ -29,7 +29,7 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-export default function New() {
+export default function New(props) {    
 
     const router = useRouter();
     const [authEmail, setAuthEmail] = useState(null);
@@ -37,11 +37,13 @@ export default function New() {
 
     const tagsRef = useRef(null);
     const questionRef = useRef(null);
+    const answerRef = useRef(null);
     const submitBtn = useRef(null);
 
     const [question, setQuestion] = useState("")
     const [tags, setTags] = useState([]);
     const [data, setData] = useState("");
+    const [time, setTime] = useState(0);
 
     function remove(el) {
         let arr = [...tags];
@@ -51,15 +53,15 @@ export default function New() {
         setTags(arr);
     }
 
-        // auth 
-        onAuthStateChanged(auth, (user) => {
+    // auth 
+    onAuthStateChanged(auth, (user) => {
             if (user) {
               setAuthEmail(user.email)
             }
-          });
+    });
 
 
-    function submitForm() {
+    function submitForm(id) {
 
         if(questionRef.current.value.trim().length==0) {
             questionRef.current.reportValidity()
@@ -74,43 +76,72 @@ export default function New() {
             tags: tags,
             answer: data,
             email: authEmail,
-            timestamp: Date.now()
+            timestamp:time
         }
 
         console.log(obj);
         
         const db = getDatabase();
-        let key = (obj.question.replace(/[^A-Z0-9]/ig, "")).toLowerCase()
+        let key = id;
 
         set(ref(db, 'data/' + key), obj).then(()=>{
             submitBtn.current.disabled=false;
             submitBtn.current.innerHTML = "Submit";
             setIsError({
                 status:false,
-                title: "Question added to db!",
+                title: "Question editted!",
                 message: `<a class="text-[#0D6EFD] hover:underline" href="/forums/${key}">Go</a> to question.</small>`
             });
+            router.push("#alert")
         }).catch((err)=>{
             submitBtn.current.disabled=false;
             submitBtn.current.innerHTML = "Submit";
+            router.push("#alert")
          setIsError({
             status:true,
             title: "An error occured!",
             message: err
          });
         });
+    }
 
+    async function getData(id) {
+        
+        const dbRef = ref(getDatabase());
+        let data;
+        await get(child(dbRef, `data/${id}`)).then((snapshot) => {
+        if (snapshot.exists()) {
+            data = snapshot.val();
+            questionRef.current.value=data.question;
+            answerRef.current.value=data.answer;
+            
+            setQuestion(data.question);
+            setTags((data.tags)?data.tags:[]);
+            setData(data.answer);
+            setTime(data.timestamp);
+              
+        } else {
+            console.log("No data available");
+        }
+        }).catch((error) => {
+        console.error(error);
+        }); 
     }
     
+    useEffect(()=>{
+        getData(props.params.id)
+    }, []);
+
+
     return (
         <>
-        <Header title="New question" subtitle="Add a new question to the forum list" />
-        <PageLayout breadLinks={["/dashboard", "/new"]}>
+        <Header title="Edit" subtitle="Add a new question to the forum list" />
+        <PageLayout breadLinks={["/dashboard", "/edit"]}>
         <div className="mr-6 w-full">
             {(()=>{
                 if(isError!=null) {
 
-                    return <AlertDiv isError={isError.status} title={isError.title} desc={isError.message} />
+                    return <AlertDiv isError={isError.status} title={isError.title} desc={isError.message} id="alert" />
                 }
             })()}
             <label htmlFor="fTitle">Question<span className="text-red-600">*</span></label>
@@ -132,7 +163,7 @@ export default function New() {
             <ul className="flex">
                 {(tags!=null)?(
                     tags.map((el, index)=>{
-                        return <TagsItem index={index} el={el} remove={remove} key={index+el}/>
+                        return (<TagsItem el={el} index={index} remove={remove} key={index+el}/>)
                     })
                 ):null}
             </ul>
@@ -171,6 +202,7 @@ export default function New() {
         <textarea
         className="w-full outline oultine-1 outline-2 outline-slate-400/25 p-3 rounded"
         rows={10}
+        ref={answerRef}
         onInput={(e)=>{
             setData(e.target.value);
         }}
@@ -183,7 +215,9 @@ export default function New() {
             ref={submitBtn}
             className="text-sm hover:underline text-[#f3f3f3] bg-[#6A6A6A] px-2 py-1.5 rounded disabled:hover:no-underline disabled:opacity-75"
             type="submit"
-            onClick={submitForm}
+            onClick={()=>{
+                submitForm(props.params.id);
+            }}
             >Submit</button>
             </div>
             <TitleDiv title="Markdown basics" subtitle="Improve readiability by using markdown. For help with markdown go to <a href='#' class='text-[#2a74e5] hover:underline'>md-extend</a>." desc={[]}/>

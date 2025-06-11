@@ -1,9 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, child, get } from "firebase/database";
-import Header from "@/app/_components/Header";
-import Breadcrumb from "@/app/_components/Breadcrumb";
+import Header from "@/frontend/app/_components/Header";
+import Breadcrumb from "@/frontend/app/_components/Breadcrumb";
 import format from "md-extend";
-import ShareBtn from "@/app/_components/ShareBtn";
+import ShareBtn from "@/frontend/app/_components/ShareBtn";
 
 async function getData(id) {
   
