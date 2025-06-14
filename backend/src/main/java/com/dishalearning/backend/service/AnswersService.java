@@ -22,7 +22,7 @@ public class AnswersService {
     
     public Page<AnswerEntity> getAllQuestions(int page) {
         Pageable pageable = PageRequest.of(page, 20, Sort.by("timestamp").descending());
-        return answerRepository.findAll(pageable);
+        return answerRepository.getLatestAnswers(pageable);
     }
 
     public Optional<AnswerEntity> getById(UUID id) {
