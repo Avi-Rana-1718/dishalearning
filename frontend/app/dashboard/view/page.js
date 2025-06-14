@@ -1,7 +1,7 @@
 "use client"
 
-import Header from "@/frontend/app/_components/Header"
-import PageLayout from "@/frontend/app/_components/PageLayout"
+import Header from "@/app/_components/Header"
+import PageLayout from "@/app/_components/PageLayout"
 import { useSearchParams } from "next/navigation"
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, child, get, remove } from "firebase/database";

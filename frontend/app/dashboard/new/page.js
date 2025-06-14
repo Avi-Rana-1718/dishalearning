@@ -1,17 +1,17 @@
 "use client"
 
 import format from "md-extend";
-import Header from "@/frontend/app/_components/Header";
-import PageLayout from "@/frontend/app/_components/PageLayout";
+import Header from "@/app/_components/Header";
+import PageLayout from "@/app/_components/PageLayout";
 import { useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getDatabase, ref, child, set } from "firebase/database";
 import { useRouter } from "next/navigation";
 import { useRef } from "react";
-import AlertDiv from "@/frontend/app/_components/AlertDiv";
-import TagsItem from "@/frontend/app/_components/TagsItem";
-import TitleDiv from "@/frontend/app/_components/TitleDiv";
+import AlertDiv from "@/app/_components/AlertDiv";
+import TagsItem from "@/app/_components/TagsItem";
+import TitleDiv from "@/app/_components/TitleDiv";
 
 
 const firebaseConfig = {
