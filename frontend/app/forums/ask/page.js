@@ -1,6 +1,6 @@
 "use client"
 
-import Nav from "@/frontend/app/_components/Nav";
+import Nav from "@/app/_components/Nav";
 import Link from "next/link";
 import { initializeApp } from "firebase/app";
 import { faCircleCheck, faCircleExclamation} from "@fortawesome/free-solid-svg-icons";
@@ -8,10 +8,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { getDatabase, ref, child, set } from "firebase/database";
 import { useState } from "react";
-import Header from "@/frontend/app/_components/Header";
-import Breadcrumb from "@/frontend/app/_components/Breadcrumb";
-import PageLayout from "@/frontend/app/_components/PageLayout";
-import TitleDiv from "@/frontend/app/_components/TitleDiv";
+import Header from "@/app/_components/Header";
+import Breadcrumb from "@/app/_components/Breadcrumb";
+import PageLayout from "@/app/_components/PageLayout";
+import TitleDiv from "@/app/_components/TitleDiv";
 
 async function sendData(e, setSendStatus) {
   

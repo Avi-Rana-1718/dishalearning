@@ -1,6 +1,6 @@
 "use client"
 
-import Nav from "@/frontend/app/_components/Nav";
+import Nav from "@/app/_components/Nav";
 import Link from "next/link";
 import { initializeApp } from "firebase/app";
 import { faCircleCheck, faCircleExclamation} from "@fortawesome/free-solid-svg-icons";
