@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +26,7 @@ public class AnswersController {
     AnswersService answersService;
 
     @GetMapping("/all")
-    public List<AnswerEntity> getAllQuestions(@RequestParam("page") int page) {
+    public Page<AnswerEntity> getAllQuestions(@RequestParam("page") int page) {
         return answersService.getAllQuestions(page);
     }
 
