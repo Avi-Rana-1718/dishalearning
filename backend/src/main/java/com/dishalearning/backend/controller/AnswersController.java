@@ -1,5 +1,6 @@
 package com.dishalearning.backend.controller;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -24,7 +25,7 @@ public class AnswersController {
     AnswersService answersService;
 
     @GetMapping("/all")
-    public Page<AnswerEntity> getAllQuestions(@RequestParam("page") int page) {
+    public List<AnswerEntity> getAllQuestions(@RequestParam("page") int page) {
         return answersService.getAllQuestions(page);
     }
 

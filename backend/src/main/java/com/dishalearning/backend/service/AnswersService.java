@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.dishalearning.backend.entity.AnswerEntity;
@@ -20,7 +21,7 @@ public class AnswersService {
     AnswerRepository answerRepository;
     
     public Page<AnswerEntity> getAllQuestions(int page) {
-        Pageable pageable = PageRequest.of(page, 20);
+        Pageable pageable = PageRequest.of(page, 20, Sort.by("timestamp").descending());
         return answerRepository.findAll(pageable);
     }
 

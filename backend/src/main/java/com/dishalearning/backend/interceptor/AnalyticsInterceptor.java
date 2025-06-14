@@ -17,7 +17,7 @@ public class AnalyticsInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        if(request.getRequestURL().toString().contains("/answers/"))
+        if(request.getRequestURL().toString().contains("/answers/") && request.getRequestURL().toString().split("/answers/")[1]!="all")
         analyticsService.add(request.getRequestURL().toString().split("/answers/")[1], request.getRemoteAddr());
         return true;
     }
